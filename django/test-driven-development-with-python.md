@@ -406,49 +406,11 @@ $ sudo systemctl status gunicorn
 
 
 
-### p.243
-
-#### Problem
-
-```bash
-ERROR: test_cannot_add_empty_list_items (functional_tests.test_list_item_validation.ItemValidationTest)
-----------------------------------------------------------------------
-Traceback (most recent call last):
-  ...
-    error = self.browser.find_element_by_css_selector('.has-error')
-  ...
-selenium.common.exceptions.NoSuchElementException: Message: Unable to locate element: .has-error
-```
-
-#### How to solved[^5]
-
-form에 `novalidate` 속성을 추가한다.
-
-###### base.html
-
-```html
-<form method="post" action="{% block form_action %}{% endblock %}" novalidate>
-	{{ form.text }}
-	{% csrf_token %}
-	{% if form.errors %}
-	<div class="form-group has-error">
-		<span class="help-block">
-			{{ form.text.errors }}
-		</span>
-	</div>
-	{% endif %}
-</form>
-```
-
-
 
 ##### Refer to
 
 - [원서 소개 링크](http://www.obeythetestinggoat.com)
 - [hyesun03님의 블로그: 클린 코드를 위한 테스트 주도 개발](https://hyesun03.github.io/2016/09/19/djangoTDD01/)
 
-
 [^4]: [참고 링크](http://askubuntu.com/a/621209)
-[^5]: [참고 링크](https://hyesun03.github.io/2016/09/29/djangoTDD08/), [참고 링크2](https://www.w3schools.com/tags/att_form_novalidate.asp)
-
  
