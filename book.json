@@ -1,8 +1,10 @@
 {
-    "plugins": ["ga"],
-    "pluginsConfig": {
-        "ga": {
-            "token": "UA-114603670-1"
-        }
+  "plugins": [
+    "ga"
+  ],
+  "pluginsConfig": {
+    "ga": {
+      "token": "UA-114603670-1"
     }
+  }
 }
