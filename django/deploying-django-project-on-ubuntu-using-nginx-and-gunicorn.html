@@ -1,0 +1,1243 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Deploying Django Project On Ubuntu Using Nginx And Gunicorn · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="django-bluebook.html" />
+    
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        <li class="header">Categories</li>
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" >
+            
+                <span>
+            
+                    
+                    Data Visualization
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../data-visualization/d3.js-tutorial.html">
+            
+                <a href="../data-visualization/d3.js-tutorial.html">
+            
+                    
+                    D3 Tutorial
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" >
+            
+                <span>
+            
+                    
+                    Database
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../database/mongodb-setup.html">
+            
+                <a href="../database/mongodb-setup.html">
+            
+                    
+                    Mongodb Setup
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../database/postgresql-on-ubuntu.html">
+            
+                <a href="../database/postgresql-on-ubuntu.html">
+            
+                    
+                    Postgresql On Ubuntu
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" >
+            
+                <span>
+            
+                    
+                    Design Patterns
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../design-patterns/abstract-factory.html">
+            
+                <a href="../design-patterns/abstract-factory.html">
+            
+                    
+                    Abstract Factory
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="../design-patterns/adapter.html">
+            
+                <a href="../design-patterns/adapter.html">
+            
+                    
+                    Adapter
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="../design-patterns/decorator.html">
+            
+                <a href="../design-patterns/decorator.html">
+            
+                    
+                    Decorator
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4" data-path="../design-patterns/delegation.html">
+            
+                <a href="../design-patterns/delegation.html">
+            
+                    
+                    Delegation
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5" data-path="../design-patterns/factory.html">
+            
+                <a href="../design-patterns/factory.html">
+            
+                    
+                    Factory
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" >
+            
+                <span>
+            
+                    
+                    Django
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter active" data-level="1.5.1" data-path="deploying-django-project-on-ubuntu-using-nginx-and-gunicorn.html">
+            
+                <a href="deploying-django-project-on-ubuntu-using-nginx-and-gunicorn.html">
+            
+                    
+                    Deploying Django Project On Ubuntu Using Nginx And Gunicorn
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="django-bluebook.html">
+            
+                <a href="django-bluebook.html">
+            
+                    
+                    Django Bluebook
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3" data-path="django-setup.html">
+            
+                <a href="django-setup.html">
+            
+                    
+                    Django Setup
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4" data-path="django-with-postgresql-on-aws-ec2.html">
+            
+                <a href="django-with-postgresql-on-aws-ec2.html">
+            
+                    
+                    Django With Postgresql On Aws Ec2
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.5" data-path="test-driven-development-with-python.html">
+            
+                <a href="test-driven-development-with-python.html">
+            
+                    
+                    Test Driven Development With Python
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" >
+            
+                <span>
+            
+                    
+                    Docker
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="../docker/about-docker.html">
+            
+                <a href="../docker/about-docker.html">
+            
+                    
+                    About Docker
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2" data-path="../docker/docker-cheatsheet.html">
+            
+                <a href="../docker/docker-cheatsheet.html">
+            
+                    
+                    Docker Cheatsheet
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3" data-path="../docker/docker-for-jekyll.html">
+            
+                <a href="../docker/docker-for-jekyll.html">
+            
+                    
+                    Docker For Jekyll
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.4" data-path="../docker/gollum-via-docker.html">
+            
+                <a href="../docker/gollum-via-docker.html">
+            
+                    
+                    Gollum Via Docker
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" >
+            
+                <span>
+            
+                    
+                    English
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.1" data-path="../english/newly-learned-words-or-phrases.html">
+            
+                <a href="../english/newly-learned-words-or-phrases.html">
+            
+                    
+                    Newly Learned Words Or Phrases
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" >
+            
+                <span>
+            
+                    
+                    Git
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.8.1" data-path="../git/git-cheat-sheet.html">
+            
+                <a href="../git/git-cheat-sheet.html">
+            
+                    
+                    Git Cheat Sheet
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.2" data-path="../git/steps-after-fork.html">
+            
+                <a href="../git/steps-after-fork.html">
+            
+                    
+                    Steps After Fork
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" >
+            
+                <span>
+            
+                    
+                    Jekyll
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.9.1" data-path="../jekyll/add-disqus-to-jekyll.html">
+            
+                <a href="../jekyll/add-disqus-to-jekyll.html">
+            
+                    
+                    Add Disqus To Jekyll
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.2" data-path="../jekyll/jekyll-with-google-analytics.html">
+            
+                <a href="../jekyll/jekyll-with-google-analytics.html">
+            
+                    
+                    Jekyll With Google Analytics
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" >
+            
+                <span>
+            
+                    
+                    Machine Learning
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.10.1" data-path="../ml/ml-study-notes.html">
+            
+                <a href="../ml/ml-study-notes.html">
+            
+                    
+                    Ml Study Notes
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11" >
+            
+                <span>
+            
+                    
+                    Python
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.11.1" data-path="../python/effective-python.html">
+            
+                <a href="../python/effective-python.html">
+            
+                    
+                    Effective Python
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.2" data-path="../python/fundamental-python.html">
+            
+                <a href="../python/fundamental-python.html">
+            
+                    
+                    Fundamental Python
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.3" data-path="../python/python-react-setup.html">
+            
+                <a href="../python/python-react-setup.html">
+            
+                    
+                    Python React Setup
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.4" data-path="../python/python-tips.html">
+            
+                <a href="../python/python-tips.html">
+            
+                    
+                    Python Tips
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.5" data-path="../python/python-virtualenv.html">
+            
+                <a href="../python/python-virtualenv.html">
+            
+                    
+                    Python Virtualenv
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.6" data-path="../python/transforming-code-into-beautiful-idiomatic-python.html">
+            
+                <a href="../python/transforming-code-into-beautiful-idiomatic-python.html">
+            
+                    
+                    Transforming Code Into Beautiful Idiomatic Python
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12" >
+            
+                <span>
+            
+                    
+                    React.js
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.12.1" data-path="../reactjs/reactjs-setup.html">
+            
+                <a href="../reactjs/reactjs-setup.html">
+            
+                    
+                    Reactjs Setup
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13" >
+            
+                <span>
+            
+                    
+                    Snippets
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.13.1" data-path="../snippets/c++.html">
+            
+                <a href="../snippets/c++.html">
+            
+                    
+                    C++
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14" >
+            
+                <span>
+            
+                    
+                    Uncategorized
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.14.1" data-path="../uncategorized/dotfiles.html">
+            
+                <a href="../uncategorized/dotfiles.html">
+            
+                    
+                    Dotfiles
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14.2" data-path="../uncategorized/hmac.html">
+            
+                <a href="../uncategorized/hmac.html">
+            
+                    
+                    HMAC
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14.3" data-path="../uncategorized/unix-command-tips.html">
+            
+                <a href="../uncategorized/unix-command-tips.html">
+            
+                    
+                    Unix Command Tips
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.15" >
+            
+                <span>
+            
+                    
+                    Vim
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.15.1" data-path="../vim/plugin-manager-vim-plug.html">
+            
+                <a href="../vim/plugin-manager-vim-plug.html">
+            
+                    
+                    Plugin Manager Vim Plug
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.15.2" data-path="../vim/plugin-manager-vundle.html">
+            
+                <a href="../vim/plugin-manager-vundle.html">
+            
+                    
+                    Plugin Manager Vundle
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.15.3" data-path="../vim/plugin-youcompleteme.html">
+            
+                <a href="../vim/plugin-youcompleteme.html">
+            
+                    
+                    Plugin Youcompleteme
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >Deploying Django Project On Ubuntu Using Nginx And Gunicorn</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="deploying-django-project-on-ubuntu-using-nginx-and-gunicorn">Deploying Django project on ubuntu using nginx and gunicorn</h1>
+<p>&#xC774; &#xAE00;&#xC740; Django &#xD504;&#xB85C;&#xC81D;&#xD2B8;&#xB97C; nginx&#xC640; gunicorn&#xC744; &#xC774;&#xC6A9;&#xD558;&#xC5EC; ubuntu &#xC11C;&#xBC84;&#xC5D0; &#xBC30;&#xD3EC;&#xD558;&#xB294; &#xACFC;&#xC815;&#xC744; &#xC815;&#xB9AC;&#xD55C; &#xAE00;&#xC774;&#xB2E4;. &#xB3C4;&#xBA54;&#xC778; &#xAD6C;&#xB9E4;&#xB3C4;, vps &#xC11C;&#xBC84; &#xAD6C;&#xB9E4;&#xB3C4; &#xBAA8;&#xB450; &#xCC98;&#xC74C;&#xC774;&#xC5C8;&#xAE30; &#xB54C;&#xBB38;&#xC5D0; &#xC0BD;&#xC9C8;&#xC744; &#xB9CE;&#xC774; &#xD588;&#xB2E4;.</p>
+<h2 id="&#xC11C;&#xBC84;-&#xC124;&#xC815;">&#xC11C;&#xBC84; &#xC124;&#xC815;</h2>
+<h3 id="1-&#xC11C;&#xBC84;-&#xB3C4;&#xBA54;&#xC778;-&#xC5F0;&#xACB0;1">1. &#xC11C;&#xBC84;-&#xB3C4;&#xBA54;&#xC778; &#xC5F0;&#xACB0;<sup><a href="#fn_1" id="reffn_1">1</a></sup></h3>
+<p>&#xBA3C;&#xC800; &#xC11C;&#xBC84;&#xC640; &#xB3C4;&#xBA54;&#xC778;&#xC744; &#xAD6C;&#xB9E4;&#xD55C;&#xB2E4;. &#xC11C;&#xBC84;&#xB294; <a href="https://blog.lael.be/post/44" target="_blank">&#xAD6D;&#xB0B4; &#xD074;&#xB77C;&#xC6B0;&#xB4DC; &#xC11C;&#xBC84;&#xD638;&#xC2A4;&#xD305; &#xBE44;&#xAD50;</a> &#xAE00; &#xC744; &#xCC38;&#xACE0;&#xD558;&#xC5EC; <a href="https://www.conoha.jp/referral/?token=dKu6u1tdfEn8M0SX91iTgL9SB24ofA6k48Km5Kz.FoesM63ZRo4-5VI" target="_blank">ConoHa</a>&#xC5D0;&#xC11C; &#xC6D4; 900&#xC5D4;&#xC9DC;&#xB9AC; &#xC11C;&#xBC84;&#xB97C; &#xC0AC;&#xACE0;,  &#xB3C4;&#xBA54;&#xC778;&#xC740; <a href="https://www.phps.kr/" target="_blank">PHPS</a>&#xC5D0;&#xC11C; &#xC0C0;&#xB2E4;.</p>
+<p>&#xC11C;&#xBC84;&#xB97C; &#xAD6C;&#xB9E4;&#xD560; &#xB54C; initial root password&#xB97C; &#xC124;&#xC815;&#xD558;&#xACE0;, ssh &#xD30C;&#xC77C;&#xB3C4; &#xB2E4;&#xC6B4;&#xBC1B;&#xAC8C; &#xB41C;&#xB2E4;(&#xBB3C;&#xB860; &#xAE30;&#xC874;&#xC758; &#xD30C;&#xC77C;&#xC744; &#xC0AC;&#xC6A9;&#xD560; &#xC218;&#xB3C4; &#xC788;&#xB2E4;). &#xCD08;&#xAE30;&#xC5D0;&#xB294; &#xC774; &#xBE44;&#xBC00;&#xBC88;&#xD638;&#xC640; ssh &#xD30C;&#xC77C;&#xC744; &#xD1B5;&#xD574; &#xC11C;&#xBC84;&#xC5D0; &#xC811;&#xC18D;&#xD558;&#xAC8C; &#xB418;&#xBBC0;&#xB85C; &#xC798; &#xBCF4;&#xAD00;&#xD574; &#xB450;&#xB294; &#xAC83;&#xC774; &#xC88B;&#xB2E4;.</p>
+<p>&#xB3C4;&#xBA54;&#xC778;&#xC744; &#xC0AC;&#xACE0; &#xB098;&#xBA74; &#xB3C4;&#xBA54;&#xC778;&#xACFC; &#xB0B4; &#xC11C;&#xBC84;&#xC758; &#xC544;&#xC774;&#xD53C;&#xB85C; &#xC5F0;&#xACB0;&#xB418;&#xB294; &#xACFC;&#xC815;&#xC774; &#xD544;&#xC694;&#xD55C;&#xB370;, &#xC774; &#xC5ED;&#xD560;&#xC744; &#xD558;&#xB294; &#xAC83;&#xC774; DNS &#xC11C;&#xBC84;&#xC774;&#xB2E4;. PHPS&#xC5D0;&#xC11C; &#xB3C4;&#xBA54;&#xC778;&#xC758; &#xB124;&#xC784;&#xC11C;&#xBC84;&#xB97C; &#xC785;&#xB825;&#xD558;&#xB294; &#xCE78;&#xC774; &#xC788;&#xB294;&#xB370; &#xC774; &#xBD80;&#xBD84;&#xC5D0; ConoHa&#xC5D0;&#xC11C; &#xC81C;&#xACF5;&#xD558;&#xB294; &#xB124;&#xC784;&#xC11C;&#xBC84;&#xB97C; &#xC785;&#xB825;&#xD588;&#xB2E4;. &#xADF8;&#xB9AC;&#xACE0; ConoHa&#xC758; DNS &#xC124;&#xC815;&#xC5D0;&#xC11C; &#xB0B4; &#xC11C;&#xBC84;&#xC758; &#xB3C4;&#xBA54;&#xC778;&#xC744; &#xCD94;&#xAC00;&#xD55C;&#xB2E4;. </p>
+<h3 id="2-&#xC11C;&#xBC84;-&#xC811;&#xC18D;">2. &#xC11C;&#xBC84; &#xC811;&#xC18D;</h3>
+<p>&#xC11C;&#xBC84;&#xB97C; &#xAD6C;&#xB9E4;&#xD560; &#xB54C; &#xB2E4;&#xC6B4; &#xBC1B;&#xC558;&#xB358; (&#xD639;&#xC740; &#xC0AC;&#xC6A9;&#xD588;&#xB358;) ssh&#xD30C;&#xC77C;&#xC744; &#xC0AC;&#xC6A9;&#xD574;&#xC11C; &#xC11C;&#xBC84;&#xC5D0; &#xC811;&#xC18D;&#xD55C;&#xB2E4;. &#xD30C;&#xC77C; &#xC774;&#xB984;&#xC774; <code>my-ssh-key-file.pem</code> &#xC774;&#xACE0; &#xAD6C;&#xB9E4;&#xD55C; &#xC11C;&#xBC84;&#xC758; ip&#xAC00; <code>***.**.**.***</code>&#xC774;&#xB77C;&#xBA74;,</p>
+<pre><code class="lang-bash">$ chmod 400 my-ssh-key-file.pem <span class="hljs-comment"># &#xAD8C;&#xD55C; &#xBCC0;&#xACBD;. &#xCC98;&#xC74C; &#xD55C;&#xBC88;&#xB9CC; &#xD558;&#xBA74; &#xB428;</span>
+$ ssh -i my-ssh-key-file.pem root@***.**.**.*** <span class="hljs-comment"># root &#xACC4;&#xC815;&#xC73C;&#xB85C; &#xC11C;&#xBC84; &#xC811;&#xC18D;</span>
+</code></pre>
+<p>&#xC11C;&#xBC84;&#xC5D0; &#xC811;&#xC18D;&#xD558;&#xACE0; &#xB098;&#xBA74; <code>$ date</code> &#xB97C; &#xC785;&#xB825;&#xD558;&#xC5EC; &#xC2DC;&#xAC04;&#xC774; &#xC798; &#xB098;&#xC624;&#xB294;&#xC9C0; &#xD655;&#xC778;&#xD574;&#xBCF4;&#xC790;. &#xC77C;&#xBCF8;&#xC5D0; &#xC788;&#xB294; &#xC11C;&#xBC84;&#xC774;&#xAE30; &#xB54C;&#xBB38;&#xC5D0; &#xBCC4;&#xB3C4;&#xC758; &#xC124;&#xC815;&#xC740; &#xD558;&#xC9C0; &#xC54A;&#xC544;&#xB3C4; &#xB41C;&#xB2E4;.</p>
+<h3 id="3-root-&#xACC4;&#xC815;-&#xC554;&#xD638;-&#xBCC0;&#xACBD;">3. root &#xACC4;&#xC815; &#xC554;&#xD638; &#xBCC0;&#xACBD;</h3>
+<p>&#xB9CC;&#xC57D;&#xC744; &#xC704;&#xD574; root &#xACC4;&#xC815;&#xC758; &#xC554;&#xD638;&#xB97C; &#xBCC0;&#xACBD;&#xD55C;&#xB2E4;.</p>
+<pre><code class="lang-bash">$ passwd
+</code></pre>
+<h3 id="4-&#xC11C;&#xBC84;-&#xC720;&#xC800;-&#xCD94;&#xAC00;">4. &#xC11C;&#xBC84; &#xC720;&#xC800; &#xCD94;&#xAC00;</h3>
+<p>&#xBCF4;&#xC548;&#xC744; &#xC704;&#xD574; &#xC11C;&#xBC84;&#xC758; &#xACC4;&#xC815;&#xC744; &#xC0C8;&#xB85C; &#xB9CC;&#xB4E4;&#xACE0;, &#xC55E;&#xC73C;&#xB85C;&#xB294; &#xADF8; &#xACC4;&#xC815;&#xC744; &#xC0AC;&#xC6A9;&#xD558;&#xAE30;&#xB85C; &#xD55C;&#xB2E4;. &#xC0C8; &#xACC4;&#xC815;&#xC758; &#xC544;&#xC774;&#xB514;&#xB97C; <code>my-user</code> &#xB77C;&#xACE0; &#xD558;&#xC790;.</p>
+<pre><code class="lang-bash">$ adduser my-user <span class="hljs-comment"># &#xACC4;&#xC815; &#xC0DD;&#xC131;</span>
+$ adduser my-user sudo <span class="hljs-comment"># &#xAD00;&#xB9AC;&#xC790; &#xAD8C;&#xD55C; &#xBD80;&#xC5EC;</span>
+$ login my-user <span class="hljs-comment"># &#xB85C;&#xADF8;&#xC778;</span>
+</code></pre>
+<h3 id="5-ssh-&#xD30C;&#xC77C;-&#xC0DD;&#xC131;-&#xBC0F;-&#xC11C;&#xBC84;&#xC5D0;-&#xB4F1;&#xB85D;2">5. SSH &#xD30C;&#xC77C; &#xC0DD;&#xC131; &#xBC0F; &#xC11C;&#xBC84;&#xC5D0; &#xB4F1;&#xB85D;<sup><a href="#fn_2" id="reffn_2">2</a></sup></h3>
+<p>&#xC55E;&#xC11C; ssh &#xD30C;&#xC77C;&#xB85C; &#xC11C;&#xBC84;&#xC5D0; &#xC811;&#xC18D;&#xD560; &#xB54C; root&#xACC4;&#xC815;&#xC73C;&#xB85C; &#xB85C;&#xADF8;&#xC778; &#xD588;&#xC5C8;&#xB2E4;. &#xC774;&#xC81C; <code>my-user</code> &#xACC4;&#xC815;&#xC744; &#xC0AC;&#xC6A9;&#xD558;&#xAE30;&#xB85C; &#xD588;&#xC73C;&#xBBC0;&#xB85C; &#xC811;&#xC18D;&#xD560; &#xB54C;&#xBD80;&#xD130; <code>my-user</code>&#xB85C; &#xB85C;&#xADF8;&#xC778;&#xD558;&#xAE30; &#xC704;&#xD574; &#xC0C8;&#xB85C;&#xC6B4; ssh&#xD0A4;&#xB97C; &#xB9CC;&#xB4E0;&#xB2E4;. </p>
+<p>&#xBA3C;&#xC800; &#xD074;&#xB77C;&#xC774;&#xC5B8;&#xD2B8;&#xC5D0;&#xC11C; <code>ssh-keygen</code> &#xBA85;&#xB839;&#xC5B4;&#xB85C; ssh &#xD30C;&#xC77C;&#xC744; &#xC0DD;&#xC131;&#xD55C;&#xB2E4;.</p>
+<pre><code class="lang-bash">$ ssh-keygen
+Generating public/private rsa key pair.
+Enter file <span class="hljs-keyword">in</span> <span class="hljs-built_in">which</span> to save the key (/home/user/.ssh/id_rsa): new-ssh-key-file.pem <span class="hljs-comment"># ssh &#xD30C;&#xC77C;&#xBA85;</span>
+Enter passphrase (empty <span class="hljs-keyword">for</span> no passphrase): <span class="hljs-comment"># &#xCD5C;&#xCD08; &#xB4F1;&#xB85D; &#xC2DC; &#xC0AC;&#xC6A9;&#xD560; &#xBE44;&#xBC00;&#xBB38;&#xAD6C;</span>
+Enter same passphrase again:
+Your identification has been saved <span class="hljs-keyword">in</span> new-ssh-key-file.pem.
+Your public key has been saved <span class="hljs-keyword">in</span> new-ssh-key-file.pem.pub.
+</code></pre>
+<p><code>new-ssh-key-file.pem</code>&#xC640; <code>new-ssh-key-file.pem.pub</code>&#xC774; &#xC0DD;&#xC131;&#xB41C;&#xB2E4;. <code>*.pub</code>&#xC740; &#xACF5;&#xAC1C;&#xD0A4;&#xC778;&#xB370;, <code>cat</code>&#xBA85;&#xB839;&#xC73C;&#xB85C; &#xACF5;&#xAC1C;&#xD0A4;&#xC758; &#xB0B4;&#xC6A9;&#xC744; &#xCD9C;&#xB825;&#xD560; &#xC218; &#xC788;&#xB2E4;.</p>
+<pre><code class="lang-bash">$ cat new-ssh-key-file.pem.pub <span class="hljs-comment"># &#xACF5;&#xAC1C;&#xD0A4; &#xCD9C;&#xB825;</span>
+</code></pre>
+<p>&#xADF8;&#xB9AC;&#xACE0; &#xC11C;&#xBC84;&#xC5D0; &#xACF5;&#xAC1C;&#xD0A4;&#xB97C; &#xB4F1;&#xB85D;&#xD55C;&#xB2E4;.</p>
+<pre><code class="lang-bash">$ mkdir ~/.ssh &amp;&amp; <span class="hljs-built_in">cd</span> ~/.ssh 
+$ cat &gt;&gt; authorized_keys
+<span class="hljs-comment"># &#xC774; &#xC0C1;&#xD0DC;&#xC5D0;&#xC11C; &#xD074;&#xB77C;&#xC774;&#xC5B8;&#xD2B8;&#xC5D0;&#xC11C; &#xCD9C;&#xB825;&#xD588;&#xB358; &#xACF5;&#xAC1C;&#xD0A4;&#xB97C; &#xBCF5;&#xC0AC; &#xD6C4; &#xBD99;&#xC5EC;&#xB123;&#xC740; &#xB2E4;&#xC74C;, &#xC904;&#xC744; &#xBC14;&#xAFBC;&#xD6C4; Ctrl+d&#xB97C; &#xB20C;&#xB7EC; &#xC800;&#xC7A5;&#xD55C;&#xB2E4;.</span>
+</code></pre>
+<p>&#xC774;&#xB807;&#xAC8C; &#xD558;&#xBA74; &#xC774;&#xC81C; &#xC11C;&#xBC84;&#xC5D0; &#xC811;&#xC18D;&#xD560; &#xB54C;  <code>my-user</code>&#xB85C; &#xBC14;&#xB85C; &#xB85C;&#xADF8;&#xC778;&#xC774; &#xAC00;&#xB2A5;&#xD558;&#xB2E4;.</p>
+<pre><code class="lang-bash">$ ssh -i new-ssh-key-file.pem my-user@***.**.**.*** <span class="hljs-comment"># my-user &#xACC4;&#xC815;&#xC73C;&#xB85C; &#xC11C;&#xBC84; &#xC811;&#xC18D;</span>
+</code></pre>
+<h3 id="6-root-&#xACC4;&#xC815;-&#xBE44;&#xD65C;&#xC131;&#xD654;3">6. root &#xACC4;&#xC815; &#xBE44;&#xD65C;&#xC131;&#xD654;<sup><a href="#fn_3" id="reffn_3">3</a></sup></h3>
+<p>&#xBCF4;&#xC548;&#xC744; &#xC704;&#xD574; root &#xACC4;&#xC815;&#xC73C;&#xB85C; &#xB85C;&#xADF8;&#xC778;&#xD558;&#xC9C0; &#xBABB;&#xD558;&#xB3C4;&#xB85D; &#xC124;&#xC815;&#xD55C;&#xB2E4;.</p>
+<pre><code class="lang-bash">$ sudo vim /etc/ssh/sshd_config
+</code></pre>
+<pre><code class="lang-bash"><span class="hljs-comment"># Authentication:</span>
+LoginGraceTime 120  
+PermitRootLogin no <span class="hljs-comment"># yes&#xC5D0;&#xC11C; no&#xB85C; &#xBCC0;&#xACBD;</span>
+</code></pre>
+<p>&#xD574;&#xB2F9; &#xC704;&#xCE58;&#xB97C; &#xCC3E;&#xC744;&#xB54C;&#xB294; <code>/PermitRootLogin</code>&#xB97C; &#xC785;&#xB825;&#xD558;&#xBA74; &#xD3B8;&#xB9AC;&#xD558;&#xB2E4;. &#xC774;&#xC81C; root &#xACC4;&#xC815;&#xC73C;&#xB85C;&#xB294; &#xC11C;&#xBC84;&#xC5D0; &#xC811;&#xC18D;&#xD560; &#xC218; &#xC5C6;&#xAC8C; &#xB418;&#xC5C8;&#xB2E4;.</p>
+<p>&#xBCC0;&#xACBD;&#xC0AC;&#xD56D;&#xB4E4;&#xC744; &#xC801;&#xC6A9;&#xD558;&#xB824;&#xBA74; ssh &#xC11C;&#xBE44;&#xC2A4;&#xB97C; &#xC7AC;&#xC2DC;&#xC791;&#xD574;&#xC57C; &#xD55C;&#xB2E4;.</p>
+<pre><code class="lang-bash">$ sudo service ssh restart
+</code></pre>
+<h3 id="7-&#xBC29;&#xD654;&#xBCBD;-&#xC124;&#xC815;">7. &#xBC29;&#xD654;&#xBCBD; &#xC124;&#xC815;</h3>
+<p>&#xC6B0;&#xBD84;&#xD22C;&#xC758; &#xAE30;&#xBCF8; &#xBC29;&#xD654;&#xBCBD;&#xC778; ufw&#xB97C; &#xC81C;&#xACF5;&#xD55C;&#xB2E4;. &#xAE30;&#xBCF8;&#xC801;&#xC73C;&#xB85C; ufw&#xB294; disable&#xB85C; &#xC124;&#xC815;&#xB418;&#xC5B4; &#xC788;&#xB2E4;. &#xBCF4;&#xC548;&#xC744; &#xC704;&#xD574; &#xBC29;&#xD654;&#xBCBD;&#xC744; &#xC124;&#xC815;&#xD55C;&#xB2E4;.</p>
+<pre><code class="lang-bash">$ sudo ufw allow ssh
+$ sudo ufw allow http
+$ sudo ufw allow https
+$ sudo ufw allow ftp
+$ sudo ufw <span class="hljs-built_in">enable</span> <span class="hljs-comment"># &#xBC29;&#xD654;&#xBCBD; &#xC124;&#xC815;</span>
+$ sudo ufw status <span class="hljs-comment"># &#xBC29;&#xD654;&#xBCBD; &#xC0C1;&#xD0DC; &#xD655;&#xC778;</span>
+</code></pre>
+<p>&#xADF8;&#xB9AC;&#xACE0; Brute-force&#xC5D0; &#xB300;&#xBE44;&#xD558;&#xAE30; &#xC704;&#xD574; <code>sshguard</code>&#xB97C; &#xC124;&#xCE58;&#xD55C;&#xB2E4;. <code>sshguard</code>&#xB294; &#xC9C0;&#xC815;&#xB41C; &#xD69F;&#xC218;&#xB9CC;&#xD07C; &#xC811;&#xC18D; &#xC2DC;&#xB3C4;&#xAC00; &#xB4E4;&#xC5B4;&#xC624;&#xBA74; &#xBC29;&#xD654;&#xBCBD;&#xC5D0;&#xC11C; &#xBC14;&#xB85C; &#xCC28;&#xB2E8;&#xD55C;&#xB2E4;.</p>
+<pre><code class="lang-bash">$ sudo apt-get install sshguard
+$ sudo service sshguard start
+</code></pre>
+<h3 id="8-&#xC5B8;&#xC5B4;-&#xC124;&#xC815;">8. &#xC5B8;&#xC5B4; &#xC124;&#xC815;</h3>
+<p>&#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC740; &#xACBD;&#xACE0;&#xB97C; &#xACC4;&#xC18D; &#xB9C8;&#xC8FC;&#xCCE4;&#xB2E4;&#xBA74;, &#xC5B8;&#xC5B4;&#xB97C; &#xC124;&#xC815;&#xD574;&#xC8FC;&#xB3C4;&#xB85D; &#xD558;&#xC790;.</p>
+<pre><code class="lang-bash">perl: warning: Setting locale failed.
+perl: warning: Please check that your locale settings:
+    LANGUAGE = (<span class="hljs-built_in">unset</span>),
+    LC_ALL = (<span class="hljs-built_in">unset</span>),
+    LC_CTYPE = <span class="hljs-string">&quot;ko_KR.UTF-8&quot;</span>,
+    LANG = <span class="hljs-string">&quot;en_US.UTF-8&quot;</span>
+    are supported and installed on your system.
+perl: warning: Falling back to a fallback locale (<span class="hljs-string">&quot;en_US.UTF-8&quot;</span>).
+locale: Cannot <span class="hljs-built_in">set</span> LC_CTYPE to default locale: No such file or directory
+locale: Cannot <span class="hljs-built_in">set</span> LC_ALL to default locale: No such file or directory
+</code></pre>
+<pre><code class="lang-bash">$ vim /etc/default/locale
+LANG=<span class="hljs-string">&quot;en_US.UTF-8&quot;</span>  
+LANGUAGE=<span class="hljs-string">&quot;en_US.UTF-8&quot;</span>  
+LC_ALL=<span class="hljs-string">&quot;en_US.UTF-8&quot;</span>
+</code></pre>
+<h3 id="9-&#xD328;&#xD0A4;&#xC9C0;-&#xC124;&#xCE58;">9. &#xD328;&#xD0A4;&#xC9C0; &#xC124;&#xCE58;</h3>
+<pre><code class="lang-bash">$ sudo apt-get update
+$ sudo apt-get upgrade
+$ sudo apt-get install zsh git
+</code></pre>
+<p>zsh&#xC640; oh-my-zsh&#xB97C; &#xC0AC;&#xC6A9;&#xD55C;&#xB2E4;&#xBA74; &#xB2E4;&#xC74C;&#xC744; &#xC785;&#xB825;&#xD558;&#xC790;.</p>
+<pre><code class="lang-bash">$ curl -L https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh | sh <span class="hljs-comment"># oh-my-zsh &#xC124;&#xCE58;</span>
+$ chsh <span class="hljs-_">-s</span> $(<span class="hljs-built_in">which</span> zsh) <span class="hljs-comment"># &#xAE30;&#xBCF8; &#xC178;&#xC744; zsh&#xB85C; &#xBCC0;&#xACBD;</span>
+</code></pre>
+<p>&#xC5EC;&#xAE30;&#xAE4C;&#xC9C0; &#xC11C;&#xBC84; &#xC124;&#xC815;&#xC774; &#xB05D;&#xB0AC;&#xB2E4;. &#xC774;&#xC81C; &#xC11C;&#xBC84;&#xB97C; &#xC7AC;&#xBD80;&#xD305;&#xD558;&#xACE0; &#xD504;&#xB85C;&#xC81D;&#xD2B8; &#xC124;&#xC815;&#xC73C;&#xB85C; &#xB118;&#xC5B4;&#xAC04;&#xB2E4;.</p>
+<pre><code class="lang-bash">$ sudo reboot
+</code></pre>
+<h2 id="&#xD504;&#xB85C;&#xC81D;&#xD2B8;-&#xC124;&#xC815;4">&#xD504;&#xB85C;&#xC81D;&#xD2B8; &#xC124;&#xC815;<sup><a href="#fn_4" id="reffn_4">4</a></sup></h2>
+<p>&#xD504;&#xB85C;&#xC81D;&#xD2B8; &#xC804;&#xCCB4; &#xAD6C;&#xC870;&#xB294; &#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xB2E4;.</p>
+<pre><code class="lang-bash">.
+&#x2514;&#x2500;&#x2500; projects
+    &#x2514;&#x2500;&#x2500; myproject
+        &#x251C;&#x2500;&#x2500; config
+        &#x2502;   &#x251C;&#x2500;&#x2500; gunicorn.service
+        &#x2502;   &#x251C;&#x2500;&#x2500; myproject_nginx.conf
+        &#x2502;   &#x2514;&#x2500;&#x2500; myproject.sock
+        &#x251C;&#x2500;&#x2500; env
+        &#x251C;&#x2500;&#x2500; <span class="hljs-built_in">log</span>
+        &#x2502;   &#x251C;&#x2500;&#x2500; access.log
+        &#x2502;   &#x2514;&#x2500;&#x2500; error.log
+        &#x2514;&#x2500;&#x2500; myproject
+            &#x251C;&#x2500;&#x2500; manage.py
+            &#x251C;&#x2500;&#x2500; myproject
+            &#x2502;   &#x251C;&#x2500;&#x2500; __init__.py
+            &#x2502;   &#x251C;&#x2500;&#x2500; settings.py
+            &#x2502;   &#x251C;&#x2500;&#x2500; urls.py
+            &#x2502;   &#x2514;&#x2500;&#x2500; wsgi.py
+            &#x2514;&#x2500;&#x2500; static
+</code></pre>
+<h3 id="1-&#xD328;&#xD0A4;&#xC9C0;-&#xC124;&#xCE58;">1. &#xD328;&#xD0A4;&#xC9C0; &#xC124;&#xCE58;</h3>
+<pre><code class="lang-bash">$ sudo apt-get install python3-dev python3-pip python3-venv nginx 
+$ sudo apt-get install postgresql postgresql-contrib libpq-dev <span class="hljs-comment"># postgresql &#xAD00;&#xB828; &#xD328;&#xD0A4;&#xC9C0;</span>
+</code></pre>
+<h3 id="2-&#xAC00;&#xC0C1;&#xD658;&#xACBD;-&#xC124;&#xC815;">2. &#xAC00;&#xC0C1;&#xD658;&#xACBD; &#xC124;&#xC815;</h3>
+<p>&#xBA3C;&#xC800; &#xD504;&#xB85C;&#xC81D;&#xD2B8;&#xB4E4;&#xC740; <code>~/projects</code> &#xD3F4;&#xB354;&#xB97C; &#xB9CC;&#xB4E4;&#xC5B4;&#xC11C; &#xAD00;&#xB9AC;&#xD560; &#xAC83;&#xC774;&#xB2E4;. &#xD504;&#xB85C;&#xC81D;&#xD2B8; &#xC774;&#xB984;&#xC774; <code>myproject</code>&#xB77C;&#xACE0; &#xD55C;&#xB2E4;&#xBA74;</p>
+<pre><code class="lang-bash">$ mkdir projects &amp;&amp; <span class="hljs-built_in">cd</span> projects
+$ mkdir myproject &amp;&amp; <span class="hljs-built_in">cd</span> myproject <span class="hljs-comment"># &#xD504;&#xB85C;&#xC81D;&#xD2B8; &#xD3F4;&#xB354; &#xC0DD;&#xC131;</span>
+$ python3 -m venv env <span class="hljs-comment"># &#xAC00;&#xC0C1;&#xD658;&#xACBD; &#xC0DD;&#xC131;</span>
+$ <span class="hljs-built_in">source</span> env/bin/activate <span class="hljs-comment"># &#xAC00;&#xC0C1;&#xD658;&#xACBD; &#xD65C;&#xC131;&#xD654;</span>
+(env) $
+</code></pre>
+<h3 id="3-nginx-&#xC124;&#xC815;">3. nginx &#xC124;&#xC815;</h3>
+<p>Django &#xD504;&#xB85C;&#xC81D;&#xD2B8;&#xB97C; &#xC124;&#xC815;&#xD558;&#xAE30; &#xC804;&#xC5D0; nginx &#xAD00;&#xB828; &#xC124;&#xC815;&#xC744; &#xBA3C;&#xC800; &#xD558;&#xC790;.</p>
+<pre><code class="lang-bash">(env) $ mkdir <span class="hljs-built_in">log</span> config
+(env) $ <span class="hljs-built_in">cd</span> <span class="hljs-built_in">log</span>
+(env) $ touch access.log error.log
+(env) $ <span class="hljs-built_in">cd</span> ..
+(env) $ <span class="hljs-built_in">cd</span> config
+(env) $ vim myproject_nginx.conf
+</code></pre>
+<h6 id="projectsmyprojectconfigmyprojectnginxconf">~/projects/myproject/config/myproject_nginx.conf</h6>
+<pre><code class="lang-bash">server {
+        <span class="hljs-comment"># the port your site will be served on</span>
+        listen 80;
+
+        <span class="hljs-comment"># the domain name it will serve for</span>
+        server_name     example.io; <span class="hljs-comment"># &#xC5EC;&#xAE30;&#xC5D0; &#xB3C4;&#xBA54;&#xC778; &#xC8FC;&#xC18C;&#xB97C; &#xC801;&#xB294;&#xB2E4;</span>
+        charset         utf-8;
+
+        access_<span class="hljs-built_in">log</span>      /home/my-user/projects/myproject/<span class="hljs-built_in">log</span>/access.log;
+        error_<span class="hljs-built_in">log</span>       /home/my-user/projects/myproject/<span class="hljs-built_in">log</span>/error.log;
+
+        location /static/ { <span class="hljs-comment"># STATIC_URL</span>
+            <span class="hljs-built_in">alias</span> /home/my-user/projects/myproject/myproject/static/; <span class="hljs-comment"># STATIC_ROOT</span>
+            expires 30d;
+        }
+
+        location / {
+            include proxy_params;
+            proxy_pass http://unix:/home/my-user/projects/myproject/config/myproject.sock;
+        }
+}
+</code></pre>
+<p>&#xC774;&#xC81C; &#xC774; &#xD30C;&#xC77C;&#xC744; nginx &#xACBD;&#xB85C;&#xC5D0; &#xCD94;&#xAC00;&#xD55C;&#xB2E4;.</p>
+<pre><code class="lang-bash">(env) $ sudo ln <span class="hljs-_">-s</span> ~/projects/myproject/config/myproject_nginx.conf /etc/nginx/sites-enabled/
+</code></pre>
+<p>&#xADF8;&#xB9AC;&#xACE0; nginx &#xC124;&#xC815; &#xD30C;&#xC77C;&#xC758; &#xBB38;&#xBC95;&#xC744; &#xAC80;&#xC0AC;&#xD558;&#xACE0; &#xC11C;&#xBE44;&#xC2A4;&#xB97C; &#xC2DC;&#xC791;&#xD55C;&#xB2E4;.</p>
+<pre><code class="lang-bash">(env) $ sudo nginx -t
+(env) $ sudo systemctl start nginx
+(env) $ sudo ufw allow 8000 <span class="hljs-comment"># Django&#xC758; runserver &#xAE30;&#xB2A5;&#xC744; &#xC704;&#xD574; 8000&#xBC88; &#xD3EC;&#xD2B8;&#xB3C4; &#xC5F4;&#xC5B4;&#xC900;&#xB2E4;.</span>
+</code></pre>
+<h3 id="3-&#xB370;&#xC774;&#xD130;&#xBCA0;&#xC774;&#xC2A4;-&#xC124;&#xC815;">3. &#xB370;&#xC774;&#xD130;&#xBCA0;&#xC774;&#xC2A4; &#xC124;&#xC815;</h3>
+<p>Django &#xD504;&#xB85C;&#xC81D;&#xD2B8;&#xC5D0;&#xC11C; postgresql&#xC744; &#xC0AC;&#xC6A9;&#xD55C;&#xB2E4;&#xBA74; &#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC740; &#xC124;&#xC815;&#xC744; &#xAC70;&#xCCD0;&#xC57C; &#xD55C;&#xB2E4;.</p>
+<pre><code class="lang-bash">(env) $ sudo -u postgres psql
+postgres=<span class="hljs-comment"># CREATE DATABASE myproject; # &#xB370;&#xC774;&#xD130;&#xBCA0;&#xC774;&#xC2A4; &#xC0DD;&#xC131;</span>
+postgres=<span class="hljs-comment"># CREATE USER myprojectuser with PASSWORD &apos;password&apos;; # &#xC720;&#xC800; &#xC0DD;&#xC131;</span>
+postgres=<span class="hljs-comment"># GRANT ALL PRIVILEGES ON DATABASE myproject TO myprojectuser; # &#xAD8C;&#xD55C; &#xD560;&#xB2F9;</span>
+postgres=<span class="hljs-comment"># \q</span>
+</code></pre>
+<h3 id="4-&#xD504;&#xB85C;&#xC81D;&#xD2B8;-&#xC0DD;&#xC131;">4. &#xD504;&#xB85C;&#xC81D;&#xD2B8; &#xC0DD;&#xC131;</h3>
+<p>&#xC2E4;&#xC81C; &#xD504;&#xB85C;&#xC81D;&#xD2B8;&#xB294; git clone&#xC744; &#xD1B5;&#xD574; &#xAC00;&#xC838;&#xC654;&#xC9C0;&#xB9CC; &#xD3B8;&#xC758;&#xC0C1; &#xD504;&#xB85C;&#xC81D;&#xD2B8;&#xB97C; &#xC0C8;&#xB85C; &#xC0DD;&#xC131;&#xD558;&#xB294; &#xAC83;&#xC73C;&#xB85C; &#xAE00;&#xC744; &#xC4F0;&#xACA0;&#xB2E4;.</p>
+<pre><code class="lang-bash">(env) $ pip install --upgrade pip
+(env) $ pip install django gunicorn psycopg2 whitenoise
+(env) $ django-admin startproject myproject
+(env) $ <span class="hljs-built_in">cd</span> myproject
+(env) $ vim myproject/settings.py
+</code></pre>
+<h6 id="myprojectsettingspy">myproject/settings.py</h6>
+<pre><code class="lang-python">...
+ALLOWED_HOSTS = [<span class="hljs-string">&apos;my_domain_name&apos;</span>]
+...
+DATABASES = {
+    <span class="hljs-string">&apos;default&apos;</span>: {
+        <span class="hljs-string">&apos;ENGINE&apos;</span>: <span class="hljs-string">&apos;django.db.backends.postgresql_psycopg2&apos;</span>,
+        <span class="hljs-string">&apos;NAME&apos;</span>: <span class="hljs-string">&apos;myproject&apos;</span>,
+        <span class="hljs-string">&apos;USER&apos;</span>: <span class="hljs-string">&apos;myprojectuser&apos;</span>,
+        <span class="hljs-string">&apos;PASSWORD&apos;</span>: <span class="hljs-string">&apos;password&apos;</span>,
+        <span class="hljs-string">&apos;HOST&apos;</span>: <span class="hljs-string">&apos;localhost&apos;</span>,
+        <span class="hljs-string">&apos;PORT&apos;</span>: <span class="hljs-string">&apos;&apos;</span>,
+    }
+}
+...
+STATIC_URL = <span class="hljs-string">&apos;/static/&apos;</span>
+STATIC_ROOT = os.path.join(BASE_DIR, <span class="hljs-string">&apos;static/&apos;</span>)
+</code></pre>
+<h6 id="myprojectwsgipy">myproject/wsgi.py</h6>
+<pre><code class="lang-python"><span class="hljs-keyword">from</span> whitenoise.django <span class="hljs-keyword">import</span> DjangoWhiteNoise
+...
+application = DjangoWhiteNoise(get_wsgi_application())
+...
+</code></pre>
+<h4 id="&#xD504;&#xB85C;&#xC81D;&#xD2B8;-&#xC2E4;&#xD589;">&#xD504;&#xB85C;&#xC81D;&#xD2B8; &#xC2E4;&#xD589;</h4>
+<pre><code class="lang-bash">(env) $ python manage.py makemigrations
+(env) $ python manage.py migrate
+(env) $ python manage.py collectstatic
+(env) $ python manage.py runserver 0.0.0.0:8000
+</code></pre>
+<p><a href="http://my_domain_name:8000/" target="_blank">http://my_domain_name:8000/</a> &#xC73C;&#xB85C; &#xC811;&#xC18D;&#xD558;&#xC5EC; &#xB0B4;&#xC6A9;&#xC774; &#xC798; &#xCD9C;&#xB825;&#xB418;&#xB294;&#xC9C0; &#xD655;&#xC778;&#xD55C;&#xB2E4;.</p>
+<h3 id="5-gunicorn-&#xC124;&#xC815;">5. Gunicorn &#xC124;&#xC815;</h3>
+<pre><code class="lang-bash">(env) $ gunicorn --bind 0.0.0.0:8000 myproject.wsgi:application
+</code></pre>
+<p>Gunicorn&#xC744; &#xD1B5;&#xD574; &#xC11C;&#xBC84;&#xB97C; &#xAD6C;&#xB3D9;&#xD55C;&#xB2E4;. &#xB9C8;&#xCC2C;&#xAC00;&#xC9C0;&#xB85C; <a href="http://my_domain_name:8000/" target="_blank">http://my_domain_name:8000/</a> &#xC73C;&#xB85C; &#xC811;&#xC18D;&#xD558;&#xC5EC; &#xB0B4;&#xC6A9;&#xC774; &#xC798; &#xCD9C;&#xB825;&#xB418;&#xB294;&#xC9C0; &#xD655;&#xC778;&#xD55C;&#xB2E4;. &#xC798; &#xB3D9;&#xC791;&#xD55C;&#xB2E4;&#xBA74; <code>deactivate</code>&#xB85C; &#xAC00;&#xC0C1;&#xD658;&#xACBD;&#xC744; &#xC885;&#xB8CC;&#xD558;&#xC790;.</p>
+<p>&#xADF8;&#xB9AC;&#xACE0; Gunicorn&#xC758; &#xC11C;&#xBE44;&#xC2A4; &#xC2A4;&#xD06C;&#xB9BD;&#xD2B8;&#xB97C; &#xB9CC;&#xB4E0;&#xB2E4;.</p>
+<h6 id="projectsmyprojectconfiggunicornservice">~/projects/myproject/config/gunicorn.service</h6>
+<pre><code class="lang-bash">[Unit]
+Description=gunicorn daemon
+After=network.target
+
+[Service]
+User=my-user
+Group=www-data
+WorkingDirectory=/home/my-user/projects/myproject/myproject
+ExecStart=/home/my-user/projects/myproject/env/bin/gunicorn \
+        --workers 3 \
+        --bind unix:/home/my-user/projects/myproject/config/myproject.sock \
+        myproject.wsgi:application
+
+[Install]
+WantedBy=multi-user.target
+</code></pre>
+<p>&#xC774;&#xC81C; &#xC774; &#xD30C;&#xC77C;&#xC744; &#xC11C;&#xBE44;&#xC2A4;&#xC5D0; &#xCD94;&#xAC00;&#xD558;&#xACE0; &#xC11C;&#xBE44;&#xC2A4;&#xB97C; &#xC2E4;&#xD589;&#xC2DC;&#xD0A8;&#xB2E4;.</p>
+<pre><code class="lang-bash">$ sudo ln <span class="hljs-_">-s</span> ~/projects/myproject/config/gunicorn.service /etc/systemd/system/
+$ sudo systemctl daemon-reload
+$ sudo systemctl start gunicorn
+$ sudo systemctl <span class="hljs-built_in">enable</span> gunicorn
+$ sudo systemctl status gunicorn
+</code></pre>
+<p>&#xB9C8;&#xC9C0;&#xB9C9;&#xC73C;&#xB85C; &#xBC29;&#xD654;&#xBCBD;&#xC744; &#xC124;&#xC815;&#xD55C;&#xB2E4;.</p>
+<pre><code class="lang-bash">$ sudo ufw delete 8000
+$ sudo ufw allow <span class="hljs-string">&apos;Nginx Full&apos;</span>
+</code></pre>
+<p><a href="http://my_domain_name/" target="_blank">http://my_domain_name/</a> &#xC73C;&#xB85C; &#xC811;&#xC18D;&#xD558;&#xC5EC; &#xB0B4;&#xC6A9;&#xC774; &#xC798; &#xCD9C;&#xB825;&#xB418;&#xB294;&#xC9C0; &#xD655;&#xC778;&#xD55C;&#xB2E4;.</p>
+<blockquote id="fn_1">
+<sup>1</sup>. <a href="http://www.maxchung.com/2015/11/06/domain-%EA%B5%AC%EC%9E%85%EA%B8%B0-%EB%B0%8F-conoha%EC%97%90-%EC%97%B0%EA%B2%B0%ED%95%98%EA%B8%B0/" target="_blank">maxchung&#xB2D8;&#xC758; &#xBE14;&#xB85C;&#xADF8;</a>&#xB97C; &#xCC38;&#xACE0;&#xD588;&#xB2E4;.<a href="#reffn_1" title="Jump back to footnote [1] in the text."> &#x21A9;</a>
+</blockquote>
+<blockquote id="fn_2">
+<sup>2</sup>. <a href="http://www.haruair.com/blog/2220" target="_blank">haruair&#xB2D8;&#xC758; &#xBE14;&#xB85C;&#xADF8;</a>&#xB97C; &#xCC38;&#xACE0;&#xD588;&#xB2E4;.<a href="#reffn_2" title="Jump back to footnote [2] in the text."> &#x21A9;</a>
+</blockquote>
+<blockquote id="fn_3">
+<sup>3</sup>. <a href="https://blog.chann.kr/initial-server-setup-with-ubuntu-14-04/" target="_blank">chann&#xB2D8;&#xC758; &#xBE14;&#xB85C;&#xADF8;</a>&#xB97C; &#xCC38;&#xACE0;&#xD588;&#xB2E4;.<a href="#reffn_3" title="Jump back to footnote [3] in the text."> &#x21A9;</a>
+</blockquote>
+<blockquote id="fn_4">
+<sup>4</sup>. <a href="https://blog.qwaz.io/dev-diary/&#xC11C;&#xBC84;-&#xC138;&#xD305;&#xD558;&#xAE30;-1&#xBD80;" target="_blank">quaz&#xB2D8;&#xC758; &#xBE14;&#xB85C;&#xADF8;</a>&#xC640; <a href="https://www.digitalocean.com/community/tutorials/how-to-set-up-django-with-postgres-nginx-and-gunicorn-on-ubuntu-16-04" target="_blank">DigitalOcean</a>&#xC744; &#xCC38;&#xACE0;&#xD588;&#xB2E4;.<a href="#reffn_4" title="Jump back to footnote [4] in the text."> &#x21A9;</a>
+</blockquote>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                
+                <a href="django-bluebook.html" class="navigation navigation-next navigation-unique" aria-label="Next page: Django Bluebook">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Deploying Django Project On Ubuntu Using Nginx And Gunicorn","level":"1.5.1","depth":2,"next":{"title":"Django Bluebook","level":"1.5.2","depth":2,"path":"django/django-bluebook.md","ref":"django/django-bluebook.md","articles":[]},"previous":{"title":"Django","level":"1.5","depth":1,"ref":"","articles":[{"title":"Deploying Django Project On Ubuntu Using Nginx And Gunicorn","level":"1.5.1","depth":2,"path":"django/deploying-django-project-on-ubuntu-using-nginx-and-gunicorn.md","ref":"django/deploying-django-project-on-ubuntu-using-nginx-and-gunicorn.md","articles":[]},{"title":"Django Bluebook","level":"1.5.2","depth":2,"path":"django/django-bluebook.md","ref":"django/django-bluebook.md","articles":[]},{"title":"Django Setup","level":"1.5.3","depth":2,"path":"django/django-setup.md","ref":"django/django-setup.md","articles":[]},{"title":"Django With Postgresql On Aws Ec2","level":"1.5.4","depth":2,"path":"django/django-with-postgresql-on-aws-ec2.md","ref":"django/django-with-postgresql-on-aws-ec2.md","articles":[]},{"title":"Test Driven Development With Python","level":"1.5.5","depth":2,"path":"django/test-driven-development-with-python.md","ref":"django/test-driven-development-with-python.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["ga"],"pluginsConfig":{"ga":{"configuration":"auto","token":"UA-114603670-1"},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"django/deploying-django-project-on-ubuntu-using-nginx-and-gunicorn.md","mtime":"2020-05-10T04:53:26.591Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-05-10T04:53:55.471Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-ga/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

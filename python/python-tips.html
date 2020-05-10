@@ -1,0 +1,998 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Python Tips · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="python-virtualenv.html" />
+    
+    
+    <link rel="prev" href="python-react-setup.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        <li class="header">Categories</li>
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" >
+            
+                <span>
+            
+                    
+                    Data Visualization
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../data-visualization/d3.js-tutorial.html">
+            
+                <a href="../data-visualization/d3.js-tutorial.html">
+            
+                    
+                    D3 Tutorial
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" >
+            
+                <span>
+            
+                    
+                    Database
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../database/mongodb-setup.html">
+            
+                <a href="../database/mongodb-setup.html">
+            
+                    
+                    Mongodb Setup
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../database/postgresql-on-ubuntu.html">
+            
+                <a href="../database/postgresql-on-ubuntu.html">
+            
+                    
+                    Postgresql On Ubuntu
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" >
+            
+                <span>
+            
+                    
+                    Design Patterns
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../design-patterns/abstract-factory.html">
+            
+                <a href="../design-patterns/abstract-factory.html">
+            
+                    
+                    Abstract Factory
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="../design-patterns/adapter.html">
+            
+                <a href="../design-patterns/adapter.html">
+            
+                    
+                    Adapter
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="../design-patterns/decorator.html">
+            
+                <a href="../design-patterns/decorator.html">
+            
+                    
+                    Decorator
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4" data-path="../design-patterns/delegation.html">
+            
+                <a href="../design-patterns/delegation.html">
+            
+                    
+                    Delegation
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5" data-path="../design-patterns/factory.html">
+            
+                <a href="../design-patterns/factory.html">
+            
+                    
+                    Factory
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" >
+            
+                <span>
+            
+                    
+                    Django
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../django/deploying-django-project-on-ubuntu-using-nginx-and-gunicorn.html">
+            
+                <a href="../django/deploying-django-project-on-ubuntu-using-nginx-and-gunicorn.html">
+            
+                    
+                    Deploying Django Project On Ubuntu Using Nginx And Gunicorn
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="../django/django-bluebook.html">
+            
+                <a href="../django/django-bluebook.html">
+            
+                    
+                    Django Bluebook
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3" data-path="../django/django-setup.html">
+            
+                <a href="../django/django-setup.html">
+            
+                    
+                    Django Setup
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4" data-path="../django/django-with-postgresql-on-aws-ec2.html">
+            
+                <a href="../django/django-with-postgresql-on-aws-ec2.html">
+            
+                    
+                    Django With Postgresql On Aws Ec2
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.5" data-path="../django/test-driven-development-with-python.html">
+            
+                <a href="../django/test-driven-development-with-python.html">
+            
+                    
+                    Test Driven Development With Python
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" >
+            
+                <span>
+            
+                    
+                    Docker
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="../docker/about-docker.html">
+            
+                <a href="../docker/about-docker.html">
+            
+                    
+                    About Docker
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2" data-path="../docker/docker-cheatsheet.html">
+            
+                <a href="../docker/docker-cheatsheet.html">
+            
+                    
+                    Docker Cheatsheet
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3" data-path="../docker/docker-for-jekyll.html">
+            
+                <a href="../docker/docker-for-jekyll.html">
+            
+                    
+                    Docker For Jekyll
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.4" data-path="../docker/gollum-via-docker.html">
+            
+                <a href="../docker/gollum-via-docker.html">
+            
+                    
+                    Gollum Via Docker
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" >
+            
+                <span>
+            
+                    
+                    English
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.1" data-path="../english/newly-learned-words-or-phrases.html">
+            
+                <a href="../english/newly-learned-words-or-phrases.html">
+            
+                    
+                    Newly Learned Words Or Phrases
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" >
+            
+                <span>
+            
+                    
+                    Git
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.8.1" data-path="../git/git-cheat-sheet.html">
+            
+                <a href="../git/git-cheat-sheet.html">
+            
+                    
+                    Git Cheat Sheet
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.2" data-path="../git/steps-after-fork.html">
+            
+                <a href="../git/steps-after-fork.html">
+            
+                    
+                    Steps After Fork
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" >
+            
+                <span>
+            
+                    
+                    Jekyll
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.9.1" data-path="../jekyll/add-disqus-to-jekyll.html">
+            
+                <a href="../jekyll/add-disqus-to-jekyll.html">
+            
+                    
+                    Add Disqus To Jekyll
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.2" data-path="../jekyll/jekyll-with-google-analytics.html">
+            
+                <a href="../jekyll/jekyll-with-google-analytics.html">
+            
+                    
+                    Jekyll With Google Analytics
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" >
+            
+                <span>
+            
+                    
+                    Machine Learning
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.10.1" data-path="../ml/ml-study-notes.html">
+            
+                <a href="../ml/ml-study-notes.html">
+            
+                    
+                    Ml Study Notes
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11" >
+            
+                <span>
+            
+                    
+                    Python
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.11.1" data-path="effective-python.html">
+            
+                <a href="effective-python.html">
+            
+                    
+                    Effective Python
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.2" data-path="fundamental-python.html">
+            
+                <a href="fundamental-python.html">
+            
+                    
+                    Fundamental Python
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.3" data-path="python-react-setup.html">
+            
+                <a href="python-react-setup.html">
+            
+                    
+                    Python React Setup
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.11.4" data-path="python-tips.html">
+            
+                <a href="python-tips.html">
+            
+                    
+                    Python Tips
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.5" data-path="python-virtualenv.html">
+            
+                <a href="python-virtualenv.html">
+            
+                    
+                    Python Virtualenv
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.6" data-path="transforming-code-into-beautiful-idiomatic-python.html">
+            
+                <a href="transforming-code-into-beautiful-idiomatic-python.html">
+            
+                    
+                    Transforming Code Into Beautiful Idiomatic Python
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12" >
+            
+                <span>
+            
+                    
+                    React.js
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.12.1" data-path="../reactjs/reactjs-setup.html">
+            
+                <a href="../reactjs/reactjs-setup.html">
+            
+                    
+                    Reactjs Setup
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13" >
+            
+                <span>
+            
+                    
+                    Snippets
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.13.1" data-path="../snippets/c++.html">
+            
+                <a href="../snippets/c++.html">
+            
+                    
+                    C++
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14" >
+            
+                <span>
+            
+                    
+                    Uncategorized
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.14.1" data-path="../uncategorized/dotfiles.html">
+            
+                <a href="../uncategorized/dotfiles.html">
+            
+                    
+                    Dotfiles
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14.2" data-path="../uncategorized/hmac.html">
+            
+                <a href="../uncategorized/hmac.html">
+            
+                    
+                    HMAC
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14.3" data-path="../uncategorized/unix-command-tips.html">
+            
+                <a href="../uncategorized/unix-command-tips.html">
+            
+                    
+                    Unix Command Tips
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.15" >
+            
+                <span>
+            
+                    
+                    Vim
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.15.1" data-path="../vim/plugin-manager-vim-plug.html">
+            
+                <a href="../vim/plugin-manager-vim-plug.html">
+            
+                    
+                    Plugin Manager Vim Plug
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.15.2" data-path="../vim/plugin-manager-vundle.html">
+            
+                <a href="../vim/plugin-manager-vundle.html">
+            
+                    
+                    Plugin Manager Vundle
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.15.3" data-path="../vim/plugin-youcompleteme.html">
+            
+                <a href="../vim/plugin-youcompleteme.html">
+            
+                    
+                    Plugin Youcompleteme
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >Python Tips</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="python-tips">Python Tips</h1>
+<h2 id="1-encoding-error">1. Encoding Error</h2>
+<h3 id="problem">Problem</h3>
+<pre><code class="lang-bash">Traceback (most recent call last):
+  File <span class="hljs-string">&quot;build.py&quot;</span>, line 63, <span class="hljs-keyword">in</span> &lt;module&gt;
+    readme.write(header)
+UnicodeEncodeError: <span class="hljs-string">&apos;ascii&apos;</span> codec can<span class="hljs-string">&apos;t encode characters in position 26-27: ordinal not in range(128)
+</span></code></pre>
+<h3 id="solved">Solved</h3>
+<p>Use <a href="https://docs.python.org/2/library/io.html#io.open" target="_blank"><code>io.open()</code></a> to create a file object that&apos;ll encode for you as you write to the file:</p>
+<pre><code class="lang-python"><span class="hljs-keyword">import</span> io
+
+f = io.open(filename, <span class="hljs-string">&apos;w&apos;</span>, encoding=<span class="hljs-string">&apos;utf8&apos;</span>)
+</code></pre>
+<h2 id="2-python2unicodecompatible">2. <a href="https://docs.djangoproject.com/en/1.8/ref/utils/#django.utils.encoding.python_2_unicode_compatible" target="_blank"><code>@python_2_unicode_compatible</code></a></h2>
+<p>To support Python 2 and 3 with a single code base, define a <code>__str__</code> method returning text and apply this decorator to the class.</p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="python-react-setup.html" class="navigation navigation-prev " aria-label="Previous page: Python React Setup">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="python-virtualenv.html" class="navigation navigation-next " aria-label="Next page: Python Virtualenv">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Python Tips","level":"1.11.4","depth":2,"next":{"title":"Python Virtualenv","level":"1.11.5","depth":2,"path":"python/python-virtualenv.md","ref":"python/python-virtualenv.md","articles":[]},"previous":{"title":"Python React Setup","level":"1.11.3","depth":2,"path":"python/python-react-setup.md","ref":"python/python-react-setup.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["ga"],"pluginsConfig":{"ga":{"configuration":"auto","token":"UA-114603670-1"},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"python/python-tips.md","mtime":"2020-05-10T04:53:26.599Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-05-10T04:53:55.471Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-ga/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
