@@ -1,0 +1,20 @@
+[book]
+authors = ["Hanju Jo"]
+language = "ko"
+multilingual = false
+src = "src"
+title = "Hanju's TIL Book"
+
+[build]
+
+[preprocessor.links]
+
+[preprocessor.index]
+
+[output.html]
+mathjax-support = true
+git-repository-url = "https://github.com/hanju-jo/TIL"
+
+[output.html.fold]
+enable = true
+level = 0

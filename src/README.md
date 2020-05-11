@@ -1,5 +1,3 @@
-[![CC BY-SA 4.0][cc-by-sa-shield]][cc-by-sa]
-
 # TIL Book
 
 Today I Learned. 오늘 내가 배운 것.
