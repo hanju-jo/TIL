@@ -1,1431 +1,683 @@
-
 <!DOCTYPE HTML>
-<html lang="" >
+<html lang="ko" class="sidebar-visible no-js light">
     <head>
+        <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
+        <title>Transforming Code Into Beautiful Idiomatic Python - Hanju's TIL Book</title>
+        
+
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>Transforming Code Into Beautiful Idiomatic Python · GitBook</title>
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
-        <meta name="generator" content="GitBook 3.2.3">
-        
-        
-        
-    
-    <link rel="stylesheet" href="../gitbook/style.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
 
-    
-            
-                
-                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
-                
-            
-                
-                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
-                
-            
-                
-                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
-                
-            
-        
+        <link rel="shortcut icon" href="../favicon.png">
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+        <link rel="stylesheet" href="../css/print.css" media="print">
 
-    
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:500" rel="stylesheet" type="text/css">
 
-    
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../highlight.css">
+        <link rel="stylesheet" href="../tomorrow-night.css">
+        <link rel="stylesheet" href="../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
         
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
 
         
-    
-    
-    <meta name="HandheldFriendly" content="true"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
-    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
-
-    
-    
-    <link rel="prev" href="python-virtualenv.html" />
-    
-
+        <!-- MathJax -->
+        <script async type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        
     </head>
     <body>
-        
-<div class="book">
-    <div class="book-summary">
-        
-            
-<div id="book-search-input" role="search">
-    <input type="text" placeholder="Type to search" />
-</div>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "light" : "light";
+        </script>
 
-            
-                <nav role="navigation">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item affix "><a href="../index.html">README</a></li><li class="chapter-item "><a href="../data-visualization/index.html"><strong aria-hidden="true">1.</strong> Data Visualization</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../data-visualization/d3.js-tutorial.html"><strong aria-hidden="true">1.1.</strong> D3.js Tutorial</a></li></ol></li><li class="chapter-item "><a href="../database/index.html"><strong aria-hidden="true">2.</strong> Database</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../database/mongodb-setup.html"><strong aria-hidden="true">2.1.</strong> Mongodb Setup</a></li><li class="chapter-item "><a href="../database/postgresql-on-ubuntu.html"><strong aria-hidden="true">2.2.</strong> Postgresql On Ubuntu</a></li></ol></li><li class="chapter-item "><a href="../design-patterns/index.html"><strong aria-hidden="true">3.</strong> Design Patterns</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../design-patterns/abstract-factory.html"><strong aria-hidden="true">3.1.</strong> Abstract Factory</a></li><li class="chapter-item "><a href="../design-patterns/adapter.html"><strong aria-hidden="true">3.2.</strong> Adapter</a></li><li class="chapter-item "><a href="../design-patterns/decorator.html"><strong aria-hidden="true">3.3.</strong> Decorator</a></li><li class="chapter-item "><a href="../design-patterns/delegation.html"><strong aria-hidden="true">3.4.</strong> Delegation</a></li><li class="chapter-item "><a href="../design-patterns/factory.html"><strong aria-hidden="true">3.5.</strong> Factory</a></li></ol></li><li class="chapter-item "><a href="../django/index.html"><strong aria-hidden="true">4.</strong> Django</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../django/deploying-django-project-on-ubuntu-using-nginx-and-gunicorn.html"><strong aria-hidden="true">4.1.</strong> Deploying Django Project On Ubuntu Using Nginx And Gunicorn</a></li><li class="chapter-item "><a href="../django/django-bluebook.html"><strong aria-hidden="true">4.2.</strong> Django Bluebook</a></li><li class="chapter-item "><a href="../django/django-setup.html"><strong aria-hidden="true">4.3.</strong> Django Setup</a></li><li class="chapter-item "><a href="../django/django-with-postgresql-on-aws-ec2.html"><strong aria-hidden="true">4.4.</strong> Django With Postgresql On Aws Ec2</a></li><li class="chapter-item "><a href="../django/test-driven-development-with-python.html"><strong aria-hidden="true">4.5.</strong> Test Driven Development With Python</a></li></ol></li><li class="chapter-item "><a href="../docker/index.html"><strong aria-hidden="true">5.</strong> Docker</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../docker/about-docker.html"><strong aria-hidden="true">5.1.</strong> About Docker</a></li><li class="chapter-item "><a href="../docker/docker-cheatsheet.html"><strong aria-hidden="true">5.2.</strong> Docker Cheatsheet</a></li><li class="chapter-item "><a href="../docker/docker-for-jekyll.html"><strong aria-hidden="true">5.3.</strong> Docker For Jekyll</a></li><li class="chapter-item "><a href="../docker/gollum-via-docker.html"><strong aria-hidden="true">5.4.</strong> Gollum Via Docker</a></li></ol></li><li class="chapter-item "><a href="../english/index.html"><strong aria-hidden="true">6.</strong> English</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../english/newly-learned-words-or-phrases.html"><strong aria-hidden="true">6.1.</strong> Newly Learned Words Or Phrases</a></li></ol></li><li class="chapter-item "><a href="../git/index.html"><strong aria-hidden="true">7.</strong> Git</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../git/git-cheat-sheet.html"><strong aria-hidden="true">7.1.</strong> Git Cheat Sheet</a></li><li class="chapter-item "><a href="../git/steps-after-fork.html"><strong aria-hidden="true">7.2.</strong> Steps After Fork</a></li></ol></li><li class="chapter-item "><a href="../jekyll/index.html"><strong aria-hidden="true">8.</strong> Jekyll</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../jekyll/add-disqus-to-jekyll.html"><strong aria-hidden="true">8.1.</strong> Add Disqus To Jekyll</a></li><li class="chapter-item "><a href="../jekyll/jekyll-with-google-analytics.html"><strong aria-hidden="true">8.2.</strong> Jekyll With Google Analytics</a></li></ol></li><li class="chapter-item "><a href="../ml/index.html"><strong aria-hidden="true">9.</strong> Ml</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../ml/ml-study-notes.html"><strong aria-hidden="true">9.1.</strong> Ml Study Notes</a></li></ol></li><li class="chapter-item expanded "><a href="../python/index.html"><strong aria-hidden="true">10.</strong> Python</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../python/effective-python.html"><strong aria-hidden="true">10.1.</strong> Effective Python</a></li><li class="chapter-item "><a href="../python/fundamental-python.html"><strong aria-hidden="true">10.2.</strong> Fundamental Python</a></li><li class="chapter-item "><a href="../python/python-react-setup.html"><strong aria-hidden="true">10.3.</strong> Python React Setup</a></li><li class="chapter-item "><a href="../python/python-tips.html"><strong aria-hidden="true">10.4.</strong> Python Tips</a></li><li class="chapter-item "><a href="../python/python-virtualenv.html"><strong aria-hidden="true">10.5.</strong> Python Virtualenv</a></li><li class="chapter-item expanded "><a href="../python/transforming-code-into-beautiful-idiomatic-python.html" class="active"><strong aria-hidden="true">10.6.</strong> Transforming Code Into Beautiful Idiomatic Python</a></li></ol></li><li class="chapter-item "><a href="../reactjs/index.html"><strong aria-hidden="true">11.</strong> Reactjs</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../reactjs/reactjs-setup.html"><strong aria-hidden="true">11.1.</strong> Reactjs Setup</a></li></ol></li><li class="chapter-item "><a href="../sicp/index.html"><strong aria-hidden="true">12.</strong> Sicp</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../sicp/1_02.html"><strong aria-hidden="true">12.1.</strong> 1_02</a></li><li class="chapter-item "><a href="../sicp/1_03.html"><strong aria-hidden="true">12.2.</strong> 1_03</a></li><li class="chapter-item "><a href="../sicp/1_05.html"><strong aria-hidden="true">12.3.</strong> 1_05</a></li><li class="chapter-item "><a href="../sicp/1_06.html"><strong aria-hidden="true">12.4.</strong> 1_06</a></li><li class="chapter-item "><a href="../sicp/1_07.html"><strong aria-hidden="true">12.5.</strong> 1_07</a></li><li class="chapter-item "><a href="../sicp/1_08.html"><strong aria-hidden="true">12.6.</strong> 1_08</a></li><li class="chapter-item "><a href="../sicp/1_09.html"><strong aria-hidden="true">12.7.</strong> 1_09</a></li><li class="chapter-item "><a href="../sicp/1_10.html"><strong aria-hidden="true">12.8.</strong> 1_10</a></li><li class="chapter-item "><a href="../sicp/racket.html"><strong aria-hidden="true">12.9.</strong> Racket</a></li></ol></li><li class="chapter-item "><a href="../snippets/index.html"><strong aria-hidden="true">13.</strong> Snippets</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../snippets/c++.html"><strong aria-hidden="true">13.1.</strong> C++</a></li></ol></li><li class="chapter-item "><a href="../uncategorized/index.html"><strong aria-hidden="true">14.</strong> Uncategorized</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../uncategorized/dotfiles.html"><strong aria-hidden="true">14.1.</strong> Dotfiles</a></li><li class="chapter-item "><a href="../uncategorized/hmac.html"><strong aria-hidden="true">14.2.</strong> Hmac</a></li><li class="chapter-item "><a href="../uncategorized/unix-command-tips.html"><strong aria-hidden="true">14.3.</strong> Unix Command Tips</a></li></ol></li><li class="chapter-item "><a href="../vim/index.html"><strong aria-hidden="true">15.</strong> Vim</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../vim/plugin-manager-vim-plug.html"><strong aria-hidden="true">15.1.</strong> Plugin Manager Vim Plug</a></li><li class="chapter-item "><a href="../vim/plugin-manager-vundle.html"><strong aria-hidden="true">15.2.</strong> Plugin Manager Vundle</a></li><li class="chapter-item "><a href="../vim/plugin-youcompleteme.html"><strong aria-hidden="true">15.3.</strong> Plugin Youcompleteme</a></li></ol></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                        
+                    </div>
+
+                    <h1 class="menu-title">Hanju's TIL Book</h1>
+
+                    <div class="right-buttons">
+                        <a href="../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        
+                        <a href="https://github.com/hanju-jo/TIL" title="Git repository" aria-label="Git repository">
+                            <i id="git-repository-button" class="fa fa-github"></i>
+                        </a>
+                        
+                    </div>
+                </div>
+
+                
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" name="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
                 
 
-
-<ul class="summary">
-    
-    
-
-    
-
-    
-        
-        <li class="header">Categories</li>
-        
-        
-    
-        <li class="chapter " data-level="1.1" data-path="../">
-            
-                <a href="../">
-            
-                    
-                    Introduction
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.2" >
-            
-                <span>
-            
-                    
-                    Data Visualization
-            
-                </span>
-            
-
-            
-            <ul class="articles">
-                
-    
-        <li class="chapter " data-level="1.2.1" data-path="../data-visualization/d3.js-tutorial.html">
-            
-                <a href="../data-visualization/d3.js-tutorial.html">
-            
-                    
-                    D3 Tutorial
-            
-                </a>
-            
-
-            
-        </li>
-    
-
-            </ul>
-            
-        </li>
-    
-        <li class="chapter " data-level="1.3" >
-            
-                <span>
-            
-                    
-                    Database
-            
-                </span>
-            
-
-            
-            <ul class="articles">
-                
-    
-        <li class="chapter " data-level="1.3.1" data-path="../database/mongodb-setup.html">
-            
-                <a href="../database/mongodb-setup.html">
-            
-                    
-                    Mongodb Setup
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.3.2" data-path="../database/postgresql-on-ubuntu.html">
-            
-                <a href="../database/postgresql-on-ubuntu.html">
-            
-                    
-                    Postgresql On Ubuntu
-            
-                </a>
-            
-
-            
-        </li>
-    
-
-            </ul>
-            
-        </li>
-    
-        <li class="chapter " data-level="1.4" >
-            
-                <span>
-            
-                    
-                    Design Patterns
-            
-                </span>
-            
-
-            
-            <ul class="articles">
-                
-    
-        <li class="chapter " data-level="1.4.1" data-path="../design-patterns/abstract-factory.html">
-            
-                <a href="../design-patterns/abstract-factory.html">
-            
-                    
-                    Abstract Factory
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.4.2" data-path="../design-patterns/adapter.html">
-            
-                <a href="../design-patterns/adapter.html">
-            
-                    
-                    Adapter
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.4.3" data-path="../design-patterns/decorator.html">
-            
-                <a href="../design-patterns/decorator.html">
-            
-                    
-                    Decorator
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.4.4" data-path="../design-patterns/delegation.html">
-            
-                <a href="../design-patterns/delegation.html">
-            
-                    
-                    Delegation
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.4.5" data-path="../design-patterns/factory.html">
-            
-                <a href="../design-patterns/factory.html">
-            
-                    
-                    Factory
-            
-                </a>
-            
-
-            
-        </li>
-    
-
-            </ul>
-            
-        </li>
-    
-        <li class="chapter " data-level="1.5" >
-            
-                <span>
-            
-                    
-                    Django
-            
-                </span>
-            
-
-            
-            <ul class="articles">
-                
-    
-        <li class="chapter " data-level="1.5.1" data-path="../django/deploying-django-project-on-ubuntu-using-nginx-and-gunicorn.html">
-            
-                <a href="../django/deploying-django-project-on-ubuntu-using-nginx-and-gunicorn.html">
-            
-                    
-                    Deploying Django Project On Ubuntu Using Nginx And Gunicorn
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.5.2" data-path="../django/django-bluebook.html">
-            
-                <a href="../django/django-bluebook.html">
-            
-                    
-                    Django Bluebook
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.5.3" data-path="../django/django-setup.html">
-            
-                <a href="../django/django-setup.html">
-            
-                    
-                    Django Setup
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.5.4" data-path="../django/django-with-postgresql-on-aws-ec2.html">
-            
-                <a href="../django/django-with-postgresql-on-aws-ec2.html">
-            
-                    
-                    Django With Postgresql On Aws Ec2
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.5.5" data-path="../django/test-driven-development-with-python.html">
-            
-                <a href="../django/test-driven-development-with-python.html">
-            
-                    
-                    Test Driven Development With Python
-            
-                </a>
-            
-
-            
-        </li>
-    
-
-            </ul>
-            
-        </li>
-    
-        <li class="chapter " data-level="1.6" >
-            
-                <span>
-            
-                    
-                    Docker
-            
-                </span>
-            
-
-            
-            <ul class="articles">
-                
-    
-        <li class="chapter " data-level="1.6.1" data-path="../docker/about-docker.html">
-            
-                <a href="../docker/about-docker.html">
-            
-                    
-                    About Docker
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.6.2" data-path="../docker/docker-cheatsheet.html">
-            
-                <a href="../docker/docker-cheatsheet.html">
-            
-                    
-                    Docker Cheatsheet
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.6.3" data-path="../docker/docker-for-jekyll.html">
-            
-                <a href="../docker/docker-for-jekyll.html">
-            
-                    
-                    Docker For Jekyll
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.6.4" data-path="../docker/gollum-via-docker.html">
-            
-                <a href="../docker/gollum-via-docker.html">
-            
-                    
-                    Gollum Via Docker
-            
-                </a>
-            
-
-            
-        </li>
-    
-
-            </ul>
-            
-        </li>
-    
-        <li class="chapter " data-level="1.7" >
-            
-                <span>
-            
-                    
-                    English
-            
-                </span>
-            
-
-            
-            <ul class="articles">
-                
-    
-        <li class="chapter " data-level="1.7.1" data-path="../english/newly-learned-words-or-phrases.html">
-            
-                <a href="../english/newly-learned-words-or-phrases.html">
-            
-                    
-                    Newly Learned Words Or Phrases
-            
-                </a>
-            
-
-            
-        </li>
-    
-
-            </ul>
-            
-        </li>
-    
-        <li class="chapter " data-level="1.8" >
-            
-                <span>
-            
-                    
-                    Git
-            
-                </span>
-            
-
-            
-            <ul class="articles">
-                
-    
-        <li class="chapter " data-level="1.8.1" data-path="../git/git-cheat-sheet.html">
-            
-                <a href="../git/git-cheat-sheet.html">
-            
-                    
-                    Git Cheat Sheet
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.8.2" data-path="../git/steps-after-fork.html">
-            
-                <a href="../git/steps-after-fork.html">
-            
-                    
-                    Steps After Fork
-            
-                </a>
-            
-
-            
-        </li>
-    
-
-            </ul>
-            
-        </li>
-    
-        <li class="chapter " data-level="1.9" >
-            
-                <span>
-            
-                    
-                    Jekyll
-            
-                </span>
-            
-
-            
-            <ul class="articles">
-                
-    
-        <li class="chapter " data-level="1.9.1" data-path="../jekyll/add-disqus-to-jekyll.html">
-            
-                <a href="../jekyll/add-disqus-to-jekyll.html">
-            
-                    
-                    Add Disqus To Jekyll
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.9.2" data-path="../jekyll/jekyll-with-google-analytics.html">
-            
-                <a href="../jekyll/jekyll-with-google-analytics.html">
-            
-                    
-                    Jekyll With Google Analytics
-            
-                </a>
-            
-
-            
-        </li>
-    
-
-            </ul>
-            
-        </li>
-    
-        <li class="chapter " data-level="1.10" >
-            
-                <span>
-            
-                    
-                    Machine Learning
-            
-                </span>
-            
-
-            
-            <ul class="articles">
-                
-    
-        <li class="chapter " data-level="1.10.1" data-path="../ml/ml-study-notes.html">
-            
-                <a href="../ml/ml-study-notes.html">
-            
-                    
-                    Ml Study Notes
-            
-                </a>
-            
-
-            
-        </li>
-    
-
-            </ul>
-            
-        </li>
-    
-        <li class="chapter " data-level="1.11" >
-            
-                <span>
-            
-                    
-                    Python
-            
-                </span>
-            
-
-            
-            <ul class="articles">
-                
-    
-        <li class="chapter " data-level="1.11.1" data-path="effective-python.html">
-            
-                <a href="effective-python.html">
-            
-                    
-                    Effective Python
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.11.2" data-path="fundamental-python.html">
-            
-                <a href="fundamental-python.html">
-            
-                    
-                    Fundamental Python
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.11.3" data-path="python-react-setup.html">
-            
-                <a href="python-react-setup.html">
-            
-                    
-                    Python React Setup
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.11.4" data-path="python-tips.html">
-            
-                <a href="python-tips.html">
-            
-                    
-                    Python Tips
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.11.5" data-path="python-virtualenv.html">
-            
-                <a href="python-virtualenv.html">
-            
-                    
-                    Python Virtualenv
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter active" data-level="1.11.6" data-path="transforming-code-into-beautiful-idiomatic-python.html">
-            
-                <a href="transforming-code-into-beautiful-idiomatic-python.html">
-            
-                    
-                    Transforming Code Into Beautiful Idiomatic Python
-            
-                </a>
-            
-
-            
-        </li>
-    
-
-            </ul>
-            
-        </li>
-    
-        <li class="chapter " data-level="1.12" >
-            
-                <span>
-            
-                    
-                    React.js
-            
-                </span>
-            
-
-            
-            <ul class="articles">
-                
-    
-        <li class="chapter " data-level="1.12.1" data-path="../reactjs/reactjs-setup.html">
-            
-                <a href="../reactjs/reactjs-setup.html">
-            
-                    
-                    Reactjs Setup
-            
-                </a>
-            
-
-            
-        </li>
-    
-
-            </ul>
-            
-        </li>
-    
-        <li class="chapter " data-level="1.13" >
-            
-                <span>
-            
-                    
-                    Snippets
-            
-                </span>
-            
-
-            
-            <ul class="articles">
-                
-    
-        <li class="chapter " data-level="1.13.1" data-path="../snippets/c++.html">
-            
-                <a href="../snippets/c++.html">
-            
-                    
-                    C++
-            
-                </a>
-            
-
-            
-        </li>
-    
-
-            </ul>
-            
-        </li>
-    
-        <li class="chapter " data-level="1.14" >
-            
-                <span>
-            
-                    
-                    Uncategorized
-            
-                </span>
-            
-
-            
-            <ul class="articles">
-                
-    
-        <li class="chapter " data-level="1.14.1" data-path="../uncategorized/dotfiles.html">
-            
-                <a href="../uncategorized/dotfiles.html">
-            
-                    
-                    Dotfiles
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.14.2" data-path="../uncategorized/hmac.html">
-            
-                <a href="../uncategorized/hmac.html">
-            
-                    
-                    HMAC
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.14.3" data-path="../uncategorized/unix-command-tips.html">
-            
-                <a href="../uncategorized/unix-command-tips.html">
-            
-                    
-                    Unix Command Tips
-            
-                </a>
-            
-
-            
-        </li>
-    
-
-            </ul>
-            
-        </li>
-    
-        <li class="chapter " data-level="1.15" >
-            
-                <span>
-            
-                    
-                    Vim
-            
-                </span>
-            
-
-            
-            <ul class="articles">
-                
-    
-        <li class="chapter " data-level="1.15.1" data-path="../vim/plugin-manager-vim-plug.html">
-            
-                <a href="../vim/plugin-manager-vim-plug.html">
-            
-                    
-                    Plugin Manager Vim Plug
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.15.2" data-path="../vim/plugin-manager-vundle.html">
-            
-                <a href="../vim/plugin-manager-vundle.html">
-            
-                    
-                    Plugin Manager Vundle
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.15.3" data-path="../vim/plugin-youcompleteme.html">
-            
-                <a href="../vim/plugin-youcompleteme.html">
-            
-                    
-                    Plugin Youcompleteme
-            
-                </a>
-            
-
-            
-        </li>
-    
-
-            </ul>
-            
-        </li>
-    
-
-    
-
-    <li class="divider"></li>
-
-    <li>
-        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
-            Published with GitBook
-        </a>
-    </li>
-</ul>
-
-
-                </nav>
-            
-        
-    </div>
-
-    <div class="book-body">
-        
-            <div class="body-inner">
-                
-                    
-
-<div class="book-header" role="navigation">
-    
-
-    <!-- Title -->
-    <h1>
-        <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >Transforming Code Into Beautiful Idiomatic Python</a>
-    </h1>
-</div>
-
-
-
-
-                    <div class="page-wrapper" tabindex="-1" role="main">
-                        <div class="page-inner">
-                            
-<div id="book-search-results">
-    <div class="search-noresults">
-    
-                                <section class="normal markdown-section">
-                                
-                                <h1 id="transforming-code-into-beautiful-idiomatic-python">Transforming Code into Beautiful, Idiomatic Python</h1>
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1><a class="header" href="#transforming-code-into-beautiful-idiomatic-python" id="transforming-code-into-beautiful-idiomatic-python">Transforming Code into Beautiful, Idiomatic Python</a></h1>
 <ul>
 <li>Speaker: Raymond Hettinger(@raymondh), who is Python core developer</li>
-<li>Lecture on Youtube: <a href="https://www.youtube.com/watch?v=OSGv2VnC0go&amp;t=503s" target="_blank">Transforming Code into Beautiful, Idiomatic Python</a></li>
+<li>Lecture on Youtube: <a href="https://www.youtube.com/watch?v=OSGv2VnC0go&amp;t=503s">Transforming Code into Beautiful, Idiomatic Python</a></li>
 </ul>
-<h2 id="when-you-see-this-do-that-instead">When you see this, do that instead!</h2>
+<h2><a class="header" href="#when-you-see-this-do-that-instead" id="when-you-see-this-do-that-instead">When you see this, do that instead!</a></h2>
 <ul>
-<li>Replace traditional index manipulation with Python&apos;s core looping idioms</li>
+<li>Replace traditional index manipulation with Python's core looping idioms</li>
 <li>Learn advanced techniques with for-else clauses and the two argument form of iter()</li>
 <li>Improve your craftmanship and aim for clean, fast, idiomatic Python code</li>
 </ul>
-<h3 id="looping-over-a-range-of-numbers">Looping over a range of numbers</h3>
-<pre><code class="lang-python"><span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> [<span class="hljs-number">0</span>, <span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>, <span class="hljs-number">5</span>]:
-    print(i**<span class="hljs-number">2</span>)
-
-<span class="hljs-comment"># Pythonic-way</span>
-<span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> range(<span class="hljs-number">6</span>):
-    print(i**<span class="hljs-number">2</span>)
+<h3><a class="header" href="#looping-over-a-range-of-numbers" id="looping-over-a-range-of-numbers">Looping over a range of numbers</a></h3>
+<pre><code class="language-python">for i in [0, 1, 2, 3, 4, 5]:
+    print(i**2)
+  
+# Pythonic-way
+for i in range(6):
+    print(i**2)
 </code></pre>
-<h3 id="looping-over-a-collection">Looping over a collection</h3>
-<pre><code class="lang-python">colors = [<span class="hljs-string">&apos;red&apos;</span>, <span class="hljs-string">&apos;green&apos;</span>, <span class="hljs-string">&apos;blue&apos;</span>, <span class="hljs-string">&apos;yellow&apos;</span>]
+<h3><a class="header" href="#looping-over-a-collection" id="looping-over-a-collection">Looping over a collection</a></h3>
+<pre><code class="language-python">colors = ['red', 'green', 'blue', 'yellow']
 
-<span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> range(len(colors)):
+for i in range(len(colors)):
     print(colors[i])
-
-<span class="hljs-comment"># Pythonic-way</span>
-<span class="hljs-keyword">for</span> color <span class="hljs-keyword">in</span> colors:
+  
+# Pythonic-way
+for color in colors:
     print(color)
 </code></pre>
-<h3 id="looping-backwards">Looping backwards</h3>
-<pre><code class="lang-python">colors = [<span class="hljs-string">&apos;red&apos;</span>, <span class="hljs-string">&apos;green&apos;</span>, <span class="hljs-string">&apos;blue&apos;</span>, <span class="hljs-string">&apos;yellow&apos;</span>]
+<h3><a class="header" href="#looping-backwards" id="looping-backwards">Looping backwards</a></h3>
+<pre><code class="language-python">colors = ['red', 'green', 'blue', 'yellow']
 
-<span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> range(len(colors)<span class="hljs-number">-1</span>, <span class="hljs-number">-1</span>, <span class="hljs-number">-1</span>):
+for i in range(len(colors)-1, -1, -1):
     print(colors[i])
-
-<span class="hljs-comment"># Pythonic-way</span>
-<span class="hljs-keyword">for</span> color <span class="hljs-keyword">in</span> reversed(colors):
+  
+# Pythonic-way
+for color in reversed(colors):
     print(color)
 </code></pre>
-<h3 id="looping-over-a-collection-and-indicies">Looping over a collection and indicies</h3>
-<pre><code class="lang-python">colors = [<span class="hljs-string">&apos;red&apos;</span>, <span class="hljs-string">&apos;green&apos;</span>, <span class="hljs-string">&apos;blue&apos;</span>, <span class="hljs-string">&apos;yellow&apos;</span>]
+<h3><a class="header" href="#looping-over-a-collection-and-indicies" id="looping-over-a-collection-and-indicies">Looping over a collection and indicies</a></h3>
+<pre><code class="language-python">colors = ['red', 'green', 'blue', 'yellow']
 
-<span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> range(len(colors)):
-    print(i, <span class="hljs-string">&apos;--&gt;&apos;</span>, colors[i])
-
-<span class="hljs-comment"># Pythonic-way</span>
-<span class="hljs-keyword">for</span> i, color <span class="hljs-keyword">in</span> enumerate(colors):
-    print(i, <span class="hljs-string">&apos;--&gt;&apos;</span>, colors)
+for i in range(len(colors)):
+    print(i, '--&gt;', colors[i])
+  
+# Pythonic-way
+for i, color in enumerate(colors):
+    print(i, '--&gt;', colors)
 </code></pre>
-<h3 id="looping-over-two-collections">Looping over two collections</h3>
-<pre><code class="lang-python">names = [<span class="hljs-string">&apos;raymond&apos;</span>, <span class="hljs-string">&apos;rachel&apos;</span>, <span class="hljs-string">&apos;matthew&apos;</span>]
-colors = [<span class="hljs-string">&apos;red&apos;</span>, <span class="hljs-string">&apos;green&apos;</span>, <span class="hljs-string">&apos;blue&apos;</span>, <span class="hljs-string">&apos;yellow&apos;</span>]
+<h3><a class="header" href="#looping-over-two-collections" id="looping-over-two-collections">Looping over two collections</a></h3>
+<pre><code class="language-python">names = ['raymond', 'rachel', 'matthew']
+colors = ['red', 'green', 'blue', 'yellow']
 
 n = min(len(names), len(colors))
-<span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> range(n):
-    print(names[i], <span class="hljs-string">&apos;--&gt;&apos;</span>, colors[i])
-
-<span class="hljs-comment"># Pythonic-way</span>
-<span class="hljs-keyword">for</span> name, color <span class="hljs-keyword">in</span> zip(names, colors):
-    print(name, <span class="hljs-string">&apos;--&gt;&apos;</span>, color)
+for i in range(n):
+    print(names[i], '--&gt;', colors[i])
+  
+# Pythonic-way
+for name, color in zip(names, colors):
+    print(name, '--&gt;', color)
 </code></pre>
-<h3 id="looping-in-sorted-order">Looping in sorted order</h3>
-<pre><code class="lang-python">colors = [<span class="hljs-string">&apos;red&apos;</span>, <span class="hljs-string">&apos;green&apos;</span>, <span class="hljs-string">&apos;blue&apos;</span>, <span class="hljs-string">&apos;yellow&apos;</span>]
+<h3><a class="header" href="#looping-in-sorted-order" id="looping-in-sorted-order">Looping in sorted order</a></h3>
+<pre><code class="language-python">colors = ['red', 'green', 'blue', 'yellow']
 
-<span class="hljs-keyword">for</span> color <span class="hljs-keyword">in</span> sorted(colors):
+for color in sorted(colors):
     print(color)
-
-<span class="hljs-keyword">for</span> color <span class="hljs-keyword">in</span> sorted(colors, reverse=<span class="hljs-keyword">True</span>):
+  
+for color in sorted(colors, reverse=True):
     print(color)
 </code></pre>
-<h3 id="custom-sort-order">Custom sort order</h3>
-<pre><code class="lang-python">colors = [<span class="hljs-string">&apos;red&apos;</span>, <span class="hljs-string">&apos;green&apos;</span>, <span class="hljs-string">&apos;blue&apos;</span>, <span class="hljs-string">&apos;yellow&apos;</span>]
+<h3><a class="header" href="#custom-sort-order" id="custom-sort-order">Custom sort order</a></h3>
+<pre><code class="language-python">colors = ['red', 'green', 'blue', 'yellow']
 
-<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">compare_length</span><span class="hljs-params">(c1, c2)</span>:</span>
-    <span class="hljs-keyword">if</span> len(c1) &lt; len(c2): <span class="hljs-keyword">return</span> <span class="hljs-number">-1</span>
-    <span class="hljs-keyword">if</span> len(c1) &gt; len(c2): <span class="hljs-keyword">return</span> <span class="hljs-number">1</span>
-    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>
+def compare_length(c1, c2):
+    if len(c1) &lt; len(c2): return -1
+    if len(c1) &gt; len(c2): return 1
+    return 0
 
-<span class="hljs-comment"># in python2</span>
-<span class="hljs-keyword">print</span> sorted(colors, cmp=compare_length)
+# in python2
+print sorted(colors, cmp=compare_length)
 
-<span class="hljs-comment"># Pythonic-way</span>
+# Pythonic-way
 print(sorted(colors, key=len))
 </code></pre>
-<h3 id="call-a-function-until-a-sentinel-value">Call a function until a sentinel value</h3>
-<pre><code class="lang-python">blocks = []
-<span class="hljs-keyword">while</span> <span class="hljs-keyword">True</span>:
-    block = f.read(<span class="hljs-number">32</span>)
-    <span class="hljs-keyword">if</span> block == <span class="hljs-string">&apos;&apos;</span>:
-        <span class="hljs-keyword">break</span>
+<h3><a class="header" href="#call-a-function-until-a-sentinel-value" id="call-a-function-until-a-sentinel-value">Call a function until a sentinel value</a></h3>
+<pre><code class="language-python">blocks = []
+while True:
+    block = f.read(32)
+    if block == '':
+        break
     blocks.append(block)
 
-<span class="hljs-comment"># Pythonic-way</span>
+# Pythonic-way
 blocks = []
-<span class="hljs-keyword">for</span> block <span class="hljs-keyword">in</span> iter(partial(f.read, <span class="hljs-number">32</span>), <span class="hljs-string">&apos;&apos;</span>):
+for block in iter(partial(f.read, 32), ''):
     blocks.append(block)
 </code></pre>
-<h3 id="distinguishing-multiple-exit-points-in-loops">Distinguishing multiple exit points in loops</h3>
-<pre><code class="lang-python"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">find</span><span class="hljs-params">(seq, target)</span>:</span>
-    found = <span class="hljs-keyword">False</span>
-    <span class="hljs-keyword">for</span> i, value <span class="hljs-keyword">in</span> enumerate(seq):
-        <span class="hljs-keyword">if</span> value == target:
-            found = <span class="hljs-keyword">True</span>
-            <span class="hljs-keyword">break</span>
-    <span class="hljs-keyword">if</span> <span class="hljs-keyword">not</span> found:
-        <span class="hljs-keyword">return</span> <span class="hljs-number">-1</span>
-    <span class="hljs-keyword">return</span> i
+<h3><a class="header" href="#distinguishing-multiple-exit-points-in-loops" id="distinguishing-multiple-exit-points-in-loops">Distinguishing multiple exit points in loops</a></h3>
+<pre><code class="language-python">def find(seq, target):
+    found = False
+    for i, value in enumerate(seq):
+        if value == target:
+            found = True
+            break
+    if not found:
+        return -1
+    return i
 
-<span class="hljs-comment"># Pythonic-way</span>
-<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">find</span><span class="hljs-params">(seq, target)</span>:</span>
-    <span class="hljs-keyword">for</span> i, value <span class="hljs-keyword">in</span> enumerate(seq):
-        <span class="hljs-keyword">if</span> value == target:
-            <span class="hljs-keyword">break</span>
-    <span class="hljs-keyword">else</span>:
-        <span class="hljs-keyword">return</span> <span class="hljs-number">-1</span>
-    <span class="hljs-keyword">return</span> i
+# Pythonic-way
+def find(seq, target):
+    for i, value in enumerate(seq):
+        if value == target:
+            break
+    else:
+        return -1
+    return i
 </code></pre>
-<h2 id="dictionary-skills">Dictionary Skills</h2>
+<h2><a class="header" href="#dictionary-skills" id="dictionary-skills">Dictionary Skills</a></h2>
 <ul>
 <li>Mastering dictionaries is a fundamental Python skill</li>
 <li>They are fundament tool for expressing relationships, linking, counting and grouping</li>
 </ul>
-<h3 id="looping-over-dictionary-keys">Looping over dictionary keys</h3>
-<pre><code class="lang-python">d = {<span class="hljs-string">&apos;matthew&apos;</span>: <span class="hljs-string">&apos;blue&apos;</span>, <span class="hljs-string">&apos;rachel&apos;</span>: <span class="hljs-string">&apos;green&apos;</span>, <span class="hljs-string">&apos;raymond&apos;</span>: <span class="hljs-string">&apos;red&apos;</span>}
+<h3><a class="header" href="#looping-over-dictionary-keys" id="looping-over-dictionary-keys">Looping over dictionary keys</a></h3>
+<pre><code class="language-python">d = {'matthew': 'blue', 'rachel': 'green', 'raymond': 'red'}
 
-<span class="hljs-keyword">for</span> k <span class="hljs-keyword">in</span> d:
+for k in d:
     print(k)
 
-<span class="hljs-keyword">for</span> k <span class="hljs-keyword">in</span> d.keys():
-    <span class="hljs-keyword">if</span> k.startswith(<span class="hljs-string">&apos;r&apos;</span>):
-        <span class="hljs-keyword">del</span> d[k]
+for k in d.keys():
+    if k.startswith('r'):
+        del d[k]
 </code></pre>
-<h3 id="looping-over-a-dictionary-keys-and-values">Looping over a dictionary keys and values</h3>
-<pre><code class="lang-python"><span class="hljs-keyword">for</span> k <span class="hljs-keyword">in</span> d:
-    print(k, <span class="hljs-string">&apos;--&gt;&apos;</span>, d[k])
+<h3><a class="header" href="#looping-over-a-dictionary-keys-and-values" id="looping-over-a-dictionary-keys-and-values">Looping over a dictionary keys and values</a></h3>
+<pre><code class="language-python">for k in d:
+    print(k, '--&gt;', d[k])
+  
+for k, v in d.items():
+    print(k, '--&gt;', v)
+</code></pre>
+<h3><a class="header" href="#construct-a-dictionary-in-pairs" id="construct-a-dictionary-in-pairs">Construct a dictionary in pairs</a></h3>
+<pre><code class="language-python">names = ['raymond', 'rachel', 'matthew']
+colors = ['red', 'green', 'blue']
 
-<span class="hljs-keyword">for</span> k, v <span class="hljs-keyword">in</span> d.items():
-    print(k, <span class="hljs-string">&apos;--&gt;&apos;</span>, v)
+d = dict(zip(names, colors))  # {'raymond': 'red', 'rachel': 'green', 'matthew': 'blue'}
+d = dict(enumerate(names))  # {0: 'raymond', 1: 'rachel', 2: 'matthew'}
 </code></pre>
-<h3 id="construct-a-dictionary-in-pairs">Construct a dictionary in pairs</h3>
-<pre><code class="lang-python">names = [<span class="hljs-string">&apos;raymond&apos;</span>, <span class="hljs-string">&apos;rachel&apos;</span>, <span class="hljs-string">&apos;matthew&apos;</span>]
-colors = [<span class="hljs-string">&apos;red&apos;</span>, <span class="hljs-string">&apos;green&apos;</span>, <span class="hljs-string">&apos;blue&apos;</span>]
-
-d = dict(zip(names, colors))  <span class="hljs-comment"># {&apos;raymond&apos;: &apos;red&apos;, &apos;rachel&apos;: &apos;green&apos;, &apos;matthew&apos;: &apos;blue&apos;}</span>
-d = dict(enumerate(names))  <span class="hljs-comment"># {0: &apos;raymond&apos;, 1: &apos;rachel&apos;, 2: &apos;matthew&apos;}</span>
-</code></pre>
-<h3 id="counting-with-dictionaries">Counting with dictionaries</h3>
-<pre><code class="lang-python">colors = [<span class="hljs-string">&apos;red&apos;</span>, <span class="hljs-string">&apos;green&apos;</span>, <span class="hljs-string">&apos;red&apos;</span>, <span class="hljs-string">&apos;blue&apos;</span>, <span class="hljs-string">&apos;green&apos;</span>, <span class="hljs-string">&apos;red&apos;</span>]
+<h3><a class="header" href="#counting-with-dictionaries" id="counting-with-dictionaries">Counting with dictionaries</a></h3>
+<pre><code class="language-python">colors = ['red', 'green', 'red', 'blue', 'green', 'red']
 
 d = {}
-<span class="hljs-keyword">for</span> color <span class="hljs-keyword">in</span> colors:
-    <span class="hljs-keyword">if</span> color <span class="hljs-keyword">not</span> <span class="hljs-keyword">in</span> d:
-        d[color] = <span class="hljs-number">0</span>
-    d[color] += <span class="hljs-number">1</span>
-<span class="hljs-comment"># {&apos;blue&apos;: 1, &apos;green&apos;: 2, &apos;red&apos;: 3}</span>
+for color in colors:
+    if color not in d:
+        d[color] = 0
+    d[color] += 1
+# {'blue': 1, 'green': 2, 'red': 3}
 
-<span class="hljs-comment"># Pythonic-way</span>
+# Pythonic-way
 d = {}
-<span class="hljs-keyword">for</span> color <span class="hljs-keyword">in</span> colors:
-    d[color] = d.get(color, <span class="hljs-number">0</span>) + <span class="hljs-number">1</span>
-
-<span class="hljs-comment"># Pythonic and modern way</span>
-<span class="hljs-keyword">from</span> collections <span class="hljs-keyword">import</span> defaultdict
+for color in colors:
+    d[color] = d.get(color, 0) + 1
+    
+# Pythonic and modern way
+from collections import defaultdict
 
 d = defaultdict(int)
-<span class="hljs-keyword">for</span> color <span class="hljs-keyword">in</span> colors:
-    d[color] += <span class="hljs-number">1</span>
+for color in colors:
+    d[color] += 1
 </code></pre>
-<h3 id="grouping-with-dictionaries">Grouping with dictionaries</h3>
-<pre><code class="lang-python">names = [<span class="hljs-string">&apos;raymond&apos;</span>, <span class="hljs-string">&apos;rachel&apos;</span>, <span class="hljs-string">&apos;matthew&apos;</span>, <span class="hljs-string">&apos;roger&apos;</span>, <span class="hljs-string">&apos;betty&apos;</span>, <span class="hljs-string">&apos;melissa&apos;</span>, <span class="hljs-string">&apos;judith&apos;</span>, <span class="hljs-string">&apos;charlie&apos;</span>]
+<h3><a class="header" href="#grouping-with-dictionaries" id="grouping-with-dictionaries">Grouping with dictionaries</a></h3>
+<pre><code class="language-python">names = ['raymond', 'rachel', 'matthew', 'roger', 'betty', 'melissa', 'judith', 'charlie']
 
 d = {}
-<span class="hljs-keyword">for</span> name <span class="hljs-keyword">in</span> names:
+for name in names:
     key = len(name)
-    <span class="hljs-keyword">if</span> key <span class="hljs-keyword">not</span> <span class="hljs-keyword">in</span> d:
+    if key not in d:
         d[key] = []
     d[key].append(name)
-<span class="hljs-comment"># {7: [&apos;raymond&apos;, &apos;matthew&apos;, &apos;melissa&apos;, &apos;charlie&apos;], 6: [&apos;rachel&apos;, &apos;judith&apos;], 5: [&apos;roger&apos;, &apos;betty&apos;]}</span>
+# {7: ['raymond', 'matthew', 'melissa', 'charlie'], 6: ['rachel', 'judith'], 5: ['roger', 'betty']}
 
-<span class="hljs-comment"># Pythonic-way</span>
+# Pythonic-way
 d = {}
-<span class="hljs-keyword">for</span> name <span class="hljs-keyword">in</span> names:
+for name in names:
     key = len(name)
     d.setdefault(key, []).append(name)
-
-<span class="hljs-comment"># Pythonic and modern way</span>
-<span class="hljs-keyword">from</span> collections <span class="hljs-keyword">import</span> defaultdict
+    
+# Pythonic and modern way
+from collections import defaultdict
 
 d = defaultdict(list)
-<span class="hljs-keyword">for</span> name <span class="hljs-keyword">in</span> names:
+for name in names:
     key = len(name)
     d[key].append(name)
 </code></pre>
-<h3 id="is-a-dictionary-popitem-atomic">Is a dictionary popitem() atomic?</h3>
-<pre><code class="lang-python">d = {<span class="hljs-string">&apos;matthew&apos;</span>: <span class="hljs-string">&apos;blue&apos;</span>, <span class="hljs-string">&apos;rachel&apos;</span>: <span class="hljs-string">&apos;green&apos;</span>, <span class="hljs-string">&apos;raymond&apos;</span>: <span class="hljs-string">&apos;red&apos;</span>}
+<h3><a class="header" href="#is-a-dictionary-popitem-atomic" id="is-a-dictionary-popitem-atomic">Is a dictionary popitem() atomic?</a></h3>
+<pre><code class="language-python">d = {'matthew': 'blue', 'rachel': 'green', 'raymond': 'red'}
 
-<span class="hljs-keyword">while</span> d:
+while d:
     key, value = d.popitem()
-    print(key, <span class="hljs-string">&apos;--&gt;&apos;</span>, value)
+    print(key, '--&gt;', value)
 </code></pre>
-<h3 id="linking-dictionaries">Linking dictionaries</h3>
-<pre><code class="lang-python"><span class="hljs-keyword">import</span> argparse
-<span class="hljs-keyword">import</span> os
+<h3><a class="header" href="#linking-dictionaries" id="linking-dictionaries">Linking dictionaries</a></h3>
+<pre><code class="language-python">import argparse
+import os
 
-defaults = {<span class="hljs-string">&apos;color&apos;</span>: <span class="hljs-string">&apos;red&apos;</span>, <span class="hljs-string">&apos;user&apos;</span>: <span class="hljs-string">&apos;guest&apos;</span>}
+defaults = {'color': 'red', 'user': 'guest'}
 parser = argparse.ArgumentParser()
-parser.add_argument(<span class="hljs-string">&apos;-u&apos;</span>, <span class="hljs-string">&apos;--user&apos;</span>)
-parser.add_argument(<span class="hljs-string">&apos;-c&apos;</span>, <span class="hljs-string">&apos;--color&apos;</span>)
+parser.add_argument('-u', '--user')
+parser.add_argument('-c', '--color')
 namespace = parser.parse_args([])
-command_line_args = {k: v <span class="hljs-keyword">for</span> k, v <span class="hljs-keyword">in</span> vars(namespace).items() <span class="hljs-keyword">if</span> v}
+command_line_args = {k: v for k, v in vars(namespace).items() if v}
 
 d = defaults.copy()
 d.update(os.environ)
 d.update(command_line_args)
 
-<span class="hljs-comment"># Pythonic-way</span>
-<span class="hljs-keyword">from</span> collections <span class="hljs-keyword">import</span> ChainMap
+# Pythonic-way
+from collections import ChainMap
 
 d = ChainMap(command_line_args, os.environ, defaults)
 </code></pre>
-<h2 id="improving-clarity">Improving Clarity</h2>
+<h2><a class="header" href="#improving-clarity" id="improving-clarity">Improving Clarity</a></h2>
 <ul>
 <li>Positional arguments and indicies are nice</li>
 <li>Keywords and names are better</li>
 <li>The first way is convenient for the computer</li>
-<li>The second corresponds to how human&apos;s think</li>
+<li>The second corresponds to how human's think</li>
 </ul>
-<h3 id="clarify-function-calls-with-keyword-arguments">Clarify function calls with keyword arguments</h3>
+<h3><a class="header" href="#clarify-function-calls-with-keyword-arguments" id="clarify-function-calls-with-keyword-arguments">Clarify function calls with keyword arguments</a></h3>
 <blockquote>
-<p>  <em>Microseconds of computer time is hours of programmer time.</em></p>
+<p><em>Microseconds of computer time is hours of programmer time.</em></p>
 </blockquote>
-<pre><code class="lang-python">twitter_search(<span class="hljs-string">&apos;@obama&apos;</span>, <span class="hljs-keyword">False</span>, <span class="hljs-number">20</span>, <span class="hljs-keyword">True</span>)
-twitter_search(<span class="hljs-string">&apos;@obama&apos;</span>, retweets=<span class="hljs-keyword">False</span>, numtweets=<span class="hljs-number">20</span>, popular=<span class="hljs-keyword">True</span>)
+<pre><code class="language-python">twitter_search('@obama', False, 20, True)
+twitter_search('@obama', retweets=False, numtweets=20, popular=True)
 </code></pre>
-<h3 id="clarify-multiple-return-values-with-named-tuples">Clarify multiple return values with named tuples</h3>
-<pre><code class="lang-python">doctest.testmod()  <span class="hljs-comment"># (0, 4)</span>
-doctest.testmod()  <span class="hljs-comment"># TestResults(failed=0, attempted=4)</span>
-TestResults = namedtuple(<span class="hljs-string">&apos;TestResults&apos;</span>, [<span class="hljs-string">&apos;failed&apos;</span>, [<span class="hljs-string">&apos;attempted&apos;</span>]])
+<h3><a class="header" href="#clarify-multiple-return-values-with-named-tuples" id="clarify-multiple-return-values-with-named-tuples">Clarify multiple return values with named tuples</a></h3>
+<pre><code class="language-python">doctest.testmod()  # (0, 4)
+doctest.testmod()  # TestResults(failed=0, attempted=4)
+TestResults = namedtuple('TestResults', ['failed', ['attempted']])
 </code></pre>
-<h3 id="unpacking-sequences">Unpacking sequences</h3>
-<pre><code class="lang-python">p = <span class="hljs-string">&apos;Raymond&apos;</span>, <span class="hljs-string">&apos;Hettinger&apos;</span>, <span class="hljs-number">0x30</span>, <span class="hljs-string">&apos;python@example.com&apos;</span>
+<h3><a class="header" href="#unpacking-sequences" id="unpacking-sequences">Unpacking sequences</a></h3>
+<pre><code class="language-python">p = 'Raymond', 'Hettinger', 0x30, 'python@example.com'
 
-fname = p[<span class="hljs-number">0</span>]
-lname = p[<span class="hljs-number">1</span>]
-age = p[<span class="hljs-number">2</span>]
-email = p[<span class="hljs-number">3</span>]
+fname = p[0]
+lname = p[1]
+age = p[2]
+email = p[3]
 
-<span class="hljs-comment"># Pythonic-way</span>
+# Pythonic-way
 fname, lname, age, email = p
 </code></pre>
-<h3 id="updating-multiple-state-variables">Updating multiple state variables</h3>
-<pre><code class="lang-python"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">fibonacci</span><span class="hljs-params">(n)</span>:</span>
-    x = <span class="hljs-number">0</span>
-    y = <span class="hljs-number">1</span>
-    <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> range(n):
+<h3><a class="header" href="#updating-multiple-state-variables" id="updating-multiple-state-variables">Updating multiple state variables</a></h3>
+<pre><code class="language-python">def fibonacci(n):
+    x = 0
+    y = 1
+    for i in range(n):
         print(x)
         t = y
         y = x + y
         x = t
 
-<span class="hljs-comment"># Pythonic-way</span>
-<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">fibonacci</span><span class="hljs-params">(n)</span>:</span>
-    x, y = <span class="hljs-number">0</span>, <span class="hljs-number">1</span>
-    <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> range(n):
+# Pythonic-way
+def fibonacci(n):
+    x, y = 0, 1
+    for i in range(n):
         print(x)
         x, y = y, x+y
 </code></pre>
-<h2 id="tuple-packing-and-unpacking">Tuple packing and unpacking</h2>
+<h2><a class="header" href="#tuple-packing-and-unpacking" id="tuple-packing-and-unpacking">Tuple packing and unpacking</a></h2>
 <ul>
-<li>Don&apos;t under-estimate the advantages of updating state variables at the same time</li>
+<li>Don't under-estimate the advantages of updating state variables at the same time</li>
 <li>It eliminates an entire class of errors due to out-of-order updates</li>
 <li>It allows high level thinking: &quot;chunking&quot;</li>
 </ul>
-<h3 id="simultaneous-state-updates">Simultaneous state updates</h3>
-<pre><code class="lang-python">tmp_x = x + dx*t
+<h3><a class="header" href="#simultaneous-state-updates" id="simultaneous-state-updates">Simultaneous state updates</a></h3>
+<pre><code class="language-python">tmp_x = x + dx*t
 tmp_y = y + dy+t
-tmp_dx = influence(m, x, y, dx, dy, partial=<span class="hljs-string">&apos;x&apos;</span>)
-tmp_dy = influence(m, x, y, dx, dy, partial=<span class="hljs-string">&apos;y&apos;</span>)
+tmp_dx = influence(m, x, y, dx, dy, partial='x')
+tmp_dy = influence(m, x, y, dx, dy, partial='y')
 x = tmp_x
 y = tmp_y
 dx = tmp_dx
 dy = tmp_dy
 
-<span class="hljs-comment"># Pythonic-way</span>
+# Pythonic-way
 x, y, dx, dy = (x + dx*t, 
                 y + dy*t, 
-                influence(m, x, y, dx, dy, partial=<span class="hljs-string">&apos;x&apos;</span>), 
-                influence(m, x, y, dx, dy, partial=<span class="hljs-string">&apos;y&apos;</span>))
+                influence(m, x, y, dx, dy, partial='x'), 
+                influence(m, x, y, dx, dy, partial='y'))           
 </code></pre>
-<h2 id="efficiency">Efficiency</h2>
+<h2><a class="header" href="#efficiency" id="efficiency">Efficiency</a></h2>
 <ul>
 <li>An optimization fundamental rule</li>
-<li>Don&apos;t cause data to move around unnecessarily</li>
+<li>Don't cause data to move around unnecessarily</li>
 <li>It takes only a little care to avoid O(n**2) behavior instead of linear behavior</li>
 </ul>
-<h3 id="concatenating-strings">Concatenating strings</h3>
-<pre><code class="lang-python">names = [<span class="hljs-string">&apos;raymond&apos;</span>, <span class="hljs-string">&apos;rachel&apos;</span>, <span class="hljs-string">&apos;matthew&apos;</span>, <span class="hljs-string">&apos;roger&apos;</span>, 
-         <span class="hljs-string">&apos;betty&apos;</span>, <span class="hljs-string">&apos;melissa&apos;</span>, <span class="hljs-string">&apos;judith&apos;</span>, <span class="hljs-string">&apos;charlie&apos;</span>]
+<h3><a class="header" href="#concatenating-strings" id="concatenating-strings">Concatenating strings</a></h3>
+<pre><code class="language-python">names = ['raymond', 'rachel', 'matthew', 'roger', 
+         'betty', 'melissa', 'judith', 'charlie']
 
-s = names[<span class="hljs-number">0</span>]
-<span class="hljs-keyword">for</span> name <span class="hljs-keyword">in</span> names[<span class="hljs-number">1</span>:]:
-    s += <span class="hljs-string">&apos;, &apos;</span> + name
-print(s)  <span class="hljs-comment"># raymond, rachel, matthew, roger, betty, melissa, judith, charlie</span>
+s = names[0]
+for name in names[1:]:
+    s += ', ' + name
+print(s)  # raymond, rachel, matthew, roger, betty, melissa, judith, charlie
 
-<span class="hljs-comment"># Pythonic-way</span>
-print(<span class="hljs-string">&apos;, &apos;</span>.join(names))  <span class="hljs-comment"># raymond, rachel, matthew, roger, betty, melissa, judith, charlie</span>
+# Pythonic-way
+print(', '.join(names))  # raymond, rachel, matthew, roger, betty, melissa, judith, charlie
 </code></pre>
-<h3 id="updating-sequences">Updating sequences</h3>
-<pre><code class="lang-python">names = [<span class="hljs-string">&apos;raymond&apos;</span>, <span class="hljs-string">&apos;rachel&apos;</span>, <span class="hljs-string">&apos;matthew&apos;</span>, <span class="hljs-string">&apos;roger&apos;</span>, 
-         <span class="hljs-string">&apos;betty&apos;</span>, <span class="hljs-string">&apos;melissa&apos;</span>, <span class="hljs-string">&apos;judith&apos;</span>, <span class="hljs-string">&apos;charlie&apos;</span>]
+<h3><a class="header" href="#updating-sequences" id="updating-sequences">Updating sequences</a></h3>
+<pre><code class="language-python">names = ['raymond', 'rachel', 'matthew', 'roger', 
+         'betty', 'melissa', 'judith', 'charlie']
 
-<span class="hljs-keyword">del</span> names[<span class="hljs-number">0</span>]
-names.pop(<span class="hljs-number">0</span>)
-names.insert(<span class="hljs-number">0</span>, <span class="hljs-string">&apos;mark&apos;</span>)
+del names[0]
+names.pop(0)
+names.insert(0, 'mark')
 
-<span class="hljs-comment"># Pythonic-way</span>
-<span class="hljs-keyword">from</span> collections <span class="hljs-keyword">import</span> deque
+# Pythonic-way
+from collections import deque
 
-names = deque([<span class="hljs-string">&apos;raymond&apos;</span>, <span class="hljs-string">&apos;rachel&apos;</span>, <span class="hljs-string">&apos;matthew&apos;</span>, <span class="hljs-string">&apos;roger&apos;</span>, 
-         <span class="hljs-string">&apos;betty&apos;</span>, <span class="hljs-string">&apos;melissa&apos;</span>, <span class="hljs-string">&apos;judith&apos;</span>, <span class="hljs-string">&apos;charlie&apos;</span>])
-<span class="hljs-keyword">del</span> names[<span class="hljs-number">0</span>]
+names = deque(['raymond', 'rachel', 'matthew', 'roger', 
+         'betty', 'melissa', 'judith', 'charlie'])
+del names[0]
 names.popleft()
-names.appendleft(<span class="hljs-string">&apos;mark&apos;</span>)
+names.appendleft('mark')
 </code></pre>
-<h2 id="decorators-and-context-managers">Decorators and Context Managers</h2>
+<h2><a class="header" href="#decorators-and-context-managers" id="decorators-and-context-managers">Decorators and Context Managers</a></h2>
 <ul>
 <li>Helps separate business logic from administrative logic</li>
 <li>Clean, beautiful tools for factoring code and improving code reuse</li>
 <li>Good naming is essential</li>
 <li>Remember the Spiderman rule: With great power, comes great responsibility!</li>
 </ul>
-<h3 id="using-decorators-to-factor-out-administrative-logic">Using decorators to factor-out administrative logic</h3>
-<pre><code class="lang-python"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">web_lookup</span><span class="hljs-params">(url, saved={})</span>:</span>
-    <span class="hljs-keyword">if</span> url <span class="hljs-keyword">in</span> saved:
-        <span class="hljs-keyword">return</span> saved[url]
+<h3><a class="header" href="#using-decorators-to-factor-out-administrative-logic" id="using-decorators-to-factor-out-administrative-logic">Using decorators to factor-out administrative logic</a></h3>
+<pre><code class="language-python">def web_lookup(url, saved={}):
+    if url in saved:
+        return saved[url]
     page = urllib.urlopen(url).read()
     saved[url] = page
-    <span class="hljs-keyword">return</span> page
+    return page
 
-<span class="hljs-comment"># Pythonic-way</span>
-<span class="hljs-comment"># Caching decorator</span>
-<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">cache</span><span class="hljs-params">(func)</span>:</span>
+# Pythonic-way
+# Caching decorator
+def cache(func):
     saved = {}
-<span class="hljs-meta">    @wraps(func)</span>
-    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">newfunc</span><span class="hljs-params">(*args)</span>:</span>
-        <span class="hljs-keyword">if</span> args <span class="hljs-keyword">in</span> saved:
-            <span class="hljs-keyword">return</span> newfunc(*args)
+    @wraps(func)
+    def newfunc(*args):
+        if args in saved:
+            return newfunc(*args)
         result = func(*args)
         saved[args] = result
-        <span class="hljs-keyword">return</span> result
-    <span class="hljs-keyword">return</span> newfunc
+        return result
+    return newfunc
 
-<span class="hljs-meta">@cache</span>
-<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">web_lookup</span><span class="hljs-params">(url)</span>:</span>
-    <span class="hljs-keyword">return</span> urllib.urlopen(url).read()
+@cache
+def web_lookup(url):
+    return urllib.urlopen(url).read()
 </code></pre>
-<h3 id="factor-out-temporary-contexts">Factor-out temporary contexts</h3>
-<pre><code class="lang-python">old_context = getcontext().copy()
-getcontext().prec = <span class="hljs-number">50</span>
-print(Decimal(<span class="hljs-number">355</span>)/Decimal(<span class="hljs-number">113</span>))
+<h3><a class="header" href="#factor-out-temporary-contexts" id="factor-out-temporary-contexts">Factor-out temporary contexts</a></h3>
+<pre><code class="language-python">old_context = getcontext().copy()
+getcontext().prec = 50
+print(Decimal(355)/Decimal(113))
 setcontext(old_context)
 
-<span class="hljs-comment"># Pythonic-way</span>
-<span class="hljs-keyword">with</span> localcontext(Context(prec=<span class="hljs-number">50</span>)):
-    print(Decimal(<span class="hljs-number">355</span>)/Decimal(<span class="hljs-number">113</span>))
+# Pythonic-way
+with localcontext(Context(prec=50)):
+    print(Decimal(355)/Decimal(113))
 </code></pre>
-<h3 id="how-to-open-and-close-files">How to open and close files</h3>
-<pre><code class="lang-python">f = open(<span class="hljs-string">&apos;data.txt&apos;</span>)
-<span class="hljs-keyword">try</span>:
+<h3><a class="header" href="#how-to-open-and-close-files" id="how-to-open-and-close-files">How to open and close files</a></h3>
+<pre><code class="language-python">f = open('data.txt')
+try:
     data = f.read()
-<span class="hljs-keyword">finally</span>:
+finally:
     f.close()
-
-<span class="hljs-comment"># Pythonic-way</span>
-<span class="hljs-keyword">with</span> open(<span class="hljs-string">&apos;data.txt&apos;</span>) <span class="hljs-keyword">as</span> f:
+    
+# Pythonic-way
+with open('data.txt') as f:
     data = f.read()
 </code></pre>
-<h3 id="how-to-use-locks">How to use locks</h3>
-<pre><code class="lang-python"><span class="hljs-comment"># Make a lock</span>
+<h3><a class="header" href="#how-to-use-locks" id="how-to-use-locks">How to use locks</a></h3>
+<pre><code class="language-python"># Make a lock
 lock = threading.Lock()
 
-<span class="hljs-comment"># Old-way to use a lock</span>
+# Old-way to use a lock
 lock.acquire()
-<span class="hljs-keyword">try</span>:
-    print(<span class="hljs-string">&apos;Critical section 1&apos;</span>)
-    print(<span class="hljs-string">&apos;Critical section 2&apos;</span>)
-<span class="hljs-keyword">finally</span>:
+try:
+    print('Critical section 1')
+    print('Critical section 2')
+finally:
     lock.release()
-
-<span class="hljs-comment"># New-way to use a lock(# Pythonic-way)</span>
-<span class="hljs-keyword">with</span> lock:
-    print(<span class="hljs-string">&apos;Critical section 1&apos;</span>)
-    print(<span class="hljs-string">&apos;Critical section 2&apos;</span>)
+    
+# New-way to use a lock(# Pythonic-way)
+with lock:
+    print('Critical section 1')
+    print('Critical section 2') 
 </code></pre>
-<h3 id="factor-out-temporary-contexts">Factor-out temporary contexts</h3>
-<pre><code class="lang-python"><span class="hljs-keyword">try</span>:
-    os.remove(<span class="hljs-string">&apos;somefile.tmp&apos;</span>)
-<span class="hljs-keyword">except</span> OSError:
-    <span class="hljs-keyword">pass</span>
+<h3><a class="header" href="#factor-out-temporary-contexts-1" id="factor-out-temporary-contexts-1">Factor-out temporary contexts</a></h3>
+<pre><code class="language-python">try:
+    os.remove('somefile.tmp')
+except OSError:
+    pass
 
-<span class="hljs-comment"># Pythonic-way</span>
-<span class="hljs-meta">@contextmanager</span>
-<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">ignored</span><span class="hljs-params">(*exceptions)</span>:</span>
-    <span class="hljs-keyword">try</span>:
-        <span class="hljs-keyword">yield</span>
-    <span class="hljs-keyword">except</span> exceptions:
-        <span class="hljs-keyword">pass</span>
+# Pythonic-way
+@contextmanager
+def ignored(*exceptions):
+    try:
+        yield
+    except exceptions:
+        pass
 
-<span class="hljs-keyword">with</span> ignored(OSError):
-    os.remove(<span class="hljs-string">&apos;somefile.tmp&apos;</span>)
+with ignored(OSError):
+    os.remove('somefile.tmp')
 </code></pre>
-<pre><code class="lang-python"><span class="hljs-keyword">with</span> open(<span class="hljs-string">&apos;help.txt&apos;</span>, <span class="hljs-string">&apos;w&apos;</span>) <span class="hljs-keyword">as</span> f:
+<pre><code class="language-python">with open('help.txt', 'w') as f:
     oldstdout = sys.stdout
     sys.stdout = f
-    <span class="hljs-keyword">try</span>:
+    try:
         help(pow)
-    <span class="hljs-keyword">finally</span>:
+    finally:
         sys.stdout = oldstdout
 
-<span class="hljs-comment"># Pythonic-way</span>
-<span class="hljs-meta">@contextmanager</span>
-<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">redirect_stdout</span><span class="hljs-params">(fileobj)</span>:</span>
+# Pythonic-way
+@contextmanager
+def redirect_stdout(fileobj):
     oldstdout = sys.stdout
     sys.stdout = fileobj
-    <span class="hljs-keyword">try</span>:
-        <span class="hljs-keyword">yield</span> fieldobj
-    <span class="hljs-keyword">finally</span>:
+    try:
+        yield fieldobj
+    finally:
         sys.stdout = oldstdout
 
-<span class="hljs-keyword">with</span> open(<span class="hljs-string">&apos;help.txt&apos;</span>, <span class="hljs-string">&apos;w&apos;</span>) <span class="hljs-keyword">as</span> f:
-    <span class="hljs-keyword">with</span> redirect_stdout(f):
+with open('help.txt', 'w') as f:
+    with redirect_stdout(f):
         help(pow)
+    
 </code></pre>
-<h2 id="concise-expressive-one-liners">Concise Expressive One-Liners</h2>
+<h2><a class="header" href="#concise-expressive-one-liners" id="concise-expressive-one-liners">Concise Expressive One-Liners</a></h2>
 <ul>
-<li>Two conficting rules:<ul>
-<li>Don&apos;t put too much on one line</li>
-<li>Don&apos;t break atoms of thought into subatomic particles</li>
+<li>Two conficting rules:
+<ul>
+<li>Don't put too much on one line</li>
+<li>Don't break atoms of thought into subatomic particles</li>
 </ul>
 </li>
-<li>Raymond&apos;s rule:<ul>
+<li>Raymond's rule:
+<ul>
 <li>One logical line of code equals one sentence in English</li>
 </ul>
 </li>
 </ul>
-<h3 id="list-comprehensions-and-generator-exprssions">List Comprehensions and Generator Exprssions</h3>
-<pre><code class="lang-python">result = []
-<span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> range(<span class="hljs-number">10</span>):
-    s = i ** <span class="hljs-number">2</span>
+<h3><a class="header" href="#list-comprehensions-and-generator-exprssions" id="list-comprehensions-and-generator-exprssions">List Comprehensions and Generator Exprssions</a></h3>
+<pre><code class="language-python">result = []
+for i in range(10):
+    s = i ** 2
     result.append(s)
 print(sum(result))
 
-<span class="hljs-comment"># Pythonic-way</span>
-result = sum(i**<span class="hljs-number">2</span> <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> range(<span class="hljs-number">10</span>))
+# Pythonic-way
+result = sum(i**2 for i in range(10))
 </code></pre>
 
-                                
-                                </section>
-                            
-    </div>
-    <div class="search-results">
-        <div class="has-results">
-            
-            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
-            <ul class="search-results-list"></ul>
-            
-        </div>
-        <div class="no-results">
-            
-            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
-            
-        </div>
-    </div>
-</div>
+                    </main>
 
-                        </div>
-                    </div>
-                
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        
+                            <a rel="prev" href="../python/python-virtualenv.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                        
+
+                        
+                            <a rel="next" href="../reactjs/index.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
             </div>
 
-            
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
                 
-                <a href="python-virtualenv.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: Python Virtualenv">
-                    <i class="fa fa-angle-left"></i>
-                </a>
+                    <a rel="prev" href="../python/python-virtualenv.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
                 
-                
-            
-        
-    </div>
 
-    <script>
-        var gitbook = gitbook || [];
-        gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Transforming Code Into Beautiful Idiomatic Python","level":"1.11.6","depth":2,"next":{"title":"React.js","level":"1.12","depth":1,"ref":"","articles":[{"title":"Reactjs Setup","level":"1.12.1","depth":2,"path":"reactjs/reactjs-setup.md","ref":"reactjs/reactjs-setup.md","articles":[]}]},"previous":{"title":"Python Virtualenv","level":"1.11.5","depth":2,"path":"python/python-virtualenv.md","ref":"python/python-virtualenv.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["ga"],"pluginsConfig":{"ga":{"configuration":"auto","token":"UA-114603670-1"},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"python/transforming-code-into-beautiful-idiomatic-python.md","mtime":"2020-05-10T04:53:26.600Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-05-10T04:53:55.471Z"},"basePath":"..","book":{"language":""}});
-        });
-    </script>
-</div>
+                
+                    <a rel="next" href="../reactjs/index.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+                
+            </nav>
+
+        </div>
 
         
-    <script src="../gitbook/gitbook.js"></script>
-    <script src="../gitbook/theme.js"></script>
-    
+
         
-        <script src="../gitbook/gitbook-plugin-ga/plugin.js"></script>
+
         
-    
         
-        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
         
-    
+        <script type="text/javascript">
+            window.playpen_copyable = true;
+        </script>
         
-        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+
         
-    
+
         
-        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        <script src="../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../searcher.js" type="text/javascript" charset="utf-8"></script>
         
-    
+
+        <script src="../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
         
-        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+
         
-    
-        
-        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
-        
-    
-        
-        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
-        
-    
 
     </body>
 </html>
-

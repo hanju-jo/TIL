@@ -1,1120 +1,381 @@
-
 <!DOCTYPE HTML>
-<html lang="" >
+<html lang="ko" class="sidebar-visible no-js light">
     <head>
+        <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
+        <title>Python React Setup - Hanju's TIL Book</title>
+        
+
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>Python React Setup · GitBook</title>
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
-        <meta name="generator" content="GitBook 3.2.3">
-        
-        
-        
-    
-    <link rel="stylesheet" href="../gitbook/style.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
 
-    
-            
-                
-                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
-                
-            
-                
-                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
-                
-            
-                
-                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
-                
-            
-        
+        <link rel="shortcut icon" href="../favicon.png">
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+        <link rel="stylesheet" href="../css/print.css" media="print">
 
-    
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:500" rel="stylesheet" type="text/css">
 
-    
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../highlight.css">
+        <link rel="stylesheet" href="../tomorrow-night.css">
+        <link rel="stylesheet" href="../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
         
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
 
         
-    
-    
-    <meta name="HandheldFriendly" content="true"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
-    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
-
-    
-    <link rel="next" href="python-tips.html" />
-    
-    
-    <link rel="prev" href="fundamental-python.html" />
-    
-
+        <!-- MathJax -->
+        <script async type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        
     </head>
     <body>
-        
-<div class="book">
-    <div class="book-summary">
-        
-            
-<div id="book-search-input" role="search">
-    <input type="text" placeholder="Type to search" />
-</div>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "light" : "light";
+        </script>
 
-            
-                <nav role="navigation">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item affix "><a href="../index.html">README</a></li><li class="chapter-item "><a href="../data-visualization/index.html"><strong aria-hidden="true">1.</strong> Data Visualization</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../data-visualization/d3.js-tutorial.html"><strong aria-hidden="true">1.1.</strong> D3.js Tutorial</a></li></ol></li><li class="chapter-item "><a href="../database/index.html"><strong aria-hidden="true">2.</strong> Database</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../database/mongodb-setup.html"><strong aria-hidden="true">2.1.</strong> Mongodb Setup</a></li><li class="chapter-item "><a href="../database/postgresql-on-ubuntu.html"><strong aria-hidden="true">2.2.</strong> Postgresql On Ubuntu</a></li></ol></li><li class="chapter-item "><a href="../design-patterns/index.html"><strong aria-hidden="true">3.</strong> Design Patterns</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../design-patterns/abstract-factory.html"><strong aria-hidden="true">3.1.</strong> Abstract Factory</a></li><li class="chapter-item "><a href="../design-patterns/adapter.html"><strong aria-hidden="true">3.2.</strong> Adapter</a></li><li class="chapter-item "><a href="../design-patterns/decorator.html"><strong aria-hidden="true">3.3.</strong> Decorator</a></li><li class="chapter-item "><a href="../design-patterns/delegation.html"><strong aria-hidden="true">3.4.</strong> Delegation</a></li><li class="chapter-item "><a href="../design-patterns/factory.html"><strong aria-hidden="true">3.5.</strong> Factory</a></li></ol></li><li class="chapter-item "><a href="../django/index.html"><strong aria-hidden="true">4.</strong> Django</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../django/deploying-django-project-on-ubuntu-using-nginx-and-gunicorn.html"><strong aria-hidden="true">4.1.</strong> Deploying Django Project On Ubuntu Using Nginx And Gunicorn</a></li><li class="chapter-item "><a href="../django/django-bluebook.html"><strong aria-hidden="true">4.2.</strong> Django Bluebook</a></li><li class="chapter-item "><a href="../django/django-setup.html"><strong aria-hidden="true">4.3.</strong> Django Setup</a></li><li class="chapter-item "><a href="../django/django-with-postgresql-on-aws-ec2.html"><strong aria-hidden="true">4.4.</strong> Django With Postgresql On Aws Ec2</a></li><li class="chapter-item "><a href="../django/test-driven-development-with-python.html"><strong aria-hidden="true">4.5.</strong> Test Driven Development With Python</a></li></ol></li><li class="chapter-item "><a href="../docker/index.html"><strong aria-hidden="true">5.</strong> Docker</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../docker/about-docker.html"><strong aria-hidden="true">5.1.</strong> About Docker</a></li><li class="chapter-item "><a href="../docker/docker-cheatsheet.html"><strong aria-hidden="true">5.2.</strong> Docker Cheatsheet</a></li><li class="chapter-item "><a href="../docker/docker-for-jekyll.html"><strong aria-hidden="true">5.3.</strong> Docker For Jekyll</a></li><li class="chapter-item "><a href="../docker/gollum-via-docker.html"><strong aria-hidden="true">5.4.</strong> Gollum Via Docker</a></li></ol></li><li class="chapter-item "><a href="../english/index.html"><strong aria-hidden="true">6.</strong> English</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../english/newly-learned-words-or-phrases.html"><strong aria-hidden="true">6.1.</strong> Newly Learned Words Or Phrases</a></li></ol></li><li class="chapter-item "><a href="../git/index.html"><strong aria-hidden="true">7.</strong> Git</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../git/git-cheat-sheet.html"><strong aria-hidden="true">7.1.</strong> Git Cheat Sheet</a></li><li class="chapter-item "><a href="../git/steps-after-fork.html"><strong aria-hidden="true">7.2.</strong> Steps After Fork</a></li></ol></li><li class="chapter-item "><a href="../jekyll/index.html"><strong aria-hidden="true">8.</strong> Jekyll</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../jekyll/add-disqus-to-jekyll.html"><strong aria-hidden="true">8.1.</strong> Add Disqus To Jekyll</a></li><li class="chapter-item "><a href="../jekyll/jekyll-with-google-analytics.html"><strong aria-hidden="true">8.2.</strong> Jekyll With Google Analytics</a></li></ol></li><li class="chapter-item "><a href="../ml/index.html"><strong aria-hidden="true">9.</strong> Ml</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../ml/ml-study-notes.html"><strong aria-hidden="true">9.1.</strong> Ml Study Notes</a></li></ol></li><li class="chapter-item expanded "><a href="../python/index.html"><strong aria-hidden="true">10.</strong> Python</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../python/effective-python.html"><strong aria-hidden="true">10.1.</strong> Effective Python</a></li><li class="chapter-item "><a href="../python/fundamental-python.html"><strong aria-hidden="true">10.2.</strong> Fundamental Python</a></li><li class="chapter-item expanded "><a href="../python/python-react-setup.html" class="active"><strong aria-hidden="true">10.3.</strong> Python React Setup</a></li><li class="chapter-item "><a href="../python/python-tips.html"><strong aria-hidden="true">10.4.</strong> Python Tips</a></li><li class="chapter-item "><a href="../python/python-virtualenv.html"><strong aria-hidden="true">10.5.</strong> Python Virtualenv</a></li><li class="chapter-item "><a href="../python/transforming-code-into-beautiful-idiomatic-python.html"><strong aria-hidden="true">10.6.</strong> Transforming Code Into Beautiful Idiomatic Python</a></li></ol></li><li class="chapter-item "><a href="../reactjs/index.html"><strong aria-hidden="true">11.</strong> Reactjs</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../reactjs/reactjs-setup.html"><strong aria-hidden="true">11.1.</strong> Reactjs Setup</a></li></ol></li><li class="chapter-item "><a href="../sicp/index.html"><strong aria-hidden="true">12.</strong> Sicp</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../sicp/1_02.html"><strong aria-hidden="true">12.1.</strong> 1_02</a></li><li class="chapter-item "><a href="../sicp/1_03.html"><strong aria-hidden="true">12.2.</strong> 1_03</a></li><li class="chapter-item "><a href="../sicp/1_05.html"><strong aria-hidden="true">12.3.</strong> 1_05</a></li><li class="chapter-item "><a href="../sicp/1_06.html"><strong aria-hidden="true">12.4.</strong> 1_06</a></li><li class="chapter-item "><a href="../sicp/1_07.html"><strong aria-hidden="true">12.5.</strong> 1_07</a></li><li class="chapter-item "><a href="../sicp/1_08.html"><strong aria-hidden="true">12.6.</strong> 1_08</a></li><li class="chapter-item "><a href="../sicp/1_09.html"><strong aria-hidden="true">12.7.</strong> 1_09</a></li><li class="chapter-item "><a href="../sicp/1_10.html"><strong aria-hidden="true">12.8.</strong> 1_10</a></li><li class="chapter-item "><a href="../sicp/racket.html"><strong aria-hidden="true">12.9.</strong> Racket</a></li></ol></li><li class="chapter-item "><a href="../snippets/index.html"><strong aria-hidden="true">13.</strong> Snippets</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../snippets/c++.html"><strong aria-hidden="true">13.1.</strong> C++</a></li></ol></li><li class="chapter-item "><a href="../uncategorized/index.html"><strong aria-hidden="true">14.</strong> Uncategorized</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../uncategorized/dotfiles.html"><strong aria-hidden="true">14.1.</strong> Dotfiles</a></li><li class="chapter-item "><a href="../uncategorized/hmac.html"><strong aria-hidden="true">14.2.</strong> Hmac</a></li><li class="chapter-item "><a href="../uncategorized/unix-command-tips.html"><strong aria-hidden="true">14.3.</strong> Unix Command Tips</a></li></ol></li><li class="chapter-item "><a href="../vim/index.html"><strong aria-hidden="true">15.</strong> Vim</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../vim/plugin-manager-vim-plug.html"><strong aria-hidden="true">15.1.</strong> Plugin Manager Vim Plug</a></li><li class="chapter-item "><a href="../vim/plugin-manager-vundle.html"><strong aria-hidden="true">15.2.</strong> Plugin Manager Vundle</a></li><li class="chapter-item "><a href="../vim/plugin-youcompleteme.html"><strong aria-hidden="true">15.3.</strong> Plugin Youcompleteme</a></li></ol></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                        
+                    </div>
+
+                    <h1 class="menu-title">Hanju's TIL Book</h1>
+
+                    <div class="right-buttons">
+                        <a href="../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        
+                        <a href="https://github.com/hanju-jo/TIL" title="Git repository" aria-label="Git repository">
+                            <i id="git-repository-button" class="fa fa-github"></i>
+                        </a>
+                        
+                    </div>
+                </div>
+
+                
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" name="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
                 
 
-
-<ul class="summary">
-    
-    
-
-    
-
-    
-        
-        <li class="header">Categories</li>
-        
-        
-    
-        <li class="chapter " data-level="1.1" data-path="../">
-            
-                <a href="../">
-            
-                    
-                    Introduction
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.2" >
-            
-                <span>
-            
-                    
-                    Data Visualization
-            
-                </span>
-            
-
-            
-            <ul class="articles">
-                
-    
-        <li class="chapter " data-level="1.2.1" data-path="../data-visualization/d3.js-tutorial.html">
-            
-                <a href="../data-visualization/d3.js-tutorial.html">
-            
-                    
-                    D3 Tutorial
-            
-                </a>
-            
-
-            
-        </li>
-    
-
-            </ul>
-            
-        </li>
-    
-        <li class="chapter " data-level="1.3" >
-            
-                <span>
-            
-                    
-                    Database
-            
-                </span>
-            
-
-            
-            <ul class="articles">
-                
-    
-        <li class="chapter " data-level="1.3.1" data-path="../database/mongodb-setup.html">
-            
-                <a href="../database/mongodb-setup.html">
-            
-                    
-                    Mongodb Setup
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.3.2" data-path="../database/postgresql-on-ubuntu.html">
-            
-                <a href="../database/postgresql-on-ubuntu.html">
-            
-                    
-                    Postgresql On Ubuntu
-            
-                </a>
-            
-
-            
-        </li>
-    
-
-            </ul>
-            
-        </li>
-    
-        <li class="chapter " data-level="1.4" >
-            
-                <span>
-            
-                    
-                    Design Patterns
-            
-                </span>
-            
-
-            
-            <ul class="articles">
-                
-    
-        <li class="chapter " data-level="1.4.1" data-path="../design-patterns/abstract-factory.html">
-            
-                <a href="../design-patterns/abstract-factory.html">
-            
-                    
-                    Abstract Factory
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.4.2" data-path="../design-patterns/adapter.html">
-            
-                <a href="../design-patterns/adapter.html">
-            
-                    
-                    Adapter
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.4.3" data-path="../design-patterns/decorator.html">
-            
-                <a href="../design-patterns/decorator.html">
-            
-                    
-                    Decorator
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.4.4" data-path="../design-patterns/delegation.html">
-            
-                <a href="../design-patterns/delegation.html">
-            
-                    
-                    Delegation
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.4.5" data-path="../design-patterns/factory.html">
-            
-                <a href="../design-patterns/factory.html">
-            
-                    
-                    Factory
-            
-                </a>
-            
-
-            
-        </li>
-    
-
-            </ul>
-            
-        </li>
-    
-        <li class="chapter " data-level="1.5" >
-            
-                <span>
-            
-                    
-                    Django
-            
-                </span>
-            
-
-            
-            <ul class="articles">
-                
-    
-        <li class="chapter " data-level="1.5.1" data-path="../django/deploying-django-project-on-ubuntu-using-nginx-and-gunicorn.html">
-            
-                <a href="../django/deploying-django-project-on-ubuntu-using-nginx-and-gunicorn.html">
-            
-                    
-                    Deploying Django Project On Ubuntu Using Nginx And Gunicorn
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.5.2" data-path="../django/django-bluebook.html">
-            
-                <a href="../django/django-bluebook.html">
-            
-                    
-                    Django Bluebook
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.5.3" data-path="../django/django-setup.html">
-            
-                <a href="../django/django-setup.html">
-            
-                    
-                    Django Setup
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.5.4" data-path="../django/django-with-postgresql-on-aws-ec2.html">
-            
-                <a href="../django/django-with-postgresql-on-aws-ec2.html">
-            
-                    
-                    Django With Postgresql On Aws Ec2
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.5.5" data-path="../django/test-driven-development-with-python.html">
-            
-                <a href="../django/test-driven-development-with-python.html">
-            
-                    
-                    Test Driven Development With Python
-            
-                </a>
-            
-
-            
-        </li>
-    
-
-            </ul>
-            
-        </li>
-    
-        <li class="chapter " data-level="1.6" >
-            
-                <span>
-            
-                    
-                    Docker
-            
-                </span>
-            
-
-            
-            <ul class="articles">
-                
-    
-        <li class="chapter " data-level="1.6.1" data-path="../docker/about-docker.html">
-            
-                <a href="../docker/about-docker.html">
-            
-                    
-                    About Docker
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.6.2" data-path="../docker/docker-cheatsheet.html">
-            
-                <a href="../docker/docker-cheatsheet.html">
-            
-                    
-                    Docker Cheatsheet
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.6.3" data-path="../docker/docker-for-jekyll.html">
-            
-                <a href="../docker/docker-for-jekyll.html">
-            
-                    
-                    Docker For Jekyll
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.6.4" data-path="../docker/gollum-via-docker.html">
-            
-                <a href="../docker/gollum-via-docker.html">
-            
-                    
-                    Gollum Via Docker
-            
-                </a>
-            
-
-            
-        </li>
-    
-
-            </ul>
-            
-        </li>
-    
-        <li class="chapter " data-level="1.7" >
-            
-                <span>
-            
-                    
-                    English
-            
-                </span>
-            
-
-            
-            <ul class="articles">
-                
-    
-        <li class="chapter " data-level="1.7.1" data-path="../english/newly-learned-words-or-phrases.html">
-            
-                <a href="../english/newly-learned-words-or-phrases.html">
-            
-                    
-                    Newly Learned Words Or Phrases
-            
-                </a>
-            
-
-            
-        </li>
-    
-
-            </ul>
-            
-        </li>
-    
-        <li class="chapter " data-level="1.8" >
-            
-                <span>
-            
-                    
-                    Git
-            
-                </span>
-            
-
-            
-            <ul class="articles">
-                
-    
-        <li class="chapter " data-level="1.8.1" data-path="../git/git-cheat-sheet.html">
-            
-                <a href="../git/git-cheat-sheet.html">
-            
-                    
-                    Git Cheat Sheet
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.8.2" data-path="../git/steps-after-fork.html">
-            
-                <a href="../git/steps-after-fork.html">
-            
-                    
-                    Steps After Fork
-            
-                </a>
-            
-
-            
-        </li>
-    
-
-            </ul>
-            
-        </li>
-    
-        <li class="chapter " data-level="1.9" >
-            
-                <span>
-            
-                    
-                    Jekyll
-            
-                </span>
-            
-
-            
-            <ul class="articles">
-                
-    
-        <li class="chapter " data-level="1.9.1" data-path="../jekyll/add-disqus-to-jekyll.html">
-            
-                <a href="../jekyll/add-disqus-to-jekyll.html">
-            
-                    
-                    Add Disqus To Jekyll
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.9.2" data-path="../jekyll/jekyll-with-google-analytics.html">
-            
-                <a href="../jekyll/jekyll-with-google-analytics.html">
-            
-                    
-                    Jekyll With Google Analytics
-            
-                </a>
-            
-
-            
-        </li>
-    
-
-            </ul>
-            
-        </li>
-    
-        <li class="chapter " data-level="1.10" >
-            
-                <span>
-            
-                    
-                    Machine Learning
-            
-                </span>
-            
-
-            
-            <ul class="articles">
-                
-    
-        <li class="chapter " data-level="1.10.1" data-path="../ml/ml-study-notes.html">
-            
-                <a href="../ml/ml-study-notes.html">
-            
-                    
-                    Ml Study Notes
-            
-                </a>
-            
-
-            
-        </li>
-    
-
-            </ul>
-            
-        </li>
-    
-        <li class="chapter " data-level="1.11" >
-            
-                <span>
-            
-                    
-                    Python
-            
-                </span>
-            
-
-            
-            <ul class="articles">
-                
-    
-        <li class="chapter " data-level="1.11.1" data-path="effective-python.html">
-            
-                <a href="effective-python.html">
-            
-                    
-                    Effective Python
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.11.2" data-path="fundamental-python.html">
-            
-                <a href="fundamental-python.html">
-            
-                    
-                    Fundamental Python
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter active" data-level="1.11.3" data-path="python-react-setup.html">
-            
-                <a href="python-react-setup.html">
-            
-                    
-                    Python React Setup
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.11.4" data-path="python-tips.html">
-            
-                <a href="python-tips.html">
-            
-                    
-                    Python Tips
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.11.5" data-path="python-virtualenv.html">
-            
-                <a href="python-virtualenv.html">
-            
-                    
-                    Python Virtualenv
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.11.6" data-path="transforming-code-into-beautiful-idiomatic-python.html">
-            
-                <a href="transforming-code-into-beautiful-idiomatic-python.html">
-            
-                    
-                    Transforming Code Into Beautiful Idiomatic Python
-            
-                </a>
-            
-
-            
-        </li>
-    
-
-            </ul>
-            
-        </li>
-    
-        <li class="chapter " data-level="1.12" >
-            
-                <span>
-            
-                    
-                    React.js
-            
-                </span>
-            
-
-            
-            <ul class="articles">
-                
-    
-        <li class="chapter " data-level="1.12.1" data-path="../reactjs/reactjs-setup.html">
-            
-                <a href="../reactjs/reactjs-setup.html">
-            
-                    
-                    Reactjs Setup
-            
-                </a>
-            
-
-            
-        </li>
-    
-
-            </ul>
-            
-        </li>
-    
-        <li class="chapter " data-level="1.13" >
-            
-                <span>
-            
-                    
-                    Snippets
-            
-                </span>
-            
-
-            
-            <ul class="articles">
-                
-    
-        <li class="chapter " data-level="1.13.1" data-path="../snippets/c++.html">
-            
-                <a href="../snippets/c++.html">
-            
-                    
-                    C++
-            
-                </a>
-            
-
-            
-        </li>
-    
-
-            </ul>
-            
-        </li>
-    
-        <li class="chapter " data-level="1.14" >
-            
-                <span>
-            
-                    
-                    Uncategorized
-            
-                </span>
-            
-
-            
-            <ul class="articles">
-                
-    
-        <li class="chapter " data-level="1.14.1" data-path="../uncategorized/dotfiles.html">
-            
-                <a href="../uncategorized/dotfiles.html">
-            
-                    
-                    Dotfiles
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.14.2" data-path="../uncategorized/hmac.html">
-            
-                <a href="../uncategorized/hmac.html">
-            
-                    
-                    HMAC
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.14.3" data-path="../uncategorized/unix-command-tips.html">
-            
-                <a href="../uncategorized/unix-command-tips.html">
-            
-                    
-                    Unix Command Tips
-            
-                </a>
-            
-
-            
-        </li>
-    
-
-            </ul>
-            
-        </li>
-    
-        <li class="chapter " data-level="1.15" >
-            
-                <span>
-            
-                    
-                    Vim
-            
-                </span>
-            
-
-            
-            <ul class="articles">
-                
-    
-        <li class="chapter " data-level="1.15.1" data-path="../vim/plugin-manager-vim-plug.html">
-            
-                <a href="../vim/plugin-manager-vim-plug.html">
-            
-                    
-                    Plugin Manager Vim Plug
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.15.2" data-path="../vim/plugin-manager-vundle.html">
-            
-                <a href="../vim/plugin-manager-vundle.html">
-            
-                    
-                    Plugin Manager Vundle
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.15.3" data-path="../vim/plugin-youcompleteme.html">
-            
-                <a href="../vim/plugin-youcompleteme.html">
-            
-                    
-                    Plugin Youcompleteme
-            
-                </a>
-            
-
-            
-        </li>
-    
-
-            </ul>
-            
-        </li>
-    
-
-    
-
-    <li class="divider"></li>
-
-    <li>
-        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
-            Published with GitBook
-        </a>
-    </li>
-</ul>
-
-
-                </nav>
-            
-        
-    </div>
-
-    <div class="book-body">
-        
-            <div class="body-inner">
-                
-                    
-
-<div class="book-header" role="navigation">
-    
-
-    <!-- Title -->
-    <h1>
-        <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >Python React Setup</a>
-    </h1>
-</div>
-
-
-
-
-                    <div class="page-wrapper" tabindex="-1" role="main">
-                        <div class="page-inner">
-                            
-<div id="book-search-results">
-    <div class="search-noresults">
-    
-                                <section class="normal markdown-section">
-                                
-                                <ul>
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <ul>
 <li><a href="#Step-1:-Create-your-Django-Project">Step 1: Create your Django project</a></li>
 <li><a href="#Step-2:-Add-non-reactJS-views">Step 2: Add non-reactJS views</a></li>
 <li><a href="#Refer-to">Refer to</a></li>
 </ul>
-<h2 id="step-1-create-your-django-project">Step 1: Create your Django project</h2>
-<h3 id="install-django">Install Django</h3>
-<pre><code class="lang-bash">$ mkdir django-reactjs-boilerplate &amp;&amp; <span class="hljs-built_in">cd</span> django-reactjs-boilerplate
+<h2><a class="header" href="#step-1-create-your-django-project" id="step-1-create-your-django-project">Step 1: Create your Django project</a></h2>
+<h3><a class="header" href="#install-django" id="install-django">Install Django</a></h3>
+<pre><code class="language-bash">$ mkdir django-reactjs-boilerplate &amp;&amp; cd django-reactjs-boilerplate
 $ python3 -m venv env
-$ <span class="hljs-built_in">source</span> env/bin/activate
+$ source env/bin/activate
 $ pip install --upgrade pip
 $ pip install Django
 </code></pre>
-<h3 id="create-django-project">Create Django Project</h3>
-<pre><code class="lang-bash"><span class="hljs-comment"># $ django-admin startproject django</span>
-<span class="hljs-comment"># This command occurs error so we use other steps below.</span>
+<h3><a class="header" href="#create-django-project" id="create-django-project">Create Django Project</a></h3>
+<pre><code class="language-bash"># $ django-admin startproject django
+# This command occurs error so we use other steps below.
 $ django-admin startproject djreact
 $ mv djreact django
 </code></pre>
-<h3 id="create-requirementstxt-file">Create <a href="https://pip.readthedocs.io/en/1.1/requirements.html" target="_blank"><code>requirements.txt</code></a> file</h3>
-<pre><code class="lang-bash">$ vim requirements.txt
+<h3><a class="header" href="#create-a-hrefhttpspipreadthedocsioen11requirementshtmlrequirementstxta-file" id="create-a-hrefhttpspipreadthedocsioen11requirementshtmlrequirementstxta-file">Create <a href="https://pip.readthedocs.io/en/1.1/requirements.html"><code>requirements.txt</code></a> file</a></h3>
+<pre><code class="language-bash">$ vim requirements.txt
 </code></pre>
 <pre><code>Django==1.9.3
-</code></pre><h3 id="set-up-for-git">Set Up for Git</h3>
-<pre><code class="lang-bash">$ git init
+</code></pre>
+<h3><a class="header" href="#set-up-for-git" id="set-up-for-git">Set Up for Git</a></h3>
+<pre><code class="language-bash">$ git init
 $ vim .gitignore
 </code></pre>
 <pre><code>*.pyc
 db.sqlite3
 __pycache__
-</code></pre><h3 id="run-server">Run Server</h3>
-<pre><code class="lang-bash">$ <span class="hljs-built_in">cd</span> django
+</code></pre>
+<h3><a class="header" href="#run-server" id="run-server">Run Server</a></h3>
+<pre><code class="language-bash">$ cd django
 $ python manage.py runserver
 </code></pre>
-<p>Open <a href="http://localhost:8000" target="_blank">http://localhost:8000</a></p>
-<h2 id="step-2-add-non-reactjs-views">Step 2: Add non-reactJS views</h2>
-<h3 id="add-to-urlspy">Add to <code>urls.py</code></h3>
+<p>Open <a href="http://localhost:8000">http://localhost:8000</a></p>
+<h2><a class="header" href="#step-2-add-non-reactjs-views" id="step-2-add-non-reactjs-views">Step 2: Add non-reactJS views</a></h2>
+<h3><a class="header" href="#add-to-urlspy" id="add-to-urlspy">Add to <code>urls.py</code></a></h3>
 <pre><code>$ cd djreact
 $ vim urls.py
-</code></pre><pre><code class="lang-python"><span class="hljs-keyword">from</span> django.views <span class="hljs-keyword">import</span> generic
+</code></pre>
+<pre><code class="language-python">from django.views import generic
 
 urlpatterns = [
-  url(<span class="hljs-string">r&apos;^admin/&apos;</span>, admin.site.urls),
-  url(<span class="hljs-string">r&apos;^view2/&apos;</span>,
-      generic.TemplateView.as_view(template_name=<span class="hljs-string">&apos;view2.html&apos;</span>)),
-  url(<span class="hljs-string">r&apos;^$&apos;</span>,
-      generic.TemplateView.as_view(template_name=<span class="hljs-string">&apos;view1.html&apos;</span>)),
+  url(r'^admin/', admin.site.urls),
+  url(r'^view2/',
+      generic.TemplateView.as_view(template_name='view2.html')),
+  url(r'^$',
+      generic.TemplateView.as_view(template_name='view1.html')),
 ]
 </code></pre>
-<h3 id="add-templates">Add templates</h3>
+<h3><a class="header" href="#add-templates" id="add-templates">Add templates</a></h3>
 <p>Make directory named <code>templates</code> in <code>djreact</code> folder.</p>
-<pre><code class="lang-bash">$ mkdir templates
+<pre><code class="language-bash">$ mkdir templates
 </code></pre>
 <p>Add <code>templates</code> directory path to <code>settings.py</code>. Add below codes in <code>setting.py</code>.</p>
-<pre><code class="lang-python">TEMPLATES = [
+<pre><code class="language-python">TEMPLATES = [
     {
         ...
-        <span class="hljs-string">&apos;DIRS&apos;</span>: [os.path.join(BASE_DIR, <span class="hljs-string">&apos;djreact/templates&apos;</span>)],
+        'DIRS': [os.path.join(BASE_DIR, 'djreact/templates')],
         ...
     },
 ]
 </code></pre>
-<pre><code class="lang-bash">$ vim base.html
+<pre><code class="language-bash">$ vim base.html
 </code></pre>
-<pre><code class="lang-html"><span class="hljs-meta">&lt;!doctype html&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-name">html</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;no-js&quot;</span> <span class="hljs-attr">lang</span>=<span class="hljs-string">&quot;&quot;</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">charset</span>=<span class="hljs-string">&quot;utf-8&quot;</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">http-equiv</span>=<span class="hljs-string">&quot;x-ua-compatible&quot;</span> <span class="hljs-attr">content</span>=<span class="hljs-string">&quot;ie=edge&quot;</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">&quot;stylesheet&quot;</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css&quot;</span> <span class="hljs-attr">integrity</span>=<span class="hljs-string">&quot;sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7&quot;</span> <span class="hljs-attr">crossorigin</span>=<span class="hljs-string">&quot;anonymous&quot;</span>&gt;</span>
-  <span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
+<pre><code class="language-html">&lt;!doctype html&gt;
+&lt;html class=&quot;no-js&quot; lang=&quot;&quot;&gt;
+  &lt;head&gt;
+    &lt;meta charset=&quot;utf-8&quot;&gt;
+    &lt;meta http-equiv=&quot;x-ua-compatible&quot; content=&quot;ie=edge&quot;&gt;
+    &lt;link rel=&quot;stylesheet&quot; href=&quot;https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css&quot; integrity=&quot;sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7&quot; crossorigin=&quot;anonymous&quot;&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
     {% block main %}{% endblock %}
-  <span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span>
+  &lt;/body&gt;
+&lt;/html&gt;
 </code></pre>
-<pre><code class="lang-bash">$ vim view1.html
+<pre><code class="language-bash">$ vim view1.html
 </code></pre>
-<pre><code class="lang-html">{% extends &quot;base.html&quot; %}
+<pre><code class="language-html">{% extends &quot;base.html&quot; %}
 
 {% block main %}
-<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;container&quot;</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>View 1<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+&lt;div class=&quot;container&quot;&gt;
+  &lt;h1&gt;View 1&lt;/h1&gt;
+&lt;/div&gt;
 {% endblock %}
 </code></pre>
-<pre><code class="lang-bash">$ vim view2.html
+<pre><code class="language-bash">$ vim view2.html
 </code></pre>
-<pre><code class="lang-html">{% extends &quot;base.html&quot; %}
+<pre><code class="language-html">{% extends &quot;base.html&quot; %}
 
 {% block main %}
-<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;container&quot;</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>View 2<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+&lt;div class=&quot;container&quot;&gt;
+  &lt;h1&gt;View 2&lt;/h1&gt;
+&lt;/div&gt;
 {% endblock %}
 </code></pre>
-<h3 id="run-server">Run Server</h3>
-<pre><code class="lang-bash">$ python manage.py runserver
+<h3><a class="header" href="#run-server-1" id="run-server-1">Run Server</a></h3>
+<pre><code class="language-bash">$ python manage.py runserver
 </code></pre>
-<p>Open <a href="http://localhost:8000" target="_blank">http://localhost:8000</a> and <a href="http://localhost:8000/view2/" target="_blank">http://localhost:8000/view2/</a></p>
-<h2 id="step-3-add-django-webpack-loader">Step 3: Add django-webpack-loader</h2>
-<pre><code class="lang-bash">$ pip freeze
+<p>Open <a href="http://localhost:8000">http://localhost:8000</a> and <a href="http://localhost:8000/view2/">http://localhost:8000/view2/</a></p>
+<h2><a class="header" href="#step-3-add-django-webpack-loader" id="step-3-add-django-webpack-loader">Step 3: Add django-webpack-loader</a></h2>
+<pre><code class="language-bash">$ pip freeze
 $ pip install django-webpack-loader
 $ vim requirements.txt
 </code></pre>
-<pre><code class="lang-txt">Django==1.9.3
+<pre><code class="language-txt">Django==1.9.3
 django-webpack-loader==0.2.4
 </code></pre>
 <p>Add <code>webpack_loader</code> in <code>settings.py</code>:</p>
-<pre><code class="lang-python">INSTALLED_APPS = [
+<pre><code class="language-python">INSTALLED_APPS = [
     ...
-    <span class="hljs-string">&apos;webpack_loader&apos;</span>,
+    'webpack_loader',
 ]
 </code></pre>
 <p>Add <code>static</code> folder directory in <code>settings.py</code>:</p>
-<pre><code class="lang-python">STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, <span class="hljs-string">&apos;djreact/static&apos;</span>),
+<pre><code class="language-python">STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'djreact/static'),
 ]
 </code></pre>
 <p>Create <code>package.json</code> in django</p>
-<pre><code class="lang-bash">$ vim package.json
+<pre><code class="language-bash">$ vim package.json
 </code></pre>
-<pre><code class="lang-json">{
-  <span class="hljs-string">&quot;name&quot;</span>: <span class="hljs-string">&quot;djreact&quot;</span>,
-  <span class="hljs-string">&quot;version&quot;</span>: <span class="hljs-string">&quot;0.0.1&quot;</span>,
-  <span class="hljs-string">&quot;devDependencies&quot;</span>: {
-    <span class="hljs-string">&quot;babel&quot;</span>: <span class="hljs-string">&quot;^6.5.2&quot;</span>,
-    <span class="hljs-string">&quot;babel-core&quot;</span>: <span class="hljs-string">&quot;^6.6.5&quot;</span>,
-    <span class="hljs-string">&quot;babel-eslint&quot;</span>: <span class="hljs-string">&quot;^5.0.0&quot;</span>,
-    <span class="hljs-string">&quot;babel-loader&quot;</span>: <span class="hljs-string">&quot;^6.2.4&quot;</span>,
-    <span class="hljs-string">&quot;babel-plugin-transform-decorators-legacy&quot;</span>: <span class="hljs-string">&quot;^1.3.4&quot;</span>,
-    <span class="hljs-string">&quot;babel-preset-es2015&quot;</span>: <span class="hljs-string">&quot;^6.6.0&quot;</span>,
-    <span class="hljs-string">&quot;babel-preset-react&quot;</span>: <span class="hljs-string">&quot;^6.5.0&quot;</span>,
-    <span class="hljs-string">&quot;babel-preset-stage-0&quot;</span>: <span class="hljs-string">&quot;^6.5.0&quot;</span>,
-    <span class="hljs-string">&quot;eslint&quot;</span>: <span class="hljs-string">&quot;^2.2.0&quot;</span>,
-    <span class="hljs-string">&quot;react&quot;</span>: <span class="hljs-string">&quot;^0.14.7&quot;</span>,
-    <span class="hljs-string">&quot;react-hot-loader&quot;</span>: <span class="hljs-string">&quot;^1.3.0&quot;</span>,
-    <span class="hljs-string">&quot;redux-devtools&quot;</span>: <span class="hljs-string">&quot;^3.1.1&quot;</span>,
-    <span class="hljs-string">&quot;webpack&quot;</span>: <span class="hljs-string">&quot;^1.12.13&quot;</span>,
-    <span class="hljs-string">&quot;webpack-bundle-tracker&quot;</span>: <span class="hljs-string">&quot;0.0.93&quot;</span>,
-    <span class="hljs-string">&quot;webpack-dev-server&quot;</span>: <span class="hljs-string">&quot;^1.14.1&quot;</span>
+<pre><code class="language-json">{
+  &quot;name&quot;: &quot;djreact&quot;,
+  &quot;version&quot;: &quot;0.0.1&quot;,
+  &quot;devDependencies&quot;: {
+    &quot;babel&quot;: &quot;^6.5.2&quot;,
+    &quot;babel-core&quot;: &quot;^6.6.5&quot;,
+    &quot;babel-eslint&quot;: &quot;^5.0.0&quot;,
+    &quot;babel-loader&quot;: &quot;^6.2.4&quot;,
+    &quot;babel-plugin-transform-decorators-legacy&quot;: &quot;^1.3.4&quot;,
+    &quot;babel-preset-es2015&quot;: &quot;^6.6.0&quot;,
+    &quot;babel-preset-react&quot;: &quot;^6.5.0&quot;,
+    &quot;babel-preset-stage-0&quot;: &quot;^6.5.0&quot;,
+    &quot;eslint&quot;: &quot;^2.2.0&quot;,
+    &quot;react&quot;: &quot;^0.14.7&quot;,
+    &quot;react-hot-loader&quot;: &quot;^1.3.0&quot;,
+    &quot;redux-devtools&quot;: &quot;^3.1.1&quot;,
+    &quot;webpack&quot;: &quot;^1.12.13&quot;,
+    &quot;webpack-bundle-tracker&quot;: &quot;0.0.93&quot;,
+    &quot;webpack-dev-server&quot;: &quot;^1.14.1&quot;
   },
-  <span class="hljs-string">&quot;dependencies&quot;</span>: {
-    <span class="hljs-string">&quot;es6-promise&quot;</span>: <span class="hljs-string">&quot;^3.1.2&quot;</span>,
-    <span class="hljs-string">&quot;isomorphic-fetch&quot;</span>: <span class="hljs-string">&quot;^2.2.1&quot;</span>,
-    <span class="hljs-string">&quot;lodash&quot;</span>: <span class="hljs-string">&quot;^4.5.1&quot;</span>,
-    <span class="hljs-string">&quot;radium&quot;</span>: <span class="hljs-string">&quot;^0.16.6&quot;</span>,
-    <span class="hljs-string">&quot;react-cookie&quot;</span>: <span class="hljs-string">&quot;^0.4.5&quot;</span>,
-    <span class="hljs-string">&quot;react-dom&quot;</span>: <span class="hljs-string">&quot;^0.14.7&quot;</span>,
-    <span class="hljs-string">&quot;react-redux&quot;</span>: <span class="hljs-string">&quot;^4.4.0&quot;</span>,
-    <span class="hljs-string">&quot;redux&quot;</span>: <span class="hljs-string">&quot;^3.3.1&quot;</span>,
-    <span class="hljs-string">&quot;redux-thunk&quot;</span>: <span class="hljs-string">&quot;^1.0.3&quot;</span>
+  &quot;dependencies&quot;: {
+    &quot;es6-promise&quot;: &quot;^3.1.2&quot;,
+    &quot;isomorphic-fetch&quot;: &quot;^2.2.1&quot;,
+    &quot;lodash&quot;: &quot;^4.5.1&quot;,
+    &quot;radium&quot;: &quot;^0.16.6&quot;,
+    &quot;react-cookie&quot;: &quot;^0.4.5&quot;,
+    &quot;react-dom&quot;: &quot;^0.14.7&quot;,
+    &quot;react-redux&quot;: &quot;^4.4.0&quot;,
+    &quot;redux&quot;: &quot;^3.3.1&quot;,
+    &quot;redux-thunk&quot;: &quot;^1.0.3&quot;
   }
 }
 </code></pre>
-<pre><code class="lang-bash">$ npm install
+<pre><code class="language-bash">$ npm install
 </code></pre>
-<pre><code class="lang-bash">$ vim .gitignore
+<pre><code class="language-bash">$ vim .gitignore
 </code></pre>
-<pre><code class="lang-vim">...
+<pre><code class="language-vim">...
 node_modules
 ...
 </code></pre>
-<pre><code class="lang-bash">$ touch webpack.base.config.js webpack.local.config.js
+<pre><code class="language-bash">$ touch webpack.base.config.js webpack.local.config.js
 </code></pre>
 <p>In <code>webpack.base.config.js</code>:</p>
-<pre><code class="lang-javascript"><span class="hljs-keyword">var</span> path = <span class="hljs-built_in">require</span>(<span class="hljs-string">&quot;path&quot;</span>)
-<span class="hljs-keyword">var</span> webpack = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;webpack&apos;</span>)
+<pre><code class="language-javascript">var path = require(&quot;path&quot;)
+var webpack = require('webpack')
 
-<span class="hljs-built_in">module</span>.exports = {
+module.exports = {
   context: __dirname,
 
   entry: {
-    <span class="hljs-comment">// Add as many entry points as you have container-react-components here</span>
-    App1: <span class="hljs-string">&apos;./reactjs/App1&apos;</span>,
-    vendors: [<span class="hljs-string">&apos;react&apos;</span>],
+    // Add as many entry points as you have container-react-components here
+    App1: './reactjs/App1',
+    vendors: ['react'],
   },
 
   output: {
-      path: path.resolve(<span class="hljs-string">&apos;./djreact/static/bundles/local/&apos;</span>),
-      filename: <span class="hljs-string">&quot;[name]-[hash].js&quot;</span>
+      path: path.resolve('./djreact/static/bundles/local/'),
+      filename: &quot;[name]-[hash].js&quot;
   },
 
   externals: [
-  ], <span class="hljs-comment">// add all vendor libs</span>
+  ], // add all vendor libs
 
   plugins: [
-    <span class="hljs-keyword">new</span> webpack.optimize.CommonsChunkPlugin(<span class="hljs-string">&apos;vendors&apos;</span>, <span class="hljs-string">&apos;vendors.js&apos;</span>),
-  ], <span class="hljs-comment">// add all common plugins here</span>
+    new webpack.optimize.CommonsChunkPlugin('vendors', 'vendors.js'),
+  ], // add all common plugins here
 
-  <span class="hljs-built_in">module</span>: {
-    loaders: [] <span class="hljs-comment">// add all common loaders here</span>
+  module: {
+    loaders: [] // add all common loaders here
   },
 
   resolve: {
-    modulesDirectories: [<span class="hljs-string">&apos;node_modules&apos;</span>, <span class="hljs-string">&apos;bower_components&apos;</span>],
-    extensions: [<span class="hljs-string">&apos;&apos;</span>, <span class="hljs-string">&apos;.js&apos;</span>, <span class="hljs-string">&apos;.jsx&apos;</span>]
+    modulesDirectories: ['node_modules', 'bower_components'],
+    extensions: ['', '.js', '.jsx']
   },
 }
 </code></pre>
 <p>In <code>webpack.local.config.js</code>:</p>
-<pre><code class="lang-javascript"><span class="hljs-keyword">var</span> path = <span class="hljs-built_in">require</span>(<span class="hljs-string">&quot;path&quot;</span>)
-<span class="hljs-keyword">var</span> webpack = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;webpack&apos;</span>)
-<span class="hljs-keyword">var</span> BundleTracker = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;webpack-bundle-tracker&apos;</span>)
-<span class="hljs-keyword">var</span> config = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;./webpack.base.config.js&apos;</span>)
+<pre><code class="language-javascript">var path = require(&quot;path&quot;)
+var webpack = require('webpack')
+var BundleTracker = require('webpack-bundle-tracker')
+var config = require('./webpack.base.config.js')
 
-config.devtool = <span class="hljs-string">&quot;#eval-source-map&quot;</span>
+config.devtool = &quot;#eval-source-map&quot;
 
 config.plugins = config.plugins.concat([
-  <span class="hljs-keyword">new</span> BundleTracker({filename: <span class="hljs-string">&apos;./webpack-stats-local.json&apos;</span>}),
+  new BundleTracker({filename: './webpack-stats-local.json'}),
 ])
 
 config.module.loaders.push(
-  { test: <span class="hljs-regexp">/\.jsx?$/</span>, exclude: <span class="hljs-regexp">/node_modules/</span>, loaders: [<span class="hljs-string">&apos;react-hot&apos;</span>, <span class="hljs-string">&apos;babel&apos;</span>] }
+  { test: /\.jsx?$/, exclude: /node_modules/, loaders: ['react-hot', 'babel'] }
 )
 
-<span class="hljs-built_in">module</span>.exports = config
+module.exports = config
 </code></pre>
-<pre><code class="lang-bash">$ touch .babelrc
+<pre><code class="language-bash">$ touch .babelrc
 </code></pre>
 <pre><code>{
   &quot;presets&quot;: [&quot;es2015&quot;, &quot;react&quot;, &quot;stage-0&quot;],
@@ -1122,236 +383,239 @@ config.module.loaders.push(
     [&quot;transform-decorators-legacy&quot;],
   ]
 }
-</code></pre><h3 id="write-reackjs-codes">Write ReackJS codes</h3>
+</code></pre>
+<h3><a class="header" href="#write-reackjs-codes" id="write-reackjs-codes">Write ReackJS codes</a></h3>
 <p>Create <code>reactjs</code> folder in <code>django</code> folder.</p>
 <pre><code>$ mkdir reactjs &amp;&amp; cd reactjs
 $ mkdir containers components
 $ touch App1.jsx containers/App1Container.jsx components/Headline.jsx
-</code></pre><h4 id="app1jsx"><code>App1.jsx</code></h4>
-<pre><code class="lang-jsx"><span class="hljs-keyword">import</span> React <span class="hljs-keyword">from</span> <span class="hljs-string">&quot;react&quot;</span>
-<span class="hljs-keyword">import</span> { render } <span class="hljs-keyword">from</span> <span class="hljs-string">&quot;react-dom&quot;</span>
+</code></pre>
+<h4><a class="header" href="#app1jsx" id="app1jsx"><code>App1.jsx</code></a></h4>
+<pre><code class="language-jsx">import React from &quot;react&quot;
+import { render } from &quot;react-dom&quot;
 
-<span class="hljs-keyword">import</span> App1Container <span class="hljs-keyword">from</span> <span class="hljs-string">&quot;./containers/App1Container&quot;</span>
+import App1Container from &quot;./containers/App1Container&quot;
 
-<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">App1</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">React</span>.<span class="hljs-title">Component</span> </span>{
+class App1 extends React.Component {
   render() {
-    <span class="hljs-keyword">return</span> (
-      <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">App1Container</span> /&gt;</span>
+    return (
+      &lt;App1Container /&gt;
     )
   }
 }
 
-render(<span class="hljs-tag">&lt;<span class="hljs-name">App1</span>/&gt;</span>, document.getElementById(&apos;App1&apos;))
-</span></code></pre>
-<h4 id="containersapp1containerjsx"><code>containers/App1Container.jsx</code></h4>
-<pre><code class="lang-jsx"><span class="hljs-keyword">import</span> React <span class="hljs-keyword">from</span> <span class="hljs-string">&quot;react&quot;</span>
+render(&lt;App1/&gt;, document.getElementById('App1'))
+</code></pre>
+<h4><a class="header" href="#containersapp1containerjsx" id="containersapp1containerjsx"><code>containers/App1Container.jsx</code></a></h4>
+<pre><code class="language-jsx">import React from &quot;react&quot;
 
-<span class="hljs-keyword">import</span> Headline <span class="hljs-keyword">from</span> <span class="hljs-string">&quot;../components/Headline&quot;</span>
+import Headline from &quot;../components/Headline&quot;
 
-<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">App1Container</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">React</span>.<span class="hljs-title">Component</span> </span>{
+export default class App1Container extends React.Component {
   render() {
-    <span class="hljs-keyword">return</span> (
-      <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">className</span>=<span class="hljs-string">&quot;container&quot;</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">className</span>=<span class="hljs-string">&quot;row&quot;</span>&gt;</span>
-          <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">className</span>=<span class="hljs-string">&quot;col-sm-12&quot;</span>&gt;</span>
-            <span class="hljs-tag">&lt;<span class="hljs-name">Headline</span>&gt;</span>Sample App!<span class="hljs-tag">&lt;/<span class="hljs-name">Headline</span>&gt;</span>
-          <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
-        <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
-      <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span>
+    return (
+      &lt;div className=&quot;container&quot;&gt;
+        &lt;div className=&quot;row&quot;&gt;
+          &lt;div className=&quot;col-sm-12&quot;&gt;
+            &lt;Headline&gt;Sample App!&lt;/Headline&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
     )
   }
 }
 </code></pre>
-<h4 id="componentsheadlinejsx"><code>components/Headline.jsx</code></h4>
-<pre><code class="lang-jsx"><span class="hljs-keyword">import</span> React <span class="hljs-keyword">from</span> <span class="hljs-string">&quot;react&quot;</span>
+<h4><a class="header" href="#componentsheadlinejsx" id="componentsheadlinejsx"><code>components/Headline.jsx</code></a></h4>
+<pre><code class="language-jsx">import React from &quot;react&quot;
 
-<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Headline</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">React</span>.<span class="hljs-title">Component</span> </span>{
+export default class Headline extends React.Component {
   render() {
-    <span class="hljs-keyword">return</span> (
-      <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>{ this.props.children }<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span></span>
+    return (
+      &lt;h1&gt;{ this.props.children }&lt;/h1&gt;
     )
   }
 }
 </code></pre>
-<h2 id="step-4-use-the-bundle">Step 4: Use the bundle</h2>
-<h4 id="view1html"><code>view1.html</code></h4>
-<pre><code class="lang-html">{% extends &quot;base.html&quot; %}
+<h2><a class="header" href="#step-4-use-the-bundle" id="step-4-use-the-bundle">Step 4: Use the bundle</a></h2>
+<h4><a class="header" href="#view1html" id="view1html"><code>view1.html</code></a></h4>
+<pre><code class="language-html">{% extends &quot;base.html&quot; %}
 {% load render_bundle from webpack_loader %}
 
 {% block main %}
-<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;App1&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
-{% render_bundle &apos;vendors&apos; %}
-{% render_bundle &apos;App1&apos; %}
+&lt;div id=&quot;App1&quot;&gt;&lt;/div&gt;
+{% render_bundle 'vendors' %}
+{% render_bundle 'App1' %}
 {% endblock %}
 </code></pre>
-<h4 id="settingspy"><code>settings.py</code></h4>
-<pre><code class="lang-python">WEBPACK_LOADER = {
-    <span class="hljs-string">&apos;DEFAULT&apos;</span>: {
-        <span class="hljs-string">&apos;BUNDLE_DIR_NAME&apos;</span>: <span class="hljs-string">&apos;bundles/local/&apos;</span>,
-        <span class="hljs-string">&apos;STATS_FILE&apos;</span>: os.path.join(BASE_DIR, <span class="hljs-string">&apos;webpack-stats-local.json&apos;</span>),
+<h4><a class="header" href="#settingspy" id="settingspy"><code>settings.py</code></a></h4>
+<pre><code class="language-python">WEBPACK_LOADER = {
+    'DEFAULT': {
+        'BUNDLE_DIR_NAME': 'bundles/local/',
+        'STATS_FILE': os.path.join(BASE_DIR, 'webpack-stats-local.json'),
     }
 }
 </code></pre>
-<h4 id="run-server">Run server</h4>
+<h4><a class="header" href="#run-server-2" id="run-server-2">Run server</a></h4>
 <pre><code>$ python manage.py runserver
-</code></pre><p>Open <a href="http://localhost:8000" target="_blank">http://localhost:8000</a></p>
-<h4 id="make-a-change">Make a change</h4>
+</code></pre>
+<p>Open <a href="http://localhost:8000">http://localhost:8000</a></p>
+<h4><a class="header" href="#make-a-change" id="make-a-change">Make a change</a></h4>
 <p>In <code>App1Container.jsx</code>, change <code>Sample App!</code> to <code>Something New!</code>.</p>
-<pre><code class="lang-bash">$ node_modules/.bin/webpack --config webpack.local.config.js
+<pre><code class="language-bash">$ node_modules/.bin/webpack --config webpack.local.config.js
 $ python manage.py runserver
 </code></pre>
-<p>Open <a href="http://localhost:8000" target="_blank">http://localhost:8000</a></p>
-<h2 id="step-5-hot-reloading">Step 5: Hot Reloading</h2>
+<p>Open <a href="http://localhost:8000">http://localhost:8000</a></p>
+<h2><a class="header" href="#step-5-hot-reloading" id="step-5-hot-reloading">Step 5: Hot Reloading</a></h2>
 <p>Make <code>server.js</code> file in <code>django</code> folder</p>
-<pre><code class="lang-bash">$ touch server.js
+<pre><code class="language-bash">$ touch server.js
 </code></pre>
-<h4 id="serverjs"><code>server.js</code></h4>
-<pre><code class="lang-javascript"><span class="hljs-keyword">var</span> webpack = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;webpack&apos;</span>)
-<span class="hljs-keyword">var</span> WebpackDevServer = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;webpack-dev-server&apos;</span>)
-<span class="hljs-keyword">var</span> config = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;./webpack.local.config&apos;</span>)
+<h4><a class="header" href="#serverjs" id="serverjs"><code>server.js</code></a></h4>
+<pre><code class="language-javascript">var webpack = require('webpack')
+var WebpackDevServer = require('webpack-dev-server')
+var config = require('./webpack.local.config')
 
-<span class="hljs-keyword">new</span> WebpackDevServer(webpack(config), {
+new WebpackDevServer(webpack(config), {
   publicPath: config.output.publicPath,
-  hot: <span class="hljs-literal">true</span>,
-  inline: <span class="hljs-literal">true</span>,
-  historyApiFallback: <span class="hljs-literal">true</span>,
-}).listen(<span class="hljs-number">3000</span>, config.ip, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">err, result</span>) </span>{
-  <span class="hljs-keyword">if</span> (err) {
-    <span class="hljs-built_in">console</span>.log(err)
+  hot: true,
+  inline: true,
+  historyApiFallback: true,
+}).listen(3000, config.ip, function (err, result) {
+  if (err) {
+    console.log(err)
   }
 
-  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&apos;Listening at &apos;</span> + config.ip + <span class="hljs-string">&apos;:3000&apos;</span>)
+  console.log('Listening at ' + config.ip + ':3000')
 })
 </code></pre>
-<h4 id="webpacklocalconfigjs"><code>webpack.local.config.js</code></h4>
-<pre><code class="lang-javascript"><span class="hljs-keyword">var</span> ip = <span class="hljs-string">&apos;localhost&apos;</span>
+<h4><a class="header" href="#webpacklocalconfigjs" id="webpacklocalconfigjs"><code>webpack.local.config.js</code></a></h4>
+<pre><code class="language-javascript">var ip = 'localhost'
 
 config.entry = {
   App1: [
-    <span class="hljs-string">&apos;webpack-dev-server/client?http://&apos;</span> + ip + <span class="hljs-string">&apos;:3000&apos;</span>,
-    <span class="hljs-string">&apos;webpack/hot/only-dev-server&apos;</span>,
-    <span class="hljs-string">&apos;./reactjs/App1&apos;</span>,
+    'webpack-dev-server/client?http://' + ip + ':3000',
+    'webpack/hot/only-dev-server',
+    './reactjs/App1',
   ],
 }
 
-config.output.publicPath = <span class="hljs-string">&apos;http://&apos;</span> + ip + <span class="hljs-string">&apos;:3000&apos;</span> + <span class="hljs-string">&apos;/assets/bundles/&apos;</span>
+config.output.publicPath = 'http://' + ip + ':3000' + '/assets/bundles/'
 
 config.plugins = config.plugins.concat([
-  <span class="hljs-keyword">new</span> webpack.HotModuleReplacementPlugin(),
-  <span class="hljs-keyword">new</span> webpack.NoErrorsPlugin(),
-  <span class="hljs-keyword">new</span> BundleTracker({filename: <span class="hljs-string">&apos;./webpack-stats-local.json&apos;</span>}),
+  new webpack.HotModuleReplacementPlugin(),
+  new webpack.NoErrorsPlugin(),
+  new BundleTracker({filename: './webpack-stats-local.json'}),
 ])
 </code></pre>
-<pre><code class="lang-bash"><span class="hljs-comment"># run these two commands in different terminer!</span>
+<pre><code class="language-bash"># run these two commands in different terminer!
 $ node server.js
 $ python manage.py runserver
 </code></pre>
-<p>Change codes in <code>App1Container.jsx</code> and checkout the updates in <a href="https://localhost:8000" target="_blank">https://localhost:8000</a></p>
-<h2 id="step-6-going-to-production">Step 6: Going to production</h2>
-<h4 id="create-webpackstageconfigjs">Create <code>webpack.stage.config.js</code></h4>
-<pre><code class="lang-bash">$ touch webpack.stage.config.js
+<p>Change codes in <code>App1Container.jsx</code> and checkout the updates in <a href="https://localhost:8000">https://localhost:8000</a></p>
+<h2><a class="header" href="#step-6-going-to-production" id="step-6-going-to-production">Step 6: Going to production</a></h2>
+<h4><a class="header" href="#create-webpackstageconfigjs" id="create-webpackstageconfigjs">Create <code>webpack.stage.config.js</code></a></h4>
+<pre><code class="language-bash">$ touch webpack.stage.config.js
 </code></pre>
-<pre><code class="lang-javascript"><span class="hljs-keyword">var</span> webpack = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;webpack&apos;</span>)
-<span class="hljs-keyword">var</span> BundleTracker = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;webpack-bundle-tracker&apos;</span>)
+<pre><code class="language-javascript">var webpack = require('webpack')
+var BundleTracker = require('webpack-bundle-tracker')
 
-<span class="hljs-keyword">var</span> config = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;./webpack.base.config.js&apos;</span>)
+var config = require('./webpack.base.config.js')
 
-config.output.path = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;path&apos;</span>).resolve(<span class="hljs-string">&apos;./djreact/static/bundles/stage/&apos;</span>)
+config.output.path = require('path').resolve('./djreact/static/bundles/stage/')
 
 config.plugins = config.plugins.concat([
-  <span class="hljs-keyword">new</span> BundleTracker({filename: <span class="hljs-string">&apos;./webpack-stats-stage.json&apos;</span>}),
+  new BundleTracker({filename: './webpack-stats-stage.json'}),
 
-  <span class="hljs-comment">// removes a lot of debugging code in React</span>
-  <span class="hljs-keyword">new</span> webpack.DefinePlugin({
-    <span class="hljs-string">&apos;process.env&apos;</span>: {
-      <span class="hljs-string">&apos;NODE_ENV&apos;</span>: <span class="hljs-built_in">JSON</span>.stringify(<span class="hljs-string">&apos;staging&apos;</span>),
-      <span class="hljs-string">&apos;BASE_API_URL&apos;</span>: <span class="hljs-built_in">JSON</span>.stringify(<span class="hljs-string">&apos;https://sandbox.example.com/api/v1/&apos;</span>),
+  // removes a lot of debugging code in React
+  new webpack.DefinePlugin({
+    'process.env': {
+      'NODE_ENV': JSON.stringify('staging'),
+      'BASE_API_URL': JSON.stringify('https://sandbox.example.com/api/v1/'),
   }}),
 
-  <span class="hljs-comment">// keeps hashes consistent between compilations</span>
-  <span class="hljs-keyword">new</span> webpack.optimize.OccurenceOrderPlugin(),
+  // keeps hashes consistent between compilations
+  new webpack.optimize.OccurenceOrderPlugin(),
 
-  <span class="hljs-comment">// minifies your code</span>
-  <span class="hljs-keyword">new</span> webpack.optimize.UglifyJsPlugin({
+  // minifies your code
+  new webpack.optimize.UglifyJsPlugin({
     compressor: {
-      warnings: <span class="hljs-literal">false</span>
+      warnings: false
     }
   })
 ])
 
-<span class="hljs-comment">// Add a loader for JSX files</span>
+// Add a loader for JSX files
 config.module.loaders.push(
-  { test: <span class="hljs-regexp">/\.jsx?$/</span>, exclude: <span class="hljs-regexp">/node_modules/</span>, loader: <span class="hljs-string">&apos;babel&apos;</span> }
+  { test: /\.jsx?$/, exclude: /node_modules/, loader: 'babel' }
 )
 
-<span class="hljs-built_in">module</span>.exports = config
+module.exports = config
 </code></pre>
-<h4 id="create-webpackprodconfigjs">Create <code>webpack.prod.config.js</code></h4>
-<pre><code class="lang-bash">$ touch webpack.prod.config.js
+<h4><a class="header" href="#create-webpackprodconfigjs" id="create-webpackprodconfigjs">Create <code>webpack.prod.config.js</code></a></h4>
+<pre><code class="language-bash">$ touch webpack.prod.config.js
 </code></pre>
-<pre><code class="lang-javascript"><span class="hljs-keyword">var</span> webpack = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;webpack&apos;</span>)
-<span class="hljs-keyword">var</span> BundleTracker = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;webpack-bundle-tracker&apos;</span>)
+<pre><code class="language-javascript">var webpack = require('webpack')
+var BundleTracker = require('webpack-bundle-tracker')
 
-<span class="hljs-keyword">var</span> config = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;./webpack.base.config.js&apos;</span>)
+var config = require('./webpack.base.config.js')
 
-config.output.path = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;path&apos;</span>).resolve(<span class="hljs-string">&apos;./djreact/static/bundles/prod/&apos;</span>)
+config.output.path = require('path').resolve('./djreact/static/bundles/prod/')
 
 config.plugins = config.plugins.concat([
-  <span class="hljs-keyword">new</span> BundleTracker({filename: <span class="hljs-string">&apos;./webpack-stats-prod.json&apos;</span>}),
+  new BundleTracker({filename: './webpack-stats-prod.json'}),
 
-  <span class="hljs-comment">// removes a lot of debugging code in React</span>
-  <span class="hljs-keyword">new</span> webpack.DefinePlugin({
-    <span class="hljs-string">&apos;process.env&apos;</span>: {
-      <span class="hljs-string">&apos;NODE_ENV&apos;</span>: <span class="hljs-built_in">JSON</span>.stringify(<span class="hljs-string">&apos;production&apos;</span>),
-      <span class="hljs-string">&apos;BASE_API_URL&apos;</span>: <span class="hljs-built_in">JSON</span>.stringify(<span class="hljs-string">&apos;https://example.com/api/v1/&apos;</span>),
+  // removes a lot of debugging code in React
+  new webpack.DefinePlugin({
+    'process.env': {
+      'NODE_ENV': JSON.stringify('production'),
+      'BASE_API_URL': JSON.stringify('https://example.com/api/v1/'),
   }}),
 
-  <span class="hljs-comment">// keeps hashes consistent between compilations</span>
-  <span class="hljs-keyword">new</span> webpack.optimize.OccurenceOrderPlugin(),
+  // keeps hashes consistent between compilations
+  new webpack.optimize.OccurenceOrderPlugin(),
 
-  <span class="hljs-comment">// minifies your code</span>
-  <span class="hljs-keyword">new</span> webpack.optimize.UglifyJsPlugin({
+  // minifies your code
+  new webpack.optimize.UglifyJsPlugin({
     compressor: {
-      warnings: <span class="hljs-literal">false</span>
+      warnings: false
     }
   })
 ])
 
-<span class="hljs-comment">// Add a loader for JSX files</span>
+// Add a loader for JSX files
 config.module.loaders.push(
-  { test: <span class="hljs-regexp">/\.jsx?$/</span>, exclude: <span class="hljs-regexp">/node_modules/</span>, loader: <span class="hljs-string">&apos;babel&apos;</span> }
+  { test: /\.jsx?$/, exclude: /node_modules/, loader: 'babel' }
 )
 
-<span class="hljs-built_in">module</span>.exports = config
+module.exports = config
 </code></pre>
-<h4 id="update-webpacklocalconfig">Update <code>webpack.local.config</code></h4>
-<pre><code class="lang-javascript">config.plugins = config.plugins.concat([
-  <span class="hljs-keyword">new</span> webpack.HotModuleReplacementPlugin(),
-  <span class="hljs-keyword">new</span> webpack.NoErrorsPlugin(),
-  <span class="hljs-keyword">new</span> BundleTracker({filename: <span class="hljs-string">&apos;./webpack-stats-local.json&apos;</span>}),
-  <span class="hljs-keyword">new</span> webpack.DefinePlugin({
-    <span class="hljs-string">&apos;process.env&apos;</span>: {
-      <span class="hljs-string">&apos;NODE_ENV&apos;</span>: <span class="hljs-built_in">JSON</span>.stringify(<span class="hljs-string">&apos;development&apos;</span>),
-      <span class="hljs-string">&apos;BASE_API_URL&apos;</span>: <span class="hljs-built_in">JSON</span>.stringify(<span class="hljs-string">&apos;https://&apos;</span>+ ip +<span class="hljs-string">&apos;:8000/api/v1/&apos;</span>),
+<h4><a class="header" href="#update-webpacklocalconfig" id="update-webpacklocalconfig">Update <code>webpack.local.config</code></a></h4>
+<pre><code class="language-javascript">config.plugins = config.plugins.concat([
+  new webpack.HotModuleReplacementPlugin(),
+  new webpack.NoErrorsPlugin(),
+  new BundleTracker({filename: './webpack-stats-local.json'}),
+  new webpack.DefinePlugin({
+    'process.env': {
+      'NODE_ENV': JSON.stringify('development'),
+      'BASE_API_URL': JSON.stringify('https://'+ ip +':8000/api/v1/'),
   }}),
 ])
 </code></pre>
-<h4 id="install-fabric">Install Fabric</h4>
-<pre><code class="lang-bash">$ pip install Fabric
+<h4><a class="header" href="#install-fabric" id="install-fabric">Install Fabric</a></h4>
+<pre><code class="language-bash">$ pip install Fabric
 </code></pre>
-<h4 id="modify-requirementstxt">Modify <code>requirements.txt</code></h4>
-<pre><code class="lang-txt">Django==1.9.3
+<h4><a class="header" href="#modify-requirementstxt" id="modify-requirementstxt">Modify <code>requirements.txt</code></a></h4>
+<pre><code class="language-txt">Django==1.9.3
 Fabric==1.10.2
 django-webpack-loader==0.2.4
 </code></pre>
-<h4 id="create-fabfilepy">Create <code>fabfile.py</code></h4>
-<pre><code class="lang-python"><span class="hljs-keyword">from</span> fabric.api <span class="hljs-keyword">import</span> local
+<h4><a class="header" href="#create-fabfilepy" id="create-fabfilepy">Create <code>fabfile.py</code></a></h4>
+<pre><code class="language-python">from fabric.api import local
 
-<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">webpack</span><span class="hljs-params">()</span>:</span>
-    local(<span class="hljs-string">&apos;rm -rf djreact/static/bundles/stage/*&apos;</span>)
-    local(<span class="hljs-string">&apos;rm -rf djreact/static/bundles/prod/*&apos;</span>)
-    local(<span class="hljs-string">&apos;webpack --config webpack.stage.config.js --progress --colors&apos;</span>)
-    local(<span class="hljs-string">&apos;webpack --config webpack.prod.config.js --progress --colors&apos;</span>)
+def webpack():
+    local('rm -rf djreact/static/bundles/stage/*')
+    local('rm -rf djreact/static/bundles/prod/*')
+    local('webpack --config webpack.stage.config.js --progress --colors')
+    local('webpack --config webpack.prod.config.js --progress --colors')
 </code></pre>
 <p>Your workflow will now look like this:</p>
 <ol>
@@ -1363,192 +627,177 @@ django-webpack-loader==0.2.4
 <li>Run a deployment</li>
 </ol>
 <p>On your servers, you will need a <code>local_settings.py</code> where you override the <code>WEBPACK_LOADER</code> setting like this:</p>
-<pre><code class="lang-javascript">WEBPACK_LOADER = {
-    &apos;DEFAULT&apos;: {
-        &apos;BUNDLE_DIR_NAME&apos;: &apos;bundles/stage/&apos;,  # end with slash
-        &apos;STATS_FILE&apos;: os.path.join(BASE_DIR, &apos;webpack-stats-stage.json&apos;),
+<pre><code class="language-javascript">WEBPACK_LOADER = {
+    'DEFAULT': {
+        'BUNDLE_DIR_NAME': 'bundles/stage/',  # end with slash
+        'STATS_FILE': os.path.join(BASE_DIR, 'webpack-stats-stage.json'),
     }
 }
 </code></pre>
 <p>And similar for prod, of course, just replace <code>stage</code> with <code>prod</code>.</p>
-<h2 id="step-7-add-redux">Step 7: Add <a href="http://redux.js.org" target="_blank">Redux</a></h2>
-<h4 id="create-action-creators-in-reactjsactionscounteractionsjs">Create Action Creators in <code>reactjs/actions/counterActions.js</code>:</h4>
-<pre><code class="lang-javascript"><span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> INCREASE = <span class="hljs-string">&quot;INCREASE&quot;</span>
-<span class="hljs-keyword">export</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">increaseCounter</span>(<span class="hljs-params"></span>) </span>{
-    <span class="hljs-keyword">return</span> {type: INCREASE}
+<h2><a class="header" href="#step-7-add-a-hrefhttpreduxjsorgreduxa" id="step-7-add-a-hrefhttpreduxjsorgreduxa">Step 7: Add <a href="http://redux.js.org">Redux</a></a></h2>
+<h4><a class="header" href="#create-action-creators-in-reactjsactionscounteractionsjs" id="create-action-creators-in-reactjsactionscounteractionsjs">Create Action Creators in <code>reactjs/actions/counterActions.js</code>:</a></h4>
+<pre><code class="language-javascript">export const INCREASE = &quot;INCREASE&quot;
+export function increaseCounter() {
+    return {type: INCREASE}
 }
 </code></pre>
-<h4 id="create-reactjsreducerscountersjs">Create <code>reactjs/reducers/counters.js</code></h4>
-<pre><code class="lang-javascript"><span class="hljs-keyword">import</span> * <span class="hljs-keyword">as</span> sampleActions <span class="hljs-keyword">from</span> <span class="hljs-string">&quot;../actions/counterActions&quot;</span>
+<h4><a class="header" href="#create-reactjsreducerscountersjs" id="create-reactjsreducerscountersjs">Create <code>reactjs/reducers/counters.js</code></a></h4>
+<pre><code class="language-javascript">import * as sampleActions from &quot;../actions/counterActions&quot;
 
-<span class="hljs-keyword">const</span> initialState = {
-  clicks: <span class="hljs-number">0</span>,
+const initialState = {
+  clicks: 0,
 }
 
-<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">counters</span>(<span class="hljs-params">state=initialState, action={}</span>) </span>{
-  <span class="hljs-keyword">switch</span> (action.type) {
-  <span class="hljs-keyword">case</span> sampleActions.INCREASE:
-    <span class="hljs-keyword">return</span> {...state, clicks: state.clicks + <span class="hljs-number">1</span>}
-  <span class="hljs-keyword">default</span>:
-    <span class="hljs-keyword">return</span> state
+export default function counters(state=initialState, action={}) {
+  switch (action.type) {
+  case sampleActions.INCREASE:
+    return {...state, clicks: state.clicks + 1}
+  default:
+    return state
   }
 }
 </code></pre>
-<h4 id="create-reactjsreducersindexjs">Create <code>reactjs/reducers/index.js</code></h4>
-<pre><code class="lang-javascript"><span class="hljs-keyword">export</span> { <span class="hljs-keyword">default</span> <span class="hljs-keyword">as</span> counters } <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;./counters&apos;</span>
+<h4><a class="header" href="#create-reactjsreducersindexjs" id="create-reactjsreducersindexjs">Create <code>reactjs/reducers/index.js</code></a></h4>
+<pre><code class="language-javascript">export { default as counters } from './counters'
 </code></pre>
-<h4 id="update-app1jsx">Update App1.jsx</h4>
-<pre><code class="lang-jsx"><span class="hljs-keyword">import</span> React <span class="hljs-keyword">from</span> <span class="hljs-string">&quot;react&quot;</span>
-<span class="hljs-keyword">import</span> { render } <span class="hljs-keyword">from</span> <span class="hljs-string">&quot;react-dom&quot;</span>
-<span class="hljs-keyword">import</span> {
+<h4><a class="header" href="#update-app1jsx" id="update-app1jsx">Update App1.jsx</a></h4>
+<pre><code class="language-jsx">import React from &quot;react&quot;
+import { render } from &quot;react-dom&quot;
+import {
   createStore,
   compose,
   applyMiddleware,
   combineReducers,
-} <span class="hljs-keyword">from</span> <span class="hljs-string">&quot;redux&quot;</span>
-<span class="hljs-keyword">import</span> { Provider } <span class="hljs-keyword">from</span> <span class="hljs-string">&quot;react-redux&quot;</span>
-<span class="hljs-keyword">import</span> thunk <span class="hljs-keyword">from</span> <span class="hljs-string">&quot;redux-thunk&quot;</span>
+} from &quot;redux&quot;
+import { Provider } from &quot;react-redux&quot;
+import thunk from &quot;redux-thunk&quot;
 
-<span class="hljs-keyword">import</span> * <span class="hljs-keyword">as</span> reducers <span class="hljs-keyword">from</span> <span class="hljs-string">&quot;./reducers&quot;</span>
-<span class="hljs-keyword">import</span> App1Container <span class="hljs-keyword">from</span> <span class="hljs-string">&quot;./containers/App1Container&quot;</span>
+import * as reducers from &quot;./reducers&quot;
+import App1Container from &quot;./containers/App1Container&quot;
 
-<span class="hljs-keyword">let</span> finalCreateStore = compose(
+let finalCreateStore = compose(
   applyMiddleware(thunk),
-  <span class="hljs-built_in">window</span>.devToolsExtension ? <span class="hljs-built_in">window</span>.devToolsExtension() : f =&gt; f
+  window.devToolsExtension ? window.devToolsExtension() : f =&gt; f
 )(createStore)
-<span class="hljs-keyword">let</span> reducer = combineReducers(reducers)
-<span class="hljs-keyword">let</span> store = finalCreateStore(reducer)
+let reducer = combineReducers(reducers)
+let store = finalCreateStore(reducer)
 
-<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">App1</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">React</span>.<span class="hljs-title">Component</span> </span>{
+class App1 extends React.Component {
   render() {
-    <span class="hljs-keyword">return</span> (
-      <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">Provider</span> <span class="hljs-attr">store</span>=<span class="hljs-string">{store}</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-name">App1Container</span> /&gt;</span>
-      <span class="hljs-tag">&lt;/<span class="hljs-name">Provider</span>&gt;</span>
+    return (
+      &lt;Provider store={store}&gt;
+        &lt;App1Container /&gt;
+      &lt;/Provider&gt;
     )
   }
 }
 
-render(<span class="hljs-tag">&lt;<span class="hljs-name">App1</span>/&gt;</span>, document.getElementById(&apos;App1&apos;))
-</span></code></pre>
-<h4 id="update-app1containerjsx">Update <code>App1Container.jsx</code></h4>
-<pre><code class="lang-jsx"><span class="hljs-keyword">import</span> React <span class="hljs-keyword">from</span> <span class="hljs-string">&quot;react&quot;</span>
+render(&lt;App1/&gt;, document.getElementById('App1'))
+</code></pre>
+<h4><a class="header" href="#update-app1containerjsx" id="update-app1containerjsx">Update <code>App1Container.jsx</code></a></h4>
+<pre><code class="language-jsx">import React from &quot;react&quot;
 
-<span class="hljs-keyword">import</span> { connect } <span class="hljs-keyword">from</span> <span class="hljs-string">&quot;react-redux&quot;</span>
+import { connect } from &quot;react-redux&quot;
 
-<span class="hljs-keyword">import</span> * <span class="hljs-keyword">as</span> counterActions <span class="hljs-keyword">from</span> <span class="hljs-string">&quot;../actions/counterActions&quot;</span>
-<span class="hljs-keyword">import</span> Headline <span class="hljs-keyword">from</span> <span class="hljs-string">&quot;../components/Headline&quot;</span>
+import * as counterActions from &quot;../actions/counterActions&quot;
+import Headline from &quot;../components/Headline&quot;
 
 @connect(state =&gt; ({
   counters: state.counters,
 }))
-<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">SampleAppContainer</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">React</span>.<span class="hljs-title">Component</span> </span>{
+export default class SampleAppContainer extends React.Component {
   handleClick() {
-    <span class="hljs-keyword">let</span> {dispatch} = <span class="hljs-keyword">this</span>.props;
+    let {dispatch} = this.props;
     dispatch(counterActions.increaseCounter())
   }
 
   render() {
-    <span class="hljs-keyword">let</span> {counters} = <span class="hljs-keyword">this</span>.props
-    <span class="hljs-keyword">return</span> (
-      <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">className</span>=<span class="hljs-string">&quot;container&quot;</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">className</span>=<span class="hljs-string">&quot;row&quot;</span>&gt;</span>
-          <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">className</span>=<span class="hljs-string">&quot;col-sm-12&quot;</span>&gt;</span>
-            <span class="hljs-tag">&lt;<span class="hljs-name">Headline</span>&gt;</span>Sample App!<span class="hljs-tag">&lt;/<span class="hljs-name">Headline</span>&gt;</span>
-            <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">onClick</span>=<span class="hljs-string">{()</span> =&gt;</span> this.handleClick()}&gt;INCREASE<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
-            <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>{counters.clicks}<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
-            <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>{process.env.BASE_API_URL}<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
-          <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
-        <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
-      <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span>
+    let {counters} = this.props
+    return (
+      &lt;div className=&quot;container&quot;&gt;
+        &lt;div className=&quot;row&quot;&gt;
+          &lt;div className=&quot;col-sm-12&quot;&gt;
+            &lt;Headline&gt;Sample App!&lt;/Headline&gt;
+            &lt;div onClick={() =&gt; this.handleClick()}&gt;INCREASE&lt;/div&gt;
+            &lt;p&gt;{counters.clicks}&lt;/p&gt;
+            &lt;p&gt;{process.env.BASE_API_URL}&lt;/p&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
     )
   }
 }
 </code></pre>
-<hr>
-<h2 id="refer-to">Refer to</h2>
-<p><a href="https://github.com/mbrochh/django-reactjs-boilerplate" target="_blank">Django React Boilerplate</a></p>
+<hr />
+<h2><a class="header" href="#refer-to" id="refer-to">Refer to</a></h2>
+<p><a href="https://github.com/mbrochh/django-reactjs-boilerplate">Django React Boilerplate</a></p>
 
-                                
-                                </section>
-                            
-    </div>
-    <div class="search-results">
-        <div class="has-results">
-            
-            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
-            <ul class="search-results-list"></ul>
-            
-        </div>
-        <div class="no-results">
-            
-            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
-            
-        </div>
-    </div>
-</div>
+                    </main>
 
-                        </div>
-                    </div>
-                
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        
+                            <a rel="prev" href="../python/fundamental-python.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                        
+
+                        
+                            <a rel="next" href="../python/python-tips.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
             </div>
 
-            
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
                 
-                <a href="fundamental-python.html" class="navigation navigation-prev " aria-label="Previous page: Fundamental Python">
-                    <i class="fa fa-angle-left"></i>
-                </a>
+                    <a rel="prev" href="../python/fundamental-python.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
                 
-                
-                <a href="python-tips.html" class="navigation navigation-next " aria-label="Next page: Python Tips">
-                    <i class="fa fa-angle-right"></i>
-                </a>
-                
-            
-        
-    </div>
 
-    <script>
-        var gitbook = gitbook || [];
-        gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Python React Setup","level":"1.11.3","depth":2,"next":{"title":"Python Tips","level":"1.11.4","depth":2,"path":"python/python-tips.md","ref":"python/python-tips.md","articles":[]},"previous":{"title":"Fundamental Python","level":"1.11.2","depth":2,"path":"python/fundamental-python.md","ref":"python/fundamental-python.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["ga"],"pluginsConfig":{"ga":{"configuration":"auto","token":"UA-114603670-1"},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"python/python-react-setup.md","mtime":"2020-05-10T04:53:26.599Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-05-10T04:53:55.471Z"},"basePath":"..","book":{"language":""}});
-        });
-    </script>
-</div>
+                
+                    <a rel="next" href="../python/python-tips.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+                
+            </nav>
+
+        </div>
 
         
-    <script src="../gitbook/gitbook.js"></script>
-    <script src="../gitbook/theme.js"></script>
-    
+
         
-        <script src="../gitbook/gitbook-plugin-ga/plugin.js"></script>
+
         
-    
         
-        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
         
-    
+        <script type="text/javascript">
+            window.playpen_copyable = true;
+        </script>
         
-        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+
         
-    
+
         
-        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        <script src="../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../searcher.js" type="text/javascript" charset="utf-8"></script>
         
-    
+
+        <script src="../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
         
-        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+
         
-    
-        
-        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
-        
-    
-        
-        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
-        
-    
 
     </body>
 </html>
-

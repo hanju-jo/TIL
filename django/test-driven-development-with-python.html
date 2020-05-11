@@ -1,1161 +1,422 @@
-
 <!DOCTYPE HTML>
-<html lang="" >
+<html lang="ko" class="sidebar-visible no-js light">
     <head>
+        <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
+        <title>Test Driven Development With Python - Hanju's TIL Book</title>
+        
+
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>Test Driven Development With Python · GitBook</title>
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
-        <meta name="generator" content="GitBook 3.2.3">
-        
-        
-        
-    
-    <link rel="stylesheet" href="../gitbook/style.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
 
-    
-            
-                
-                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
-                
-            
-                
-                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
-                
-            
-                
-                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
-                
-            
-        
+        <link rel="shortcut icon" href="../favicon.png">
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+        <link rel="stylesheet" href="../css/print.css" media="print">
 
-    
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:500" rel="stylesheet" type="text/css">
 
-    
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../highlight.css">
+        <link rel="stylesheet" href="../tomorrow-night.css">
+        <link rel="stylesheet" href="../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
         
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
 
         
-    
-    
-    <meta name="HandheldFriendly" content="true"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
-    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
-
-    
-    
-    <link rel="prev" href="django-with-postgresql-on-aws-ec2.html" />
-    
-
+        <!-- MathJax -->
+        <script async type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        
     </head>
     <body>
-        
-<div class="book">
-    <div class="book-summary">
-        
-            
-<div id="book-search-input" role="search">
-    <input type="text" placeholder="Type to search" />
-</div>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "light" : "light";
+        </script>
 
-            
-                <nav role="navigation">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item affix "><a href="../index.html">README</a></li><li class="chapter-item "><a href="../data-visualization/index.html"><strong aria-hidden="true">1.</strong> Data Visualization</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../data-visualization/d3.js-tutorial.html"><strong aria-hidden="true">1.1.</strong> D3.js Tutorial</a></li></ol></li><li class="chapter-item "><a href="../database/index.html"><strong aria-hidden="true">2.</strong> Database</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../database/mongodb-setup.html"><strong aria-hidden="true">2.1.</strong> Mongodb Setup</a></li><li class="chapter-item "><a href="../database/postgresql-on-ubuntu.html"><strong aria-hidden="true">2.2.</strong> Postgresql On Ubuntu</a></li></ol></li><li class="chapter-item "><a href="../design-patterns/index.html"><strong aria-hidden="true">3.</strong> Design Patterns</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../design-patterns/abstract-factory.html"><strong aria-hidden="true">3.1.</strong> Abstract Factory</a></li><li class="chapter-item "><a href="../design-patterns/adapter.html"><strong aria-hidden="true">3.2.</strong> Adapter</a></li><li class="chapter-item "><a href="../design-patterns/decorator.html"><strong aria-hidden="true">3.3.</strong> Decorator</a></li><li class="chapter-item "><a href="../design-patterns/delegation.html"><strong aria-hidden="true">3.4.</strong> Delegation</a></li><li class="chapter-item "><a href="../design-patterns/factory.html"><strong aria-hidden="true">3.5.</strong> Factory</a></li></ol></li><li class="chapter-item expanded "><a href="../django/index.html"><strong aria-hidden="true">4.</strong> Django</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../django/deploying-django-project-on-ubuntu-using-nginx-and-gunicorn.html"><strong aria-hidden="true">4.1.</strong> Deploying Django Project On Ubuntu Using Nginx And Gunicorn</a></li><li class="chapter-item "><a href="../django/django-bluebook.html"><strong aria-hidden="true">4.2.</strong> Django Bluebook</a></li><li class="chapter-item "><a href="../django/django-setup.html"><strong aria-hidden="true">4.3.</strong> Django Setup</a></li><li class="chapter-item "><a href="../django/django-with-postgresql-on-aws-ec2.html"><strong aria-hidden="true">4.4.</strong> Django With Postgresql On Aws Ec2</a></li><li class="chapter-item expanded "><a href="../django/test-driven-development-with-python.html" class="active"><strong aria-hidden="true">4.5.</strong> Test Driven Development With Python</a></li></ol></li><li class="chapter-item "><a href="../docker/index.html"><strong aria-hidden="true">5.</strong> Docker</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../docker/about-docker.html"><strong aria-hidden="true">5.1.</strong> About Docker</a></li><li class="chapter-item "><a href="../docker/docker-cheatsheet.html"><strong aria-hidden="true">5.2.</strong> Docker Cheatsheet</a></li><li class="chapter-item "><a href="../docker/docker-for-jekyll.html"><strong aria-hidden="true">5.3.</strong> Docker For Jekyll</a></li><li class="chapter-item "><a href="../docker/gollum-via-docker.html"><strong aria-hidden="true">5.4.</strong> Gollum Via Docker</a></li></ol></li><li class="chapter-item "><a href="../english/index.html"><strong aria-hidden="true">6.</strong> English</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../english/newly-learned-words-or-phrases.html"><strong aria-hidden="true">6.1.</strong> Newly Learned Words Or Phrases</a></li></ol></li><li class="chapter-item "><a href="../git/index.html"><strong aria-hidden="true">7.</strong> Git</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../git/git-cheat-sheet.html"><strong aria-hidden="true">7.1.</strong> Git Cheat Sheet</a></li><li class="chapter-item "><a href="../git/steps-after-fork.html"><strong aria-hidden="true">7.2.</strong> Steps After Fork</a></li></ol></li><li class="chapter-item "><a href="../jekyll/index.html"><strong aria-hidden="true">8.</strong> Jekyll</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../jekyll/add-disqus-to-jekyll.html"><strong aria-hidden="true">8.1.</strong> Add Disqus To Jekyll</a></li><li class="chapter-item "><a href="../jekyll/jekyll-with-google-analytics.html"><strong aria-hidden="true">8.2.</strong> Jekyll With Google Analytics</a></li></ol></li><li class="chapter-item "><a href="../ml/index.html"><strong aria-hidden="true">9.</strong> Ml</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../ml/ml-study-notes.html"><strong aria-hidden="true">9.1.</strong> Ml Study Notes</a></li></ol></li><li class="chapter-item "><a href="../python/index.html"><strong aria-hidden="true">10.</strong> Python</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../python/effective-python.html"><strong aria-hidden="true">10.1.</strong> Effective Python</a></li><li class="chapter-item "><a href="../python/fundamental-python.html"><strong aria-hidden="true">10.2.</strong> Fundamental Python</a></li><li class="chapter-item "><a href="../python/python-react-setup.html"><strong aria-hidden="true">10.3.</strong> Python React Setup</a></li><li class="chapter-item "><a href="../python/python-tips.html"><strong aria-hidden="true">10.4.</strong> Python Tips</a></li><li class="chapter-item "><a href="../python/python-virtualenv.html"><strong aria-hidden="true">10.5.</strong> Python Virtualenv</a></li><li class="chapter-item "><a href="../python/transforming-code-into-beautiful-idiomatic-python.html"><strong aria-hidden="true">10.6.</strong> Transforming Code Into Beautiful Idiomatic Python</a></li></ol></li><li class="chapter-item "><a href="../reactjs/index.html"><strong aria-hidden="true">11.</strong> Reactjs</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../reactjs/reactjs-setup.html"><strong aria-hidden="true">11.1.</strong> Reactjs Setup</a></li></ol></li><li class="chapter-item "><a href="../sicp/index.html"><strong aria-hidden="true">12.</strong> Sicp</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../sicp/1_02.html"><strong aria-hidden="true">12.1.</strong> 1_02</a></li><li class="chapter-item "><a href="../sicp/1_03.html"><strong aria-hidden="true">12.2.</strong> 1_03</a></li><li class="chapter-item "><a href="../sicp/1_05.html"><strong aria-hidden="true">12.3.</strong> 1_05</a></li><li class="chapter-item "><a href="../sicp/1_06.html"><strong aria-hidden="true">12.4.</strong> 1_06</a></li><li class="chapter-item "><a href="../sicp/1_07.html"><strong aria-hidden="true">12.5.</strong> 1_07</a></li><li class="chapter-item "><a href="../sicp/1_08.html"><strong aria-hidden="true">12.6.</strong> 1_08</a></li><li class="chapter-item "><a href="../sicp/1_09.html"><strong aria-hidden="true">12.7.</strong> 1_09</a></li><li class="chapter-item "><a href="../sicp/1_10.html"><strong aria-hidden="true">12.8.</strong> 1_10</a></li><li class="chapter-item "><a href="../sicp/racket.html"><strong aria-hidden="true">12.9.</strong> Racket</a></li></ol></li><li class="chapter-item "><a href="../snippets/index.html"><strong aria-hidden="true">13.</strong> Snippets</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../snippets/c++.html"><strong aria-hidden="true">13.1.</strong> C++</a></li></ol></li><li class="chapter-item "><a href="../uncategorized/index.html"><strong aria-hidden="true">14.</strong> Uncategorized</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../uncategorized/dotfiles.html"><strong aria-hidden="true">14.1.</strong> Dotfiles</a></li><li class="chapter-item "><a href="../uncategorized/hmac.html"><strong aria-hidden="true">14.2.</strong> Hmac</a></li><li class="chapter-item "><a href="../uncategorized/unix-command-tips.html"><strong aria-hidden="true">14.3.</strong> Unix Command Tips</a></li></ol></li><li class="chapter-item "><a href="../vim/index.html"><strong aria-hidden="true">15.</strong> Vim</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../vim/plugin-manager-vim-plug.html"><strong aria-hidden="true">15.1.</strong> Plugin Manager Vim Plug</a></li><li class="chapter-item "><a href="../vim/plugin-manager-vundle.html"><strong aria-hidden="true">15.2.</strong> Plugin Manager Vundle</a></li><li class="chapter-item "><a href="../vim/plugin-youcompleteme.html"><strong aria-hidden="true">15.3.</strong> Plugin Youcompleteme</a></li></ol></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                        
+                    </div>
+
+                    <h1 class="menu-title">Hanju's TIL Book</h1>
+
+                    <div class="right-buttons">
+                        <a href="../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        
+                        <a href="https://github.com/hanju-jo/TIL" title="Git repository" aria-label="Git repository">
+                            <i id="git-repository-button" class="fa fa-github"></i>
+                        </a>
+                        
+                    </div>
+                </div>
+
+                
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" name="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
                 
 
-
-<ul class="summary">
-    
-    
-
-    
-
-    
-        
-        <li class="header">Categories</li>
-        
-        
-    
-        <li class="chapter " data-level="1.1" data-path="../">
-            
-                <a href="../">
-            
-                    
-                    Introduction
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.2" >
-            
-                <span>
-            
-                    
-                    Data Visualization
-            
-                </span>
-            
-
-            
-            <ul class="articles">
-                
-    
-        <li class="chapter " data-level="1.2.1" data-path="../data-visualization/d3.js-tutorial.html">
-            
-                <a href="../data-visualization/d3.js-tutorial.html">
-            
-                    
-                    D3 Tutorial
-            
-                </a>
-            
-
-            
-        </li>
-    
-
-            </ul>
-            
-        </li>
-    
-        <li class="chapter " data-level="1.3" >
-            
-                <span>
-            
-                    
-                    Database
-            
-                </span>
-            
-
-            
-            <ul class="articles">
-                
-    
-        <li class="chapter " data-level="1.3.1" data-path="../database/mongodb-setup.html">
-            
-                <a href="../database/mongodb-setup.html">
-            
-                    
-                    Mongodb Setup
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.3.2" data-path="../database/postgresql-on-ubuntu.html">
-            
-                <a href="../database/postgresql-on-ubuntu.html">
-            
-                    
-                    Postgresql On Ubuntu
-            
-                </a>
-            
-
-            
-        </li>
-    
-
-            </ul>
-            
-        </li>
-    
-        <li class="chapter " data-level="1.4" >
-            
-                <span>
-            
-                    
-                    Design Patterns
-            
-                </span>
-            
-
-            
-            <ul class="articles">
-                
-    
-        <li class="chapter " data-level="1.4.1" data-path="../design-patterns/abstract-factory.html">
-            
-                <a href="../design-patterns/abstract-factory.html">
-            
-                    
-                    Abstract Factory
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.4.2" data-path="../design-patterns/adapter.html">
-            
-                <a href="../design-patterns/adapter.html">
-            
-                    
-                    Adapter
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.4.3" data-path="../design-patterns/decorator.html">
-            
-                <a href="../design-patterns/decorator.html">
-            
-                    
-                    Decorator
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.4.4" data-path="../design-patterns/delegation.html">
-            
-                <a href="../design-patterns/delegation.html">
-            
-                    
-                    Delegation
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.4.5" data-path="../design-patterns/factory.html">
-            
-                <a href="../design-patterns/factory.html">
-            
-                    
-                    Factory
-            
-                </a>
-            
-
-            
-        </li>
-    
-
-            </ul>
-            
-        </li>
-    
-        <li class="chapter " data-level="1.5" >
-            
-                <span>
-            
-                    
-                    Django
-            
-                </span>
-            
-
-            
-            <ul class="articles">
-                
-    
-        <li class="chapter " data-level="1.5.1" data-path="deploying-django-project-on-ubuntu-using-nginx-and-gunicorn.html">
-            
-                <a href="deploying-django-project-on-ubuntu-using-nginx-and-gunicorn.html">
-            
-                    
-                    Deploying Django Project On Ubuntu Using Nginx And Gunicorn
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.5.2" data-path="django-bluebook.html">
-            
-                <a href="django-bluebook.html">
-            
-                    
-                    Django Bluebook
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.5.3" data-path="django-setup.html">
-            
-                <a href="django-setup.html">
-            
-                    
-                    Django Setup
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.5.4" data-path="django-with-postgresql-on-aws-ec2.html">
-            
-                <a href="django-with-postgresql-on-aws-ec2.html">
-            
-                    
-                    Django With Postgresql On Aws Ec2
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter active" data-level="1.5.5" data-path="test-driven-development-with-python.html">
-            
-                <a href="test-driven-development-with-python.html">
-            
-                    
-                    Test Driven Development With Python
-            
-                </a>
-            
-
-            
-        </li>
-    
-
-            </ul>
-            
-        </li>
-    
-        <li class="chapter " data-level="1.6" >
-            
-                <span>
-            
-                    
-                    Docker
-            
-                </span>
-            
-
-            
-            <ul class="articles">
-                
-    
-        <li class="chapter " data-level="1.6.1" data-path="../docker/about-docker.html">
-            
-                <a href="../docker/about-docker.html">
-            
-                    
-                    About Docker
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.6.2" data-path="../docker/docker-cheatsheet.html">
-            
-                <a href="../docker/docker-cheatsheet.html">
-            
-                    
-                    Docker Cheatsheet
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.6.3" data-path="../docker/docker-for-jekyll.html">
-            
-                <a href="../docker/docker-for-jekyll.html">
-            
-                    
-                    Docker For Jekyll
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.6.4" data-path="../docker/gollum-via-docker.html">
-            
-                <a href="../docker/gollum-via-docker.html">
-            
-                    
-                    Gollum Via Docker
-            
-                </a>
-            
-
-            
-        </li>
-    
-
-            </ul>
-            
-        </li>
-    
-        <li class="chapter " data-level="1.7" >
-            
-                <span>
-            
-                    
-                    English
-            
-                </span>
-            
-
-            
-            <ul class="articles">
-                
-    
-        <li class="chapter " data-level="1.7.1" data-path="../english/newly-learned-words-or-phrases.html">
-            
-                <a href="../english/newly-learned-words-or-phrases.html">
-            
-                    
-                    Newly Learned Words Or Phrases
-            
-                </a>
-            
-
-            
-        </li>
-    
-
-            </ul>
-            
-        </li>
-    
-        <li class="chapter " data-level="1.8" >
-            
-                <span>
-            
-                    
-                    Git
-            
-                </span>
-            
-
-            
-            <ul class="articles">
-                
-    
-        <li class="chapter " data-level="1.8.1" data-path="../git/git-cheat-sheet.html">
-            
-                <a href="../git/git-cheat-sheet.html">
-            
-                    
-                    Git Cheat Sheet
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.8.2" data-path="../git/steps-after-fork.html">
-            
-                <a href="../git/steps-after-fork.html">
-            
-                    
-                    Steps After Fork
-            
-                </a>
-            
-
-            
-        </li>
-    
-
-            </ul>
-            
-        </li>
-    
-        <li class="chapter " data-level="1.9" >
-            
-                <span>
-            
-                    
-                    Jekyll
-            
-                </span>
-            
-
-            
-            <ul class="articles">
-                
-    
-        <li class="chapter " data-level="1.9.1" data-path="../jekyll/add-disqus-to-jekyll.html">
-            
-                <a href="../jekyll/add-disqus-to-jekyll.html">
-            
-                    
-                    Add Disqus To Jekyll
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.9.2" data-path="../jekyll/jekyll-with-google-analytics.html">
-            
-                <a href="../jekyll/jekyll-with-google-analytics.html">
-            
-                    
-                    Jekyll With Google Analytics
-            
-                </a>
-            
-
-            
-        </li>
-    
-
-            </ul>
-            
-        </li>
-    
-        <li class="chapter " data-level="1.10" >
-            
-                <span>
-            
-                    
-                    Machine Learning
-            
-                </span>
-            
-
-            
-            <ul class="articles">
-                
-    
-        <li class="chapter " data-level="1.10.1" data-path="../ml/ml-study-notes.html">
-            
-                <a href="../ml/ml-study-notes.html">
-            
-                    
-                    Ml Study Notes
-            
-                </a>
-            
-
-            
-        </li>
-    
-
-            </ul>
-            
-        </li>
-    
-        <li class="chapter " data-level="1.11" >
-            
-                <span>
-            
-                    
-                    Python
-            
-                </span>
-            
-
-            
-            <ul class="articles">
-                
-    
-        <li class="chapter " data-level="1.11.1" data-path="../python/effective-python.html">
-            
-                <a href="../python/effective-python.html">
-            
-                    
-                    Effective Python
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.11.2" data-path="../python/fundamental-python.html">
-            
-                <a href="../python/fundamental-python.html">
-            
-                    
-                    Fundamental Python
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.11.3" data-path="../python/python-react-setup.html">
-            
-                <a href="../python/python-react-setup.html">
-            
-                    
-                    Python React Setup
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.11.4" data-path="../python/python-tips.html">
-            
-                <a href="../python/python-tips.html">
-            
-                    
-                    Python Tips
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.11.5" data-path="../python/python-virtualenv.html">
-            
-                <a href="../python/python-virtualenv.html">
-            
-                    
-                    Python Virtualenv
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.11.6" data-path="../python/transforming-code-into-beautiful-idiomatic-python.html">
-            
-                <a href="../python/transforming-code-into-beautiful-idiomatic-python.html">
-            
-                    
-                    Transforming Code Into Beautiful Idiomatic Python
-            
-                </a>
-            
-
-            
-        </li>
-    
-
-            </ul>
-            
-        </li>
-    
-        <li class="chapter " data-level="1.12" >
-            
-                <span>
-            
-                    
-                    React.js
-            
-                </span>
-            
-
-            
-            <ul class="articles">
-                
-    
-        <li class="chapter " data-level="1.12.1" data-path="../reactjs/reactjs-setup.html">
-            
-                <a href="../reactjs/reactjs-setup.html">
-            
-                    
-                    Reactjs Setup
-            
-                </a>
-            
-
-            
-        </li>
-    
-
-            </ul>
-            
-        </li>
-    
-        <li class="chapter " data-level="1.13" >
-            
-                <span>
-            
-                    
-                    Snippets
-            
-                </span>
-            
-
-            
-            <ul class="articles">
-                
-    
-        <li class="chapter " data-level="1.13.1" data-path="../snippets/c++.html">
-            
-                <a href="../snippets/c++.html">
-            
-                    
-                    C++
-            
-                </a>
-            
-
-            
-        </li>
-    
-
-            </ul>
-            
-        </li>
-    
-        <li class="chapter " data-level="1.14" >
-            
-                <span>
-            
-                    
-                    Uncategorized
-            
-                </span>
-            
-
-            
-            <ul class="articles">
-                
-    
-        <li class="chapter " data-level="1.14.1" data-path="../uncategorized/dotfiles.html">
-            
-                <a href="../uncategorized/dotfiles.html">
-            
-                    
-                    Dotfiles
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.14.2" data-path="../uncategorized/hmac.html">
-            
-                <a href="../uncategorized/hmac.html">
-            
-                    
-                    HMAC
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.14.3" data-path="../uncategorized/unix-command-tips.html">
-            
-                <a href="../uncategorized/unix-command-tips.html">
-            
-                    
-                    Unix Command Tips
-            
-                </a>
-            
-
-            
-        </li>
-    
-
-            </ul>
-            
-        </li>
-    
-        <li class="chapter " data-level="1.15" >
-            
-                <span>
-            
-                    
-                    Vim
-            
-                </span>
-            
-
-            
-            <ul class="articles">
-                
-    
-        <li class="chapter " data-level="1.15.1" data-path="../vim/plugin-manager-vim-plug.html">
-            
-                <a href="../vim/plugin-manager-vim-plug.html">
-            
-                    
-                    Plugin Manager Vim Plug
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.15.2" data-path="../vim/plugin-manager-vundle.html">
-            
-                <a href="../vim/plugin-manager-vundle.html">
-            
-                    
-                    Plugin Manager Vundle
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.15.3" data-path="../vim/plugin-youcompleteme.html">
-            
-                <a href="../vim/plugin-youcompleteme.html">
-            
-                    
-                    Plugin Youcompleteme
-            
-                </a>
-            
-
-            
-        </li>
-    
-
-            </ul>
-            
-        </li>
-    
-
-    
-
-    <li class="divider"></li>
-
-    <li>
-        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
-            Published with GitBook
-        </a>
-    </li>
-</ul>
-
-
-                </nav>
-            
-        
-    </div>
-
-    <div class="book-body">
-        
-            <div class="body-inner">
-                
-                    
-
-<div class="book-header" role="navigation">
-    
-
-    <!-- Title -->
-    <h1>
-        <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >Test Driven Development With Python</a>
-    </h1>
-</div>
-
-
-
-
-                    <div class="page-wrapper" tabindex="-1" role="main">
-                        <div class="page-inner">
-                            
-<div id="book-search-results">
-    <div class="search-noresults">
-    
-                                <section class="normal markdown-section">
-                                
-                                <h1 id="&#xD074;&#xB9B0;-&#xCF54;&#xB4DC;&#xB97C;-&#xC704;&#xD55C;-&#xD14C;&#xC2A4;&#xD2B8;-&#xC8FC;&#xB3C4;-&#xAC1C;&#xBC1C;">&#xD074;&#xB9B0; &#xCF54;&#xB4DC;&#xB97C; &#xC704;&#xD55C; &#xD14C;&#xC2A4;&#xD2B8; &#xC8FC;&#xB3C4; &#xAC1C;&#xBC1C;</h1>
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1><a class="header" href="#클린-코드를-위한-테스트-주도-개발" id="클린-코드를-위한-테스트-주도-개발">클린 코드를 위한 테스트 주도 개발</a></h1>
 <blockquote>
-<p>&#xC6D0;&#xC11C; &#xC18C;&#xAC1C; &#xB9C1;&#xD06C; <a href="http://www.obeythetestinggoat.com" target="_blank">http://www.obeythetestinggoat.com</a></p>
+<p>원서 소개 링크 http://www.obeythetestinggoat.com</p>
 </blockquote>
-<h4 id="&#xC2E4;&#xD589;-&#xD658;&#xACBD;">&#xC2E4;&#xD589; &#xD658;&#xACBD;</h4>
+<h4><a class="header" href="#실행-환경" id="실행-환경">실행 환경</a></h4>
 <ul>
 <li>macOS 10.12.3</li>
 <li>python 3.5.2</li>
 <li>selenium 3.3.1</li>
 <li>firefox 52.0</li>
 </ul>
-<h3 id="p-5">p. 5</h3>
-<h4 id="problem">Problem</h4>
-<p>&#xCCAB; &#xBC88;&#xC9F8; &#xD14C;&#xC2A4;&#xD2B8;&#xBD80;&#xD130; &#xCC45;&#xC5D0; &#xB098;&#xC628;&#xB300;&#xB85C; &#xB418;&#xC9C0; &#xC54A;&#xB294;&#xB2E4;.</p>
-<h6 id="&#xC18C;&#xC2A4;&#xCF54;&#xB4DC;">&#xC18C;&#xC2A4;&#xCF54;&#xB4DC;</h6>
-<pre><code class="lang-python"><span class="hljs-keyword">from</span> selenium <span class="hljs-keyword">import</span> webdriver
+<h3><a class="header" href="#p-5" id="p-5">p. 5</a></h3>
+<h4><a class="header" href="#problem" id="problem">Problem</a></h4>
+<p>첫 번째 테스트부터 책에 나온대로 되지 않는다.</p>
+<h6><a class="header" href="#소스코드" id="소스코드">소스코드</a></h6>
+<pre><code class="language-python">from selenium import webdriver
 
 browser = webdriver.Firefox()
-browser.get(<span class="hljs-string">&apos;http://localhost:8000&apos;</span>)
+browser.get('http://localhost:8000')
 
-<span class="hljs-keyword">assert</span> <span class="hljs-string">&apos;Django&apos;</span> <span class="hljs-keyword">in</span> browser.title
+assert 'Django' in browser.title
 </code></pre>
-<p>&#xCF54;&#xB4DC;&#xB97C; &#xB3CC;&#xB824;&#xBCF4;&#xB2C8; &#xC6D0;&#xD558;&#xB294; &#xC5D0;&#xB7EC; &#xBA54;&#xC2DC;&#xC9C0;&#xAC00; &#xC544;&#xB2C8;&#xB2E4;. &#xC544;&#xBB34;&#xB798;&#xB3C4; <code>geckodriver</code>&#xB97C; &#xAC00;&#xC9C0;&#xACE0; &#xD574;&#xACB0;&#xD574;&#xC57C; &#xD558;&#xB294; &#xB4EF; &#xD558;&#xB2E4;.</p>
-<h4 id="how-to-solve">How to solve</h4>
-<h5 id="1-on-mac-os">1. on Mac OS</h5>
-<p>&#xBA3C;&#xC800; <a href="https://github.com/mozilla/geckodriver/releases/tag/v0.15.0" target="_blank">geckodriver</a>&#xB97C; &#xC124;&#xCE58;&#xD558;&#xACE0; &#xC801;&#xB2F9;&#xD55C; &#xC704;&#xCE58;&#xC5D0; &#xB123;&#xC5B4;&#xC8FC;&#xC790;. &#xB098;&#xB294; &#xCD5C;&#xC2E0; &#xB9B4;&#xB9AC;&#xC988; &#xBC84;&#xC804;&#xC778; 0.15.0&#xC744; &#xC124;&#xCE58;&#xD588;&#xB2E4;. &#xADF8;&#xB9AC;&#xACE0; &#xC544;&#xB798; &#xC0AC;&#xD56D;&#xB4E4;&#xC744; &#xC9C4;&#xD589;&#xD55C;&#xB2E4;.</p>
-<pre><code class="lang-bash"><span class="hljs-comment"># &#xD30C;&#xC77C;&#xC744; &#xC5F4;&#xC5B4; &#xB2E4;&#xC74C;&#xC744; &#xCD94;&#xAC00;&#xD55C;&#xB2E4;. &#xD3F4;&#xB354;&#xC758; &#xACBD;&#xB85C;&#xB294; &#xC790;&#xC2E0;&#xC758; &#xAC83;&#xC5D0; &#xB9DE;&#xAC8C; &#xC218;&#xC815;&#xD55C;&#xB2E4;.</span>
+<p>코드를 돌려보니 원하는 에러 메시지가 아니다. 아무래도 <code>geckodriver</code>를 가지고 해결해야 하는 듯 하다.</p>
+<h4><a class="header" href="#how-to-solve" id="how-to-solve">How to solve</a></h4>
+<h5><a class="header" href="#1-on-mac-os" id="1-on-mac-os">1. on Mac OS</a></h5>
+<p>먼저 <a href="https://github.com/mozilla/geckodriver/releases/tag/v0.15.0">geckodriver</a>를 설치하고 적당한 위치에 넣어주자. 나는 최신 릴리즈 버전인 0.15.0을 설치했다. 그리고 아래 사항들을 진행한다.</p>
+<pre><code class="language-bash"># 파일을 열어 다음을 추가한다. 폴더의 경로는 자신의 것에 맞게 수정한다.
 $ vim ~/.bash_profile
-<span class="hljs-built_in">export</span> PATH=<span class="hljs-variable">$PATH</span>:/YOUR/DIRECTORY/PATH/geckodriver-v0.15.0-macos
+export PATH=$PATH:/YOUR/DIRECTORY/PATH/geckodriver-v0.15.0-macos
 
-<span class="hljs-comment"># &#xBCC0;&#xACBD;&#xC0AC;&#xD56D;&#xC744; &#xC258;&#xC5D0; &#xC801;&#xC6A9;&#xD55C;&#xB2E4;.</span>
-$ <span class="hljs-built_in">source</span> ~/.bash_profile
+# 변경사항을 쉘에 적용한다.
+$ source ~/.bash_profile
 
-<span class="hljs-comment"># &#xBCC0;&#xACBD;&#xC774; &#xC798; &#xB418;&#xC5C8;&#xB294;&#xC9C0; &#xD655;&#xC778;&#xD55C;&#xB2E4;.</span>
+# 변경이 잘 되었는지 확인한다.
 $ geckodriver --version
 geckodriver 0.15.0
 
-The <span class="hljs-built_in">source</span> code of this program is available at
+The source code of this program is available at
 https://github.com/mozilla/geckodriver.
 
 This program is subject to the terms of the Mozilla Public License 2.0.
 You can obtain a copy of the license at https://mozilla.org/MPL/2.0/.
 </code></pre>
-<p>&#xC774;&#xBC88;&#xC5D0;&#xB294; <code>http://localhost:8000</code> &#xB97C; &#xC811;&#xC18D;&#xD558;&#xB294; &#xB370;&#xC11C; &#xC5D0;&#xB7EC;&#xAC00; &#xB09C;&#xB2E4;. &#xC774;&#xB97C; &#xBB34;&#xC2DC;&#xD558;&#xACE0; &#xCC45;&#xC744; &#xACC4;&#xC18D; &#xB530;&#xB77C;&#xAC00;&#xB2E4;&#xBCF4;&#xBA74;, Django &#xD14C;&#xC2A4;&#xD2B8;&#xC5D0;&#xC11C; &#xC774; &#xCF54;&#xB4DC;&#xAC00; &#xC0AC;&#xC6A9;&#xB418;&#xAE30; &#xB54C;&#xBB38;&#xC5D0; &#xADF8;&#xB2E4;&#xC9C0; &#xBB38;&#xC81C;&#xAC00; &#xC5C6;&#xB2E4;. &#xADF8;&#xB7EC;&#xB098; &#xB9CC;&#xC57D; <code>geckodriver</code> &#xBB38;&#xC81C;&#xAC00; &#xC798; &#xD574;&#xACB0;&#xB418;&#xC5C8;&#xB294;&#xC9C0; &#xD655;&#xC778;&#xD558;&#xACE0; &#xC2F6;&#xB2E4;&#xBA74;, <code>http://localhost:8000</code> &#xB300;&#xC2E0; <code>http://www.google.com</code>&#xC640; &#xAC19;&#xC740; &#xC2E4;&#xC7AC;&#xD558;&#xB294; &#xC8FC;&#xC18C;&#xB97C; &#xB123;&#xC5B4;&#xBCF4;&#xC790;. &#xADF8;&#xB7EC;&#xBA74; &#xC6D0;&#xD558;&#xB294; <code>AssertionError</code> &#xB97C; &#xC5BB;&#xC744; &#xC218; &#xC788;&#xC744; &#xAC83;&#xC774;&#xB2E4;.</p>
-<pre><code class="lang-bash">$ python functional_test.py
+<p>이번에는 <code>http://localhost:8000</code> 를 접속하는 데서 에러가 난다. 이를 무시하고 책을 계속 따라가다보면, Django 테스트에서 이 코드가 사용되기 때문에 그다지 문제가 없다. 그러나 만약 <code>geckodriver</code> 문제가 잘 해결되었는지 확인하고 싶다면, <code>http://localhost:8000</code> 대신 <code>http://www.google.com</code>와 같은 실재하는 주소를 넣어보자. 그러면 원하는 <code>AssertionError</code> 를 얻을 수 있을 것이다.</p>
+<pre><code class="language-bash">$ python functional_test.py
 Traceback (most recent call last):
-  File <span class="hljs-string">&quot;functional_test.py&quot;</span>, line 6, <span class="hljs-keyword">in</span> &lt;module&gt;
-    assert <span class="hljs-string">&apos;Django&apos;</span> <span class="hljs-keyword">in</span> browser.title
+  File &quot;functional_test.py&quot;, line 6, in &lt;module&gt;
+    assert 'Django' in browser.title
 AssertionError
 </code></pre>
-<h4 id="2-on-ubuntu">2. on Ubuntu</h4>
-<pre><code class="lang-bash">$ wget https://github.com/mozilla/geckodriver/releases/download/v0.15.0/geckodriver-v0.15.0-linux64.tar.gz <span class="hljs-comment"># install</span>
-$ tar -xvzf geckodriver-v0.15.0-linux64.tar.gz geckodriver <span class="hljs-comment"># unpack</span>
-$ rm geckodriver-v0.15.0-linux64.tar.gz <span class="hljs-comment"># delete tar file</span>
+<h4><a class="header" href="#2-on-ubuntu" id="2-on-ubuntu">2. on Ubuntu</a></h4>
+<pre><code class="language-bash">$ wget https://github.com/mozilla/geckodriver/releases/download/v0.15.0/geckodriver-v0.15.0-linux64.tar.gz # install
+$ tar -xvzf geckodriver-v0.15.0-linux64.tar.gz geckodriver # unpack
+$ rm geckodriver-v0.15.0-linux64.tar.gz # delete tar file
 $ chmod +x geckodriver
-$ <span class="hljs-built_in">export</span> PATH=<span class="hljs-variable">$PATH</span>:/YOUR/DIRECTORY/PATH/geckodriver
+$ export PATH=$PATH:/YOUR/DIRECTORY/PATH/geckodriver
 </code></pre>
-<h3 id="p33">p.33</h3>
-<h4 id="problem">Problem</h4>
-<p><code>python manage.py runserver</code>&#xB97C; &#xC2E4;&#xD589;&#xD558;&#xBA74; &#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC740; &#xC5D0;&#xB7EC;&#xBA54;&#xC2DC;&#xC9C0;&#xAC00; &#xB098;&#xC628;&#xB2E4;.</p>
-<pre><code class="lang-bash">Error: view must be a callable or a list/tuple <span class="hljs-keyword">in</span> the <span class="hljs-keyword">case</span> of include().
+<h3><a class="header" href="#p33" id="p33">p.33</a></h3>
+<h4><a class="header" href="#problem-1" id="problem-1">Problem</a></h4>
+<p><code>python manage.py runserver</code>를 실행하면 다음과 같은 에러메시지가 나온다.</p>
+<pre><code class="language-bash">Error: view must be a callable or a list/tuple in the case of include().
 </code></pre>
-<h4 id="how-to-solve">How to solve</h4>
-<h6 id="superlistsurlspy">superlists/urls.py</h6>
-<pre><code class="lang-python"><span class="hljs-keyword">from</span> django.conf.urls <span class="hljs-keyword">import</span> url
-<span class="hljs-keyword">from</span> lists <span class="hljs-keyword">import</span> views
+<h4><a class="header" href="#how-to-solve-1" id="how-to-solve-1">How to solve</a></h4>
+<h6><a class="header" href="#superlistsurlspy" id="superlistsurlspy">superlists/urls.py</a></h6>
+<pre><code class="language-python">from django.conf.urls import url
+from lists import views
 
 urlpatterns = [
-    url(<span class="hljs-string">r&apos;^$&apos;</span>, views.home_page, name=<span class="hljs-string">&apos;home&apos;</span>)
+    url(r'^$', views.home_page, name='home')
 ]
 </code></pre>
-<h3 id="p63">p.63</h3>
-<h4 id="how-to-solve">How to solve</h4>
-<p>csrf_token&#xC744; &#xC81C;&#xAC70;&#xD558;&#xACE0; &#xBE44;&#xAD50;&#xD558;&#xB3C4;&#xB85D; &#xD55C;&#xB2E4;.</p>
-<h6 id="liststestpy">lists/test.py</h6>
-<pre><code class="lang-python"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">HomePageTest</span><span class="hljs-params">(TestCase)</span>:</span>
+<h3><a class="header" href="#p63" id="p63">p.63</a></h3>
+<h4><a class="header" href="#how-to-solve-2" id="how-to-solve-2">How to solve</a></h4>
+<p>csrf_token을 제거하고 비교하도록 한다.</p>
+<h6><a class="header" href="#liststestpy" id="liststestpy">lists/test.py</a></h6>
+<pre><code class="language-python">class HomePageTest(TestCase):
 
-    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">remove_csrf</span><span class="hljs-params">(self, origin)</span>:</span>
-        csrf_regex = <span class="hljs-string">r&apos;&lt;input[^&gt;]+csrfmiddlewaretoken[^&gt;]+&gt;&apos;</span>
-        <span class="hljs-keyword">return</span> re.sub(csrf_regex, <span class="hljs-string">&apos;&apos;</span>, origin)
+    def remove_csrf(self, origin):
+        csrf_regex = r'&lt;input[^&gt;]+csrfmiddlewaretoken[^&gt;]+&gt;'
+        return re.sub(csrf_regex, '', origin)
 
-    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">test_root_url_resolves_to_home_page_view</span><span class="hljs-params">(self)</span>:</span>
-        found = resolve(<span class="hljs-string">&apos;/&apos;</span>)
+    def test_root_url_resolves_to_home_page_view(self):
+        found = resolve('/')
         self.assertEqual(found.func, home_page)
 
-    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">test_home_page_returns_correct_html</span><span class="hljs-params">(self)</span>:</span>
+    def test_home_page_returns_correct_html(self):
         request = HttpRequest()
         response = home_page(request)
-        expected_html = self.remove_csrf(render_to_string(<span class="hljs-string">&apos;home.html&apos;</span>))
+        expected_html = self.remove_csrf(render_to_string('home.html'))
         response_decode = self.remove_csrf(response.content.decode())
 
         self.assertEqual(response_decode, expected_html)
 
-    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">test_home_page_can_save_a_post_request</span><span class="hljs-params">(self)</span>:</span>
+    def test_home_page_can_save_a_post_request(self):
         request = HttpRequest()
-        request.method = <span class="hljs-string">&apos;POST&apos;</span>
-        request.POST[<span class="hljs-string">&apos;item_text&apos;</span>] = <span class="hljs-string">&apos;A new item&apos;</span>
+        request.method = 'POST'
+        request.POST['item_text'] = 'A new item'
 
         response = home_page(request)
 
-        self.assertIn(<span class="hljs-string">&apos;A new item&apos;</span>, response.content.decode())
+        self.assertIn('A new item', response.content.decode())
 
         expected_html = self.remove_csrf(render_to_string(
-            <span class="hljs-string">&apos;home.html&apos;</span>,
-            {<span class="hljs-string">&apos;new_item_text&apos;</span>: <span class="hljs-string">&apos;A new item&apos;</span>}
+            'home.html',
+            {'new_item_text': 'A new item'}
         ))
         response_decode = self.remove_csrf(response.content.decode())
 
         self.assertEqual(response_decode, expected_html)
 </code></pre>
-<h3 id="p85">p.85</h3>
-<h4 id="problem">Problem</h4>
-<p>&#xD398;&#xC774;&#xC9C0; &#xB9C8;&#xC9C0;&#xB9C9;&#xC758; &#xAE30;&#xB2A5; &#xD14C;&#xC2A4;&#xD2B8;&#xB97C; &#xC131;&#xACF5;&#xD558;&#xBA74; &#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC740; &#xBA54;&#xC2DC;&#xC9C0;&#xAC00; &#xB5A0;&#xC57C;&#xD55C;&#xB2E4;.</p>
-<pre><code class="lang-bash">Traceback (most recent call last):
-  File <span class="hljs-string">&quot;functional_test.py&quot;</span>, line 77, <span class="hljs-keyword">in</span> <span class="hljs-built_in">test</span>_can_start_a_list_and_retrieve_it_later
-    self.fail(<span class="hljs-string">&apos;Finish the test!&apos;</span>)
-AssertionError: Finish the <span class="hljs-built_in">test</span>!
+<h3><a class="header" href="#p85" id="p85">p.85</a></h3>
+<h4><a class="header" href="#problem-2" id="problem-2">Problem</a></h4>
+<p>페이지 마지막의 기능 테스트를 성공하면 다음과 같은 메시지가 떠야한다.</p>
+<pre><code class="language-bash">Traceback (most recent call last):
+  File &quot;functional_test.py&quot;, line 77, in test_can_start_a_list_and_retrieve_it_later
+    self.fail('Finish the test!')
+AssertionError: Finish the test!
 </code></pre>
-<p>&#xADF8;&#xB7EC;&#xB098; &#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC740; &#xC5D0;&#xB7EC; &#xBA54;&#xC2DC;&#xC9C0;&#xAC00; &#xB5B4;&#xB2E4;.</p>
-<pre><code class="lang-bash">selenium.common.exceptions.InvalidSelectorException: Message: Given css selector expression <span class="hljs-string">&quot;tr&quot;</span> is invalid: TypeError: can<span class="hljs-string">&apos;t access dead object
-</span></code></pre>
-<h4 id="how-to-solve">How to solve</h4>
-<p>&#xC774; &#xBB38;&#xC81C;&#xC5D0; &#xB300;&#xD574;&#xC11C; <a href="http://stackoverflow.com/a/41206683" target="_blank">stackoverflow</a>&#xC5D0; &#xC800;&#xC790;&#xAC00; &#xB2F5;&#xBCC0;&#xC744; &#xB2EC;&#xC544;&#xB1A8;&#xB294;&#xB370;, &#xCC45;&#xC5D0;&#xC11C;&#xB294; Selenium2&#xC744; &#xC0AC;&#xC6A9;&#xD588;&#xB294;&#xB370; Selenium3&#xC73C;&#xB85C; &#xC5C5;&#xB370;&#xC774;&#xD2B8; &#xB418;&#xBA74;&#xC11C; <code>implicit wait</code>&#xC744; &#xCC98;&#xB9AC;&#xD558;&#xB294; &#xBC29;&#xBC95;&#xC774; &#xB2EC;&#xB77C;&#xC84C;&#xAE30; &#xB54C;&#xBB38;&#xC5D0; &#xC5D0;&#xB7EC;&#xAC00; &#xB09C;&#xB2E4;&#xACE0; &#xD55C;&#xB2E4;. &#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC774; &#xCF54;&#xB4DC;&#xB97C; &#xC218;&#xC815;&#xD574;&#xC8FC;&#xC790;.</p>
-<h6 id="functionaltestpy">functional_test.py</h6>
-<pre><code class="lang-python">...
-<span class="hljs-keyword">from</span> contextlib <span class="hljs-keyword">import</span> contextmanager
-<span class="hljs-keyword">from</span> selenium.webdriver.support.ui <span class="hljs-keyword">import</span> WebDriverWait
-<span class="hljs-keyword">from</span> selenium.webdriver.support.expected_conditions <span class="hljs-keyword">import</span> staleness_of
+<p>그러나 다음과 같은 에러 메시지가 떴다.</p>
+<pre><code class="language-bash">selenium.common.exceptions.InvalidSelectorException: Message: Given css selector expression &quot;tr&quot; is invalid: TypeError: can't access dead object
+</code></pre>
+<h4><a class="header" href="#how-to-solve-3" id="how-to-solve-3">How to solve</a></h4>
+<p>이 문제에 대해서 <a href="http://stackoverflow.com/a/41206683">stackoverflow</a>에 저자가 답변을 달아놨는데, 책에서는 Selenium2을 사용했는데 Selenium3으로 업데이트 되면서 <code>implicit wait</code>을 처리하는 방법이 달라졌기 때문에 에러가 난다고 한다. 다음과 같이 코드를 수정해주자.</p>
+<h6><a class="header" href="#functional_testpy" id="functional_testpy">functional_test.py</a></h6>
+<pre><code class="language-python">...
+from contextlib import contextmanager
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support.expected_conditions import staleness_of
 
-<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">NewVisitorTest</span><span class="hljs-params">(unittest.TestCase)</span>:</span>
+class NewVisitorTest(unittest.TestCase):
     ...
-<span class="hljs-meta">    @contextmanager</span>
-    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">wait_for_page_load</span><span class="hljs-params">(self, timeout=<span class="hljs-number">30</span>)</span>:</span>
-        old_page = self.browser.find_element_by_tag_name(<span class="hljs-string">&quot;html&quot;</span>)
-        <span class="hljs-keyword">yield</span> WebDriverWait(self.browser, timeout).until(
+    @contextmanager
+    def wait_for_page_load(self, timeout=30):
+        old_page = self.browser.find_element_by_tag_name(&quot;html&quot;)
+        yield WebDriverWait(self.browser, timeout).until(
             staleness_of(old_page)
         )
     ...
-    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">test_can_start_list_and_retrieve_it_later</span><span class="hljs-params">(self)</span>:</span>
+    def test_can_start_list_and_retrieve_it_later(self):
         ...
-        inputbox.send_keys(<span class="hljs-string">&quot;Buy peacock feathers&quot;</span>)
+        inputbox.send_keys(&quot;Buy peacock feathers&quot;)
         inputbox.send_keys(Keys.ENTER)
 
-        <span class="hljs-keyword">with</span> self.wait_for_page_load(timeout=<span class="hljs-number">10</span>):
-            self.check_for_row_in_list_table(<span class="hljs-string">&quot;1: Buy peacock feathers&quot;</span>)
+        with self.wait_for_page_load(timeout=10):
+            self.check_for_row_in_list_table(&quot;1: Buy peacock feathers&quot;)
 
-        inputbox = self.browser.find_element_by_id(<span class="hljs-string">&quot;id_new_item&quot;</span>)
-        inputbox.send_keys(<span class="hljs-string">&quot;Use peacock feathers to make a fly&quot;</span>)
+        inputbox = self.browser.find_element_by_id(&quot;id_new_item&quot;)
+        inputbox.send_keys(&quot;Use peacock feathers to make a fly&quot;)
         inputbox.send_keys(Keys.ENTER)
 
-        <span class="hljs-keyword">with</span> self.wait_for_page_load(timeout=<span class="hljs-number">10</span>):
-            self.check_for_row_in_list_table(<span class="hljs-string">&quot;1: Buy peacock feathers&quot;</span>)
-            self.check_for_row_in_list_table(<span class="hljs-string">&quot;2: Use peacock feathers to make a fly&quot;</span>)
+        with self.wait_for_page_load(timeout=10):
+            self.check_for_row_in_list_table(&quot;1: Buy peacock feathers&quot;)
+            self.check_for_row_in_list_table(&quot;2: Use peacock feathers to make a fly&quot;)
 </code></pre>
-<h3 id="p95">p.95</h3>
-<h4 id="yagni">YAGNI</h4>
+<h3><a class="header" href="#p95" id="p95">p.95</a></h3>
+<h4><a class="header" href="#yagni" id="yagni">YAGNI</a></h4>
 <blockquote>
-<p>&#xC124;&#xACC4;&#xC5D0; &#xB300;&#xD574; &#xD55C;&#xBC88; &#xC0DD;&#xAC01;&#xD558;&#xAE30; &#xC2DC;&#xC791;&#xD558;&#xBA74; &#xC0DD;&#xAC01;&#xC744; &#xBA48;&#xCD94;&#xB294; &#xAC83;&#xC774; &#xC27D;&#xC9C0; &#xC54A;&#xB2E4;. &#xC5EC;&#xB7EC; &#xAC00;&#xC9C0; &#xC0DD;&#xAC01;&#xC774; &#xB5A0;&#xC624;&#xB974;&#xAE30; &#xC2DC;&#xC791;&#xD55C;&#xB2E4;. [&#xC911;&#xB7B5;] &#xD558;&#xC9C0;&#xB9CC; &#xC560;&#xC790;&#xC77C; &#xBCF5;&#xC74C;&#xC778; <strong>YAGNI</strong>&#xC5D0; &#xC21C;&#xC885;&#xD574;&#xC57C; &#xD55C;&#xB2E4;(&#xC57C;&#xADF8;&#xB2C8;&#xB77C; &#xC77D;&#xB294;&#xB2E4;). &quot;You ain&apos;t gonna need it.&quot;(&#xADF8;&#xAC83;&#xC744; &#xC0AC;&#xC6A9;&#xD560; &#xC77C;&#xC774; &#xC5C6;&#xC744; &#xAC83;&#xC774;&#xB2E4;)&#xC758; &#xC57D;&#xC790;&#xB2E4;. &#xC18C;&#xD504;&#xD2B8;&#xC6E8;&#xC5B4; &#xAC1C;&#xBC1C;&#xC790;&#xB85C;&#xC11C; &#xC6B0;&#xB9AC;&#xB294; &#xBB34;&#xC5B8;&#xAC00; &#xB9CC;&#xB4DC;&#xB294; &#xAC83;&#xC744; &#xC990;&#xAE34;&#xB2E4;. &#xB610;&#xD55C; &#xC544;&#xC774;&#xB514;&#xC5B4;&#xAC00; &#xC0DD;&#xAC01;&#xB098;&#xC11C; &#xADF8;&#xAC83;&#xC744; &#xC9C1;&#xC811; &#xAD6C;&#xCD95;&#xD574;&#xBCF4;&#xACE0; &#xC2F6;&#xC5B4;&#xC11C; &#xC548;&#xB2EC;&#xC774; &#xB098;&#xB294; &#xACBD;&#xC6B0;&#xB3C4; &#xC788;&#xC744; &#xAC83;&#xC774;&#xB2E4;. &#xD558;&#xC9C0;&#xB9CC; &#xC544;&#xC774;&#xB514;&#xC5B4;&#xAC00; &#xC815;&#xB9D0; &#xB05D;&#xB0B4;&#xC8FC;&#xB354;&#xB77C;&#xB3C4; &#xB300;&#xAC1C;&#xB294; &#xADF8;&#xAC78; &#xC0AC;&#xC6A9;&#xD558;&#xC9C0; &#xC54A;&#xACE0; &#xB05D;&#xB098;&#xB294; &#xACBD;&#xC6B0;&#xAC00; &#xB9CE;&#xB2E4; &#xC624;&#xD788;&#xB824; &#xC0AC;&#xC6A9;&#xD558;&#xC9C0; &#xC54A;&#xB294; &#xCF54;&#xB4DC;&#xB85C; &#xAC00;&#xB4DD; &#xCC28;&#xC11C; &#xC560;&#xD50C;&#xB9AC;&#xCF00;&#xC774;&#xC158;&#xC774; &#xBCF5;&#xC7A1;&#xD574;&#xC9C0;&#xAE30;&#xB3C4; &#xD55C;&#xB2E4;. YAGNI&#xB294; &#xCC3D;&#xC758;&#xC801;&#xC774;&#xC9C0;&#xB9CC; &#xACFC;&#xB3C4;&#xD55C; &#xC5F4;&#xC815;&#xC744; &#xC5B5;&#xC81C;&#xD574;&#xC8FC;&#xB294; &#xACBD;&#xC804;&#xC774;&#xB77C;&#xACE0; &#xD560; &#xC218; &#xC788;&#xB2E4;.</p>
+<p>설계에 대해 한번 생각하기 시작하면 생각을 멈추는 것이 쉽지 않다. 여러 가지 생각이 떠오르기 시작한다. [중략] 하지만 애자일 복음인 <strong>YAGNI</strong>에 순종해야 한다(야그니라 읽는다). &quot;You ain't gonna need it.&quot;(그것을 사용할 일이 없을 것이다)의 약자다. 소프트웨어 개발자로서 우리는 무언가 만드는 것을 즐긴다. 또한 아이디어가 생각나서 그것을 직접 구축해보고 싶어서 안달이 나는 경우도 있을 것이다. 하지만 아이디어가 정말 끝내주더라도 대개는 그걸 사용하지 않고 끝나는 경우가 많다 오히려 사용하지 않는 코드로 가득 차서 애플리케이션이 복잡해지기도 한다. YAGNI는 창의적이지만 과도한 열정을 억제해주는 경전이라고 할 수 있다.</p>
 </blockquote>
-<h3 id="p101">p.101</h3>
-<h4 id="problem">Problem</h4>
-<p>p.97&#xC5D0;&#xC11C; &#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC774; &#xAE30;&#xB2A5; &#xD14C;&#xC2A4;&#xD2B8;&#xB97C; &#xC218;&#xC815;&#xD588;&#xB2E4;. <code>self.wait_for_page_load</code> &#xBD80;&#xBD84;&#xC740; &#xC774; &#xD3EC;&#xC2A4;&#xD2B8;&#xC758; &#xC717;&#xBD80;&#xBD84;(p.85)&#xC5D0; &#xC218;&#xC815;&#xD588;&#xB358; &#xBD80;&#xBD84;&#xC774;&#xB2E4;.</p>
-<h6 id="functionalteststestspy">functional_tests/tests.py</h6>
-<pre><code class="lang-python"><span class="hljs-comment"># When she hits enter, the page updates, and now the page lists</span>
-<span class="hljs-comment"># &quot;1: Buy peacock feathers&quot; as an item in a to-do list</span>
+<h3><a class="header" href="#p101" id="p101">p.101</a></h3>
+<h4><a class="header" href="#problem-3" id="problem-3">Problem</a></h4>
+<p>p.97에서 다음과 같이 기능 테스트를 수정했다. <code>self.wait_for_page_load</code> 부분은 이 포스트의 윗부분(p.85)에 수정했던 부분이다.</p>
+<h6><a class="header" href="#functional_teststestspy" id="functional_teststestspy">functional_tests/tests.py</a></h6>
+<pre><code class="language-python"># When she hits enter, the page updates, and now the page lists
+# &quot;1: Buy peacock feathers&quot; as an item in a to-do list
 inputbox.send_keys(Keys.ENTER)
 edith_list_url = self.browser.current_url
-self.assertRegex(edith_list_url, <span class="hljs-string">&apos;/lists/.+&apos;</span>)
-<span class="hljs-keyword">with</span> self.wait_for_page_load(timeout=<span class="hljs-number">10</span>):
-    self.check_for_row_in_list_table(<span class="hljs-string">&quot;1: Buy peacock feathers&quot;</span>)
+self.assertRegex(edith_list_url, '/lists/.+')
+with self.wait_for_page_load(timeout=10):
+    self.check_for_row_in_list_table(&quot;1: Buy peacock feathers&quot;)
 </code></pre>
-<p>p.100&#xC5D0;&#xC11C; home_page &#xBDF0;&#xB97C; &#xC218;&#xC815;&#xD588;&#xB294;&#xB370;&#xB3C4;, &#xAE30;&#xB2A5; &#xD14C;&#xC2A4;&#xD2B8;&#xB97C; &#xC2E4;&#xD589;&#xD558;&#xBA74; &#xC774;&#xC804;&#xC5D0; &#xB098;&#xC654;&#xB358; &#xC5D0;&#xB7EC; &#xBA54;&#xC2DC;&#xC9C0;&#xAC00; &#xB611;&#xAC19;&#xC774; &#xB098;&#xC628;&#xB2E4;.</p>
-<pre><code class="lang-bash">self.assertRegex(edith_list_url, <span class="hljs-string">&apos;/lists/.+&apos;</span>)
-AssertionError: Regex didn<span class="hljs-string">&apos;t match: &apos;</span>/lists/.+<span class="hljs-string">&apos; not found in &apos;</span>http://localhost:8081/<span class="hljs-string">&apos;
-</span></code></pre>
-<h4 id="how-to-solve">How to solve</h4>
-<h6 id="functionalteststestspy">functional_tests/tests.py</h6>
-<pre><code class="lang-python"><span class="hljs-comment"># When she hits enter, the page updates, and now the page lists</span>
-<span class="hljs-comment"># &quot;1: Buy peacock feathers&quot; as an item in a to-do list</span>
+<p>p.100에서 home_page 뷰를 수정했는데도, 기능 테스트를 실행하면 이전에 나왔던 에러 메시지가 똑같이 나온다.</p>
+<pre><code class="language-bash">self.assertRegex(edith_list_url, '/lists/.+')
+AssertionError: Regex didn't match: '/lists/.+' not found in 'http://localhost:8081/'
+</code></pre>
+<h4><a class="header" href="#how-to-solve-4" id="how-to-solve-4">How to solve</a></h4>
+<h6><a class="header" href="#functional_teststestspy-1" id="functional_teststestspy-1">functional_tests/tests.py</a></h6>
+<pre><code class="language-python"># When she hits enter, the page updates, and now the page lists
+# &quot;1: Buy peacock feathers&quot; as an item in a to-do list
 inputbox.send_keys(Keys.ENTER)
-<span class="hljs-keyword">with</span> self.wait_for_page_load(timeout=<span class="hljs-number">10</span>):
-    self.check_for_row_in_list_table(<span class="hljs-string">&quot;1: Buy peacock feathers&quot;</span>)
+with self.wait_for_page_load(timeout=10):
+    self.check_for_row_in_list_table(&quot;1: Buy peacock feathers&quot;)
 edith_list_url = self.browser.current_url
-self.assertRegex(edith_list_url, <span class="hljs-string">&apos;/lists/.+&apos;</span>)
+self.assertRegex(edith_list_url, '/lists/.+')
 </code></pre>
-<p>&#xAE30;&#xC874;&#xC758; &#xCF54;&#xB4DC;&#xC5D0;&#xC11C; &#xC21C;&#xC11C;&#xB97C; &#xC870;&#xAE08; &#xBC14;&#xAFE8;&#xB294;&#xB370;, &#xC5D4;&#xD130;&#xB97C; &#xC785;&#xB825;&#xBC1B;&#xC740; &#xD6C4;&#xC5D0; &#xC554;&#xBB35;&#xC801;&#xC778; &#xB300;&#xAE30; &#xC2DC;&#xAC04;(implicit wait)&#xC744; &#xC8FC;&#xB3C4;&#xB85D; &#xC218;&#xC815;&#xD588;&#xB2E4;. &#xC774;&#xC81C; &#xB2E4;&#xC2DC; &#xAE30;&#xB2A5; &#xD14C;&#xC2A4;&#xD2B8;&#xB97C; &#xC2E4;&#xD589;&#xD558;&#xBA74; &#xC6D0;&#xD558;&#xB294; &#xBA54;&#xC2DC;&#xC9C0;&#xB97C; &#xC5BB;&#xC744; &#xC218; &#xC788;&#xB2E4;.</p>
-<pre><code class="lang-bash">selenium.common.exceptions.NoSuchElementException: Message: Unable to locate element: [id=<span class="hljs-string">&quot;id_list_table&quot;</span>]
+<p>기존의 코드에서 순서를 조금 바꿨는데, 엔터를 입력받은 후에 암묵적인 대기 시간(implicit wait)을 주도록 수정했다. 이제 다시 기능 테스트를 실행하면 원하는 메시지를 얻을 수 있다.</p>
+<pre><code class="language-bash">selenium.common.exceptions.NoSuchElementException: Message: Unable to locate element: [id=&quot;id_list_table&quot;]
 </code></pre>
-<h3 id="p103">p.103</h3>
-<h4 id="how-to-solve">How to solve</h4>
-<pre><code class="lang-python"><span class="hljs-keyword">from</span> django.conf.urls <span class="hljs-keyword">import</span> url
-<span class="hljs-keyword">from</span> lists <span class="hljs-keyword">import</span> views
+<h3><a class="header" href="#p103" id="p103">p.103</a></h3>
+<h4><a class="header" href="#how-to-solve-5" id="how-to-solve-5">How to solve</a></h4>
+<pre><code class="language-python">from django.conf.urls import url
+from lists import views
 
 urlpatterns = [
-    url(<span class="hljs-string">r&apos;^$&apos;</span>, views.home_page, name=<span class="hljs-string">&apos;home&apos;</span>),
+    url(r'^$', views.home_page, name='home'),
     url(
-        <span class="hljs-string">r&apos;^lists/the-only-list-in-the-world/$&apos;</span>,
+        r'^lists/the-only-list-in-the-world/$',
         views.view_list,
-        name=<span class="hljs-string">&apos;view_list&apos;</span>)
+        name='view_list')
 ]
 </code></pre>
-<h3 id="p104">p.104</h3>
-<h4 id="problem">Problem</h4>
-<p>&#xCC45;&#xC5D0;&#xC11C;&#xB294; &#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC740; &#xC5D0;&#xB7EC;&#xAC00; &#xB098;&#xAE38; &#xC6D0;&#xD55C;&#xB2E4;.</p>
-<pre><code>AssertionError: &apos;2: Use peacock feathers to make a fly&apos; not found in [&apos;1: Buy peacock feathers&apos;]
-</code></pre><p>&#xADF8;&#xB7F0;&#xB370; &#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC740; &#xC5D0;&#xB7EC;&#xAC00; &#xB098;&#xB294; &#xAC83;&#xC740; implicit wait&#xB97C; &#xC124;&#xC815;&#xD574;&#xC8FC;&#xC5C8;&#xAE30; &#xB54C;&#xBB38;&#xC774;&#xACE0;, &#xC790;&#xC138;&#xD788; &#xC0B4;&#xD3B4;&#xBCF4;&#xBA74; &#xAC19;&#xC740; &#xACF3;&#xC5D0;&#xC11C; &#xC5D0;&#xB7EC;&#xAC00; &#xB098;&#xB294; &#xAC83;&#xC774;&#xBBC0;&#xB85C; &#xBB38;&#xC81C;&#xB420; &#xAC83;&#xC774; &#xC5C6;&#xB2E4;.</p>
-<pre><code class="lang-bash">    raise TimeoutException(message, screen, stacktrace)
+<h3><a class="header" href="#p104" id="p104">p.104</a></h3>
+<h4><a class="header" href="#problem-4" id="problem-4">Problem</a></h4>
+<p>책에서는 다음과 같은 에러가 나길 원한다.</p>
+<pre><code>AssertionError: '2: Use peacock feathers to make a fly' not found in ['1: Buy peacock feathers']
+</code></pre>
+<p>그런데 다음과 같은 에러가 나는 것은 implicit wait를 설정해주었기 때문이고, 자세히 살펴보면 같은 곳에서 에러가 나는 것이므로 문제될 것이 없다.</p>
+<pre><code class="language-bash">	raise TimeoutException(message, screen, stacktrace)
 selenium.common.exceptions.TimeoutException: Message:
 </code></pre>
-<h3 id="p107">p.107</h3>
-<p>&#xC6D0;&#xD558;&#xC9C0; &#xC54A;&#xB294; &#xC5D0;&#xB7EC;&#xAC00; &#xB098;&#xD0C0;&#xB0AC;&#xB2E4;. &#xAE30;&#xB2A5; &#xD14C;&#xC2A4;&#xD2B8; &#xACFC;&#xC815;&#xC5D0;&#xC11C; &#xBE0C;&#xB77C;&#xC6B0;&#xC800;&#xB97C; &#xAED0;&#xB2E4;&#xAC00; &#xB2E4;&#xC2DC; &#xCF30;&#xB294;&#xB370;&#xB3C4; &#xC774;&#xC804;&#xC758; &#xCFE0;&#xD0A4;&#xAC00; &#xB0A8;&#xC544;&#xC788;&#xB294; &#xBAA8;&#xC591;&#xC774;&#xB2E4;.</p>
-<pre><code class="lang-bash">    self.assertIn(row_text, [row.text <span class="hljs-keyword">for</span> row <span class="hljs-keyword">in</span> rows])
-AssertionError: <span class="hljs-string">&apos;1: Buy milk&apos;</span> not found <span class="hljs-keyword">in</span> [<span class="hljs-string">&apos;1: Buy peacock feathers&apos;</span>, <span class="hljs-string">&apos;2: Use peacock feathers to make a fly&apos;</span>, <span class="hljs-string">&apos;3: Buy milk&apos;</span>]
+<h3><a class="header" href="#p107" id="p107">p.107</a></h3>
+<p>원하지 않는 에러가 나타났다. 기능 테스트 과정에서 브라우저를 껐다가 다시 켰는데도 이전의 쿠키가 남아있는 모양이다.</p>
+<pre><code class="language-bash">	self.assertIn(row_text, [row.text for row in rows])
+AssertionError: '1: Buy milk' not found in ['1: Buy peacock feathers', '2: Use peacock feathers to make a fly', '3: Buy milk']
 </code></pre>
-<h3 id="p171">p.171</h3>
-<h4 id="problem">Problem</h4>
-<pre><code class="lang-bash">AttributeError: <span class="hljs-built_in">type</span> object <span class="hljs-string">&apos;NewVisitorTest&apos;</span> has no attribute <span class="hljs-string">&apos;server_thread&apos;</span>
+<h3><a class="header" href="#p171" id="p171">p.171</a></h3>
+<h4><a class="header" href="#problem-5" id="problem-5">Problem</a></h4>
+<pre><code class="language-bash">AttributeError: type object 'NewVisitorTest' has no attribute 'server_thread'
 </code></pre>
-<h4 id="how-to-solve">How to Solve</h4>
-<p>tearDownClass&#xAC00; &#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC740; &#xC5D0;&#xB7EC;&#xB97C; &#xB9CC;&#xB4E4;&#xC5B4;&#xB0B4;&#xC11C; &#xC8FC;&#xC11D;&#xCC98;&#xB9AC; &#xD574;&#xC8FC;&#xC5C8;&#xB2E4;.</p>
-<pre><code class="lang-python"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">NewVisitorTest</span><span class="hljs-params">(StaticLiveServerTestCase)</span>:</span>
-
-<span class="hljs-meta">    @classmethod</span>
-    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">setUpClass</span><span class="hljs-params">(cls)</span>:</span>
-        <span class="hljs-keyword">for</span> arg <span class="hljs-keyword">in</span> sys.argv:
-            <span class="hljs-keyword">if</span> <span class="hljs-string">&apos;liveserver&apos;</span> <span class="hljs-keyword">in</span> arg:
-                cls.server_url = <span class="hljs-string">&apos;http://&apos;</span> + arg.split(<span class="hljs-string">&apos;=&apos;</span>)[<span class="hljs-number">1</span>]
-                <span class="hljs-keyword">return</span>
+<h4><a class="header" href="#how-to-solve-6" id="how-to-solve-6">How to Solve</a></h4>
+<p>tearDownClass가 다음과 같은 에러를 만들어내서 주석처리 해주었다.</p>
+<pre><code class="language-python">class NewVisitorTest(StaticLiveServerTestCase):
+    
+    @classmethod
+    def setUpClass(cls):
+        for arg in sys.argv:
+            if 'liveserver' in arg:
+                cls.server_url = 'http://' + arg.split('=')[1]
+                return
         super().setUpClass()
         cls.server_url = cls.live_server_url
 
-    <span class="hljs-comment"># @classmethod</span>
-    <span class="hljs-comment"># def tearDownClass(cls):</span>
-    <span class="hljs-comment">#     if cls.server_url == cls.live_server_url:</span>
-    <span class="hljs-comment">#         super().tearDownClass()</span>
+    # @classmethod
+    # def tearDownClass(cls):
+    #     if cls.server_url == cls.live_server_url:
+    #         super().tearDownClass()
 </code></pre>
-<h3 id="p177">p.177</h3>
-<p>&#xC774;&#xC81C; Ubuntu&#xC5D0;&#xC11C; upstart &#xB97C; &#xC0AC;&#xC6A9;&#xD558;&#xC9C0; &#xC54A;&#xB294;&#xB2E4;&#xACE0; &#xD55C;&#xB2E4;.<sup><a href="#fn_4" id="reffn_4">4</a></sup> &#xB300;&#xC2E0; service &#xB97C; &#xC0AC;&#xC6A9;&#xD588;&#xB2E4;.</p>
-<h6 id="nginxconf">nginx.conf</h6>
-<pre><code class="lang-bash">server {
+<h3><a class="header" href="#p177" id="p177">p.177</a></h3>
+<p>이제 Ubuntu에서 upstart 를 사용하지 않는다고 한다.<sup class="footnote-reference"><a href="#4">1</a></sup> 대신 service 를 사용했다.</p>
+<h6><a class="header" href="#nginxconf" id="nginxconf">nginx.conf</a></h6>
+<pre><code class="language-bash">server {
     listen 80;
     server_name tdd.aweek-jo.com;
 
     location /static {
-        <span class="hljs-built_in">alias</span> /home/modo/projects/tdd.aweek-jo.com/static;
+        alias /home/modo/projects/tdd.aweek-jo.com/static;
     }
 
     location / {
-        proxy_<span class="hljs-built_in">set</span>_header Host <span class="hljs-variable">$host</span>;
+        proxy_set_header Host $host;
         proxy_pass http://unix:/home/modo/projects/tdd.aweek-jo.com/gunicorn.sock;
     }
 }
 </code></pre>
-<h6 id="gunicornservice">gunicorn.service</h6>
-<pre><code class="lang-bash">[Unit]
+<h6><a class="header" href="#gunicornservice" id="gunicornservice">gunicorn.service</a></h6>
+<pre><code class="language-bash">[Unit]
 Description=Gunicorn daemon
 After=network.target
 
 [Service]
 User=modo
 Group=www-data
-WorkingDirectory=/home/modo/projects/tdd.aweek-jo.com/<span class="hljs-built_in">source</span>
+WorkingDirectory=/home/modo/projects/tdd.aweek-jo.com/source
 ExecStart=/home/modo/projects/tdd.aweek-jo.com/env/bin/gunicorn \
         --workers 3 \
         --bind unix:/home/modo/projects/tdd.aweek-jo.com/gunicorn.sock \
@@ -1164,97 +425,90 @@ ExecStart=/home/modo/projects/tdd.aweek-jo.com/env/bin/gunicorn \
 [Install]
 WantedBy=multi-user.target
 </code></pre>
-<pre><code class="lang-bash">$ sudo ln <span class="hljs-_">-s</span> ~/Path/to/yourfile/gunicorn.service /etc/systemd/system/
+<pre><code class="language-bash">$ sudo ln -s ~/Path/to/yourfile/gunicorn.service /etc/systemd/system/
 $ sudo systemctl daemon-reload
 $ sudo systemctl start gunicorn
-$ sudo systemctl <span class="hljs-built_in">enable</span> gunicorn
+$ sudo systemctl enable gunicorn
 $ sudo systemctl status gunicorn
 </code></pre>
-<h5 id="refer-to">Refer to</h5>
+<h5><a class="header" href="#refer-to" id="refer-to">Refer to</a></h5>
 <ul>
-<li><a href="http://www.obeythetestinggoat.com" target="_blank">&#xC6D0;&#xC11C; &#xC18C;&#xAC1C; &#xB9C1;&#xD06C;</a></li>
-<li><a href="https://hyesun03.github.io/2016/09/19/djangoTDD01/" target="_blank">hyesun03&#xB2D8;&#xC758; &#xBE14;&#xB85C;&#xADF8;: &#xD074;&#xB9B0; &#xCF54;&#xB4DC;&#xB97C; &#xC704;&#xD55C; &#xD14C;&#xC2A4;&#xD2B8; &#xC8FC;&#xB3C4; &#xAC1C;&#xBC1C;</a></li>
-</ul>
-<blockquote id="fn_4">
-<sup>4</sup>. <a href="http://askubuntu.com/a/621209" target="_blank">&#xCC38;&#xACE0; &#xB9C1;&#xD06C;</a><a href="#reffn_4" title="Jump back to footnote [4] in the text."> &#x21A9;</a>
-</blockquote>
-
-                                
-                                </section>
-                            
-    </div>
-    <div class="search-results">
-        <div class="has-results">
-            
-            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
-            <ul class="search-results-list"></ul>
-            
-        </div>
-        <div class="no-results">
-            
-            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
-            
-        </div>
-    </div>
+<li>
+<p><a href="http://www.obeythetestinggoat.com">원서 소개 링크</a></p>
+</li>
+<li>
+<p><a href="https://hyesun03.github.io/2016/09/19/djangoTDD01/">hyesun03님의 블로그: 클린 코드를 위한 테스트 주도 개발</a></p>
+</li>
+<div class="footnote-definition" id="4"><sup class="footnote-definition-label">1</sup>
+<p><a href="http://askubuntu.com/a/621209">참고 링크</a></p>
 </div>
+</ul>
 
-                        </div>
-                    </div>
-                
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        
+                            <a rel="prev" href="../django/django-with-postgresql-on-aws-ec2.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                        
+
+                        
+                            <a rel="next" href="../docker/index.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
             </div>
 
-            
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
                 
-                <a href="django-with-postgresql-on-aws-ec2.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: Django With Postgresql On Aws Ec2">
-                    <i class="fa fa-angle-left"></i>
-                </a>
+                    <a rel="prev" href="../django/django-with-postgresql-on-aws-ec2.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
                 
-                
-            
-        
-    </div>
 
-    <script>
-        var gitbook = gitbook || [];
-        gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Test Driven Development With Python","level":"1.5.5","depth":2,"next":{"title":"Docker","level":"1.6","depth":1,"ref":"","articles":[{"title":"About Docker","level":"1.6.1","depth":2,"path":"docker/about-docker.md","ref":"docker/about-docker.md","articles":[]},{"title":"Docker Cheatsheet","level":"1.6.2","depth":2,"path":"docker/docker-cheatsheet.md","ref":"docker/docker-cheatsheet.md","articles":[]},{"title":"Docker For Jekyll","level":"1.6.3","depth":2,"path":"docker/docker-for-jekyll.md","ref":"docker/docker-for-jekyll.md","articles":[]},{"title":"Gollum Via Docker","level":"1.6.4","depth":2,"path":"docker/gollum-via-docker.md","ref":"docker/gollum-via-docker.md","articles":[]}]},"previous":{"title":"Django With Postgresql On Aws Ec2","level":"1.5.4","depth":2,"path":"django/django-with-postgresql-on-aws-ec2.md","ref":"django/django-with-postgresql-on-aws-ec2.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["ga"],"pluginsConfig":{"ga":{"configuration":"auto","token":"UA-114603670-1"},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"django/test-driven-development-with-python.md","mtime":"2020-05-10T04:53:26.593Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-05-10T04:53:55.471Z"},"basePath":"..","book":{"language":""}});
-        });
-    </script>
-</div>
+                
+                    <a rel="next" href="../docker/index.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+                
+            </nav>
+
+        </div>
 
         
-    <script src="../gitbook/gitbook.js"></script>
-    <script src="../gitbook/theme.js"></script>
-    
+
         
-        <script src="../gitbook/gitbook-plugin-ga/plugin.js"></script>
+
         
-    
         
-        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
         
-    
+        <script type="text/javascript">
+            window.playpen_copyable = true;
+        </script>
         
-        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+
         
-    
+
         
-        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        <script src="../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../searcher.js" type="text/javascript" charset="utf-8"></script>
         
-    
+
+        <script src="../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
         
-        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+
         
-    
-        
-        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
-        
-    
-        
-        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
-        
-    
 
     </body>
 </html>
-

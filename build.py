@@ -5,86 +5,31 @@ import glob
 import os.path
 import io
 
-
-header = """
-# TIL
-> Today I Learned
-
-오늘 배운 내용을 간결하게 정리하여 모아둔다.
-
----
-
-"""
-
-footer = """
----
-
-## Rules
-
-* Directory and file would be lowercase.
-* Follow GFM(Github Flavored Markdown)
-
-
-## Usage
-
-### Generate `README.md`
-
-```
-$ python3 build.py
-```
-
-### Run in Local
-
-Use [Docker](https://www.docker.com) and [Gollum](https://github.com/gollum/gollum). Details are [here](https://github.com/AWEEKJ/TIL/blob/master/docker/gollum-via-docker.md).
-
-
-## Other TIL Collections
-Inspired by
-
-* [@thoughtbot](https://github.com/thoughtbot/til)
-* [@jbranchaud](https://github.com/jbranchaud/til)
-* [@milooy](https://github.com/milooy/TIL)
-* [@channprj](https://github.com/channprj/TIL)
-
-## License
-
-© 2016 Hanju Jo
-
-This repository is licensed under the MIT license. See `LICENSE` for details.
-"""
-
-###################################
-
-
-def make_pretty_name(name):
+def prettyfy_file_name(name):
     pretty_name = re.sub(r'-', ' ', name)
+    pretty_name = pretty_name.replace('.md', '')
     return string.capwords(pretty_name)
 
+def recursive_path_visit(parent, text):
+    paths = sorted(os.listdir(parent))
+    for path in paths:
+        if path in {"README.md", "SUMMARY.md", "build.py"}:
+            continue
 
-readme = io.open('README.md', 'r+', encoding='utf-8')
-readme.write(header)
-readme.write("## Categories\n")
+        child = os.path.join(parent, path)
+        if (os.path.isdir(child)):
+            text.append(f"\n- [{prettyfy_file_name(path)}]({child}/README.md)")
+            recursive_path_visit(child, text)
+        if (os.path.isfile(child)):
+            text.append(f"  - [{prettyfy_file_name(path)}]({child})")
 
-files = glob.glob('**', recursive=True)
-directories = []
+text = []
+text.append("# Summary")
+text.append("\n[README](./README.md)")
 
-for file in files:
-    if os.path.isdir(file):
-        directories.append(file)
+recursive_path_visit(os.path.join(os.curdir), text)
 
-if 'drafts' in directories:
-    directories.remove('drafts')
-
-for directory in directories:
-    readme.write("* [" + directory.capitalize() + "](#" + directory + ")\n")
-
-readme.write("\n---\n")
-
-for directory in directories:
-    readme.write("\n## " + directory.capitalize() + "\n")
-    sub_files = glob.glob(directory + '/*.md')
-    for sub_file in sub_files:
-        readme.write("* [" + make_pretty_name(os.path.basename(sub_file)) + "](" + sub_file + ")\n")
-
-readme.write(footer)
-readme.close
+with io.open('SUMMARY.md', 'r+', encoding='utf-8') as summary:
+    summary.seek(0)
+    summary.truncate()
+    summary.write('\n'.join(text))    
